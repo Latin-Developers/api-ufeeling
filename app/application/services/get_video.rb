@@ -10,9 +10,12 @@ module UFeeling
       include Dry::Transaction
 
       step :get_video
-      step :get_comments
 
       private
+
+      DB_ERR_MSG = 'Having trouble accessing the database'
+
+      # Get video
 
       def get_video(video_id)
         video = Videos::Repository::For.klass(Videos::Entity::Video)
@@ -25,15 +28,6 @@ module UFeeling
         end
       rescue StandardError
         Failure('Could not obtain video')
-      end
-
-      def get_comments(input)
-        input[:comments] = Videos::Repository::For.klass(Videos::Entity::Comment)
-          .find_video_comments(input[:video][:id])
-
-        Success(input)
-      rescue StandardError
-        Failure('Could not get video comments')
       end
     end
   end
