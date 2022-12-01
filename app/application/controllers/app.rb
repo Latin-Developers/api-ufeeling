@@ -11,6 +11,8 @@ module UFeeling
     plugin :common_logger, $stderr
 
     route do |routing|
+      response['Content-Type'] = 'application/json'
+
       # [GET] /
       # Validate if the api is alive
       routing.root do
@@ -26,7 +28,7 @@ module UFeeling
 
       routing.on 'api/v1' do
         # [...] /categories
-        routing on 'categories' do
+        routing.on 'categories' do
           # [GET] /categories
           # TODO
           routing.get do
@@ -40,32 +42,41 @@ module UFeeling
             # Returns the list of videos
             # ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
-            # TODO
+            # TODO Cesar
             routing.get do
             end
           end
 
           # [...]  /videos/:video_origin_id
-          routing.on String do |_video_origin_id|
+          routing.on String do |video_origin_id|
             routing.is do
               # [POST]  /videos/:video_origin_id
               # Adds a new video into the database and obtains the comments
               # vodeo_origin_id = id of the video in youtube
-              # TODO
               routing.post do
+                result = Services::AddVideo.new.call(video_id: video_origin_id)
+
+                if result.failure?
+                  failed = Representer::HttpResponse.new(result.failure)
+                  routing.halt failed.http_status_code, failed.to_json
+                end
+
+                http_response = Representer::HttpResponse.new(result.value!)
+                response.status = http_response.http_status_code
+                Representer::Video.new(result.value!.message).to_json
               end
 
               # [PUT]  /videos/:video_origin_id
               # Updates the information of a videos and its comments
               # vodeo_origin_id = id of the video in youtube
-              # TODO
+              # TODO Julian
               routing.post do
               end
 
               # [GET]  /videos/:video_origin_id
               # Returns the basic information of a video
               # vodeo_origin_id = id of the video in youtube
-              # TODO
+              # TODO Julian
               routing.get do
               end
             end
@@ -74,7 +85,7 @@ module UFeeling
             routing.on 'comments' do
               # [GET]  /videos/:video_origin_id/comments
               # Gets the list of comments of a video
-              # TODO
+              # TODO Armando
               routing.get do
               end
             end

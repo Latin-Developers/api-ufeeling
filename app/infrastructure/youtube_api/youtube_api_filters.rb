@@ -32,6 +32,7 @@ module UFeeling
       def self.comments(video_id)
         {
           part: "#{PATH_FILTERS[:SNIPPET]},#{PATH_FILTERS[:REPLIES]}",
+          maxResults: 100,
           videoId: video_id
         }
       end

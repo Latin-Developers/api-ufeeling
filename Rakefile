@@ -9,7 +9,7 @@ end
 
 desc 'Run tests once'
 Rake::TestTask.new(:spec) do |t|
-  t.pattern = 'spec/*_spec.rb'
+  t.pattern = 'spec/tests/**/*_spec.rb'
   t.warning = false
 end
 
@@ -18,8 +18,16 @@ task :respec do
   sh "rerun -c 'rake spec' --ignore 'coverage/*'"
 end
 
-task :run do
-  sh 'bundle exec puma'
+namespace :run do
+  desc 'Run API in dev mode'
+  task :dev do
+    sh 'rerun -c "bundle exec puma -p 9090"'
+  end
+
+  desc 'Run API in test mode'
+  task :test do
+    sh 'RACK_ENV=test bundle exec puma -p 9090'
+  end
 end
 
 desc 'Run the webserver and application and restart if code changes'

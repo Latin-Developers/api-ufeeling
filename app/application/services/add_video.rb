@@ -8,7 +8,6 @@ module UFeeling
     class AddVideo
       include Dry::Transaction
 
-      step :parse_url
       step :get_video
       step :add_video_to_db
       step :get_comments
@@ -16,15 +15,9 @@ module UFeeling
 
       private
 
-      def parse_url(input)
-        if input.success?
-          includes_other_params = input[:video_url].include? '&'
-          video_id = includes_other_params ? input[:video_url].split('=')[-2] : input[:video_url].split('=')[-1]
-          Success(video_id:)
-        else
-          Failure("URL #{input.errors.messages.first}")
-        end
-      end
+      DB_ERR_MSG = 'Having trouble accessing the database'
+      YT_NOT_FOUND_MSG = 'Could not find video in youtube'
+      YT_COMMENTS_ERROR = 'Having trouble getting comments from youtube'
 
       # Get video from Youtube
       def get_video(input)
@@ -35,7 +28,7 @@ module UFeeling
         end
         Success(input)
       rescue StandardError => e
-        Failure(e.to_s)
+        Failure(Response::ApiResult.new(status: :not_found, message: e.to_s))
       end
 
       def add_video_to_db(input)
@@ -47,8 +40,8 @@ module UFeeling
                 end
         Success(video:)
       rescue StandardError => e
-        puts "@@Error : #{e}"
-        Failure('Having trouble accessing the database')
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
       # Get comments from Youtube (Julian added)
@@ -59,10 +52,9 @@ module UFeeling
           .comments(input[:video][:origin_id])
 
         Success(input)
-        # ? Como vamos a manejar estas excepciones?
       rescue StandardError => e
-        puts "@@Error : #{e}"
-        Failure('There is a problem accesing the database')
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
       # Add comments to database
@@ -73,7 +65,10 @@ module UFeeling
             .klass(Videos::Entity::Comment)
             .find_or_create(comment)
         end
-        Success(input[:video])
+        Success(Response::ApiResult.new(status: :created, message: input[:video]))
+      rescue StandardError => e
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
       # Support methods that other services could use
@@ -82,7 +77,7 @@ module UFeeling
         Videos::Mappers::ApiVideo
           .new(App.config.YOUTUBE_API_KEY).details(input[:video_id])
       rescue StandardError
-        raise 'Could not find that video on Youtube'
+        raise YT_NOT_FOUND_MSG
       end
 
       def video_in_database(input)
