@@ -2,6 +2,7 @@
 
 require 'dry/transaction'
 
+# TODO: Move get comments to it's own service
 module UFeeling
   module Services
     # Retrieves array of all listed videos entities

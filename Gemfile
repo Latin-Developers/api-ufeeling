@@ -3,26 +3,33 @@
 source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
-# Configuration and Utilities
+# CONFIGURATION
 gem 'figaro', '~> 1.2'
+gem 'rack-test' # for testing and can also be used to diagnose in production
 gem 'rake', '~> 13.0'
-gem 'vader_sentiment_ruby'
 
-# Web Application
-gem 'puma', '~> 6'
+# PRESENTATION LAYER
+gem 'multi_json', '~> 1.15'
+gem 'roar', '~> 1.1'
+
+# APPLICATION LAYER
+# Web application related
+gem 'puma', '~> 6.0'
 gem 'rack-session', '~> 0.3'
-gem 'roda', '~> 3'
-gem 'slim', '~> 4'
-
-# Validation
-gem 'dry-struct', '~> 1'
-gem 'dry-types', '~> 1'
+gem 'roda', '~> 3.62'
 
 # Controllers and services
 gem 'dry-monads', '~> 1.4'
 gem 'dry-transaction', '~> 0.13'
-gem 'dry-validation', '~> 1.10'
+gem 'dry-validation', '~> 1.7'
 
+# DOMAIN LAYER
+# Validation
+gem 'dry-struct', '~> 1'
+gem 'dry-types', '~> 1'
+gem 'vader_sentiment_ruby'
+
+# INFRASTRUCTURE LAYER
 # Networking
 gem 'http', '~> 5'
 
@@ -39,27 +46,23 @@ group :production do
   gem 'pg', '~> 1.2'
 end
 
-# Testing
+# TESTING
 group :test do
   gem 'minitest', '~> 5'
   gem 'minitest-rg', '~> 5'
   gem 'simplecov', '~> 0'
   gem 'vcr', '~> 6.0'
   gem 'webmock', '~> 3.0'
-
-  gem 'headless', '~> 2.3'
-  gem 'watir', '~> 7.0'
-  gem 'webdrivers', '~> 5.0'
 end
 
 group :development do
   gem 'rerun', '~> 0'
 end
 
-# Debugging
+# DEBUGGING
 gem 'pry'
 
-# Code Quality
+# QUALITY
 group :development do
   gem 'flog'
   gem 'reek'
