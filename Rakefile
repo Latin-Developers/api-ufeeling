@@ -112,9 +112,8 @@ namespace :db do
       puts 'Do not damage production database!'
       return
     end
-    
+
     FileUtils.rm(UFeeling::App.config.DB_FILENAME)
     puts "Deleted #{UFeeling::App.config.DB_FILENAME}"
-    
   end
 end

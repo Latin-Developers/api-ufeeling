@@ -43,7 +43,9 @@ describe 'Test API routes' do
       video = JSON.parse last_response.body
       _(video['title']).must_equal VIDEO_TITLE
 
-      vid = UFeeling::Representer::Video.new(UFeeling::Representer::OpenStructWithLinks.new).from_json last_response.body
+      vid = UFeeling::Representer::Video
+        .new(UFeeling::Representer::OpenStructWithLinks.new)
+        .from_json last_response.body
 
       _(vid.links['self'].href).must_include 'http'
     end
