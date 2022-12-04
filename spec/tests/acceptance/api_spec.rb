@@ -48,7 +48,7 @@ describe 'Test API routes' do
       _(proj.links['self'].href).must_include 'http'
     end
 
-    it 'should report error for invalid projects' do
+    it 'should report error for invalid videos' do
       post 'api/v1/videos/adsf'
 
       _(last_response.status).must_equal 404

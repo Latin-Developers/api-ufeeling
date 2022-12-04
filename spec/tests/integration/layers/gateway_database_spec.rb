@@ -15,7 +15,7 @@ describe 'Integration Tests of Youtube API and Database' do
     VcrHelper.eject_vcr
   end
 
-  describe 'Retrieve and store project' do
+  describe 'Retrieve and store videos' do
     before do
       DatabaseHelper.wipe_database
     end
@@ -28,20 +28,46 @@ describe 'Integration Tests of Youtube API and Database' do
       categories.each do |category|
         UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Category).find_or_create(category)
       end
-      categories_db = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Category)
+
+      categories_db = UFeeling::Videos::Repository::For
+        .klass(UFeeling::Videos::Entity::Category)
         .all
 
       _(categories_db.size).must_equal(categories.size)
     end
 
-    it 'HAPPY: should a new video in the database' do
-      video = UFeeling::Videos::Mappers::ApiVideo.new(YOUTUBE_API_KEY).details('LZx22ZcMPy0')
+    it 'HAPPY: should add a new video in the database' do
+      video = UFeeling::Videos::Mappers::ApiVideo.new(YOUTUBE_API_KEY).details(VIDEO_ID)
       UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video).find_or_create(video)
 
       video_db = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video)
         .find_origin_id(video.origin_id)
 
       _(video_db.origin_id).must_equal(video.origin_id)
+    end
+
+    it 'HAPPY: should get a list of video ids from the database' do
+      VIDEO_IDS.each do |video_id|
+        video = UFeeling::Videos::Mappers::ApiVideo.new(YOUTUBE_API_KEY).details(video_id)
+        UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video).find_or_create(video)
+      end
+
+      videos = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video)
+        .find(VIDEO_IDS, [])
+
+      _(videos.size).must_equal(VIDEO_IDS.size)
+    end
+
+    it 'HAPPY: should get a all videos from the database' do
+      VIDEO_IDS.each do |video_id|
+        video = UFeeling::Videos::Mappers::ApiVideo.new(YOUTUBE_API_KEY).details(video_id)
+        UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video).find_or_create(video)
+      end
+
+      videos = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video)
+        .find([], [])
+
+      _(videos.size).must_equal(VIDEO_IDS.size)
     end
   end
 end

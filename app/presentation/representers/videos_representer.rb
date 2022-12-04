@@ -8,7 +8,7 @@ require_relative 'video_representer'
 
 module UFeeling
   module Representer
-    # Represents list of projects for API output
+    # Represents list of videos for API output
     class VideosList < Roar::Decorator
       include Roar::JSON
 

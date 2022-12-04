@@ -16,5 +16,7 @@ require_relative '../../require_app'
 require_app
 
 YOUTUBE_API_KEY = UFeeling::App.config.YOUTUBE_API_KEY
+AUTHOR_ID = 'UCc96wBaIMkjH2JedZ5LIO4g'
 VIDEO_ID = 'VBsB3FgqEx4'
+VIDEO_IDS = %w[VBsB3FgqEx4 9reTrHdL7rQ].freeze
 VIDEO_TITLE = "Marvel's Midnight Suns Developer Livestream | Rise Up With The Midnight Suns"

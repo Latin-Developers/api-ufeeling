@@ -42,26 +42,26 @@ describe 'Tests Youtube API library' do
 
   describe 'Youtube comments information' do
     it 'HAPPY: should provide list of youtube comments' do
-      comments = UFeeling::Videos::Mappers::ApiComment.new(YOUTUBE_API_KEY).comments('ggGINmj5EQE')
+      comments = UFeeling::Videos::Mappers::ApiComment.new(YOUTUBE_API_KEY).comments(VIDEO_ID)
       _(comments.size).must_be :>, 0
     end
 
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
-        UFeeling::Videos::Mappers::ApiComment.new('BAD_TOKEN').comments('ggGINmj5EQE')
+        UFeeling::Videos::Mappers::ApiComment.new('BAD_TOKEN').comments(VIDEO_ID)
       end).must_raise Errors::BadRequest
     end
   end
 
   describe 'Youtube detail video information' do
     it 'HAPPY: should provide list of youtube video detail' do
-      details = UFeeling::Videos::Mappers::ApiVideo.new(YOUTUBE_API_KEY).details('ggGINmj5EQE')
-      _(details.origin_id).must_equal 'ggGINmj5EQE'
+      details = UFeeling::Videos::Mappers::ApiVideo.new(YOUTUBE_API_KEY).details(VIDEO_ID)
+      _(details.origin_id).must_equal VIDEO_ID
     end
 
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
-        UFeeling::Videos::Mappers::ApiVideo.new('BAD_TOKEN').details('ggGINmj5EQE')
+        UFeeling::Videos::Mappers::ApiVideo.new('BAD_TOKEN').details(VIDEO_ID)
       end).must_raise Errors::BadRequest
     end
   end
@@ -81,13 +81,13 @@ describe 'Tests Youtube API library' do
 
   describe 'Youtube channel (author) information' do
     it 'HAPPY: should provide list of youtube channel (author) detail' do
-      details = UFeeling::Videos::Mappers::ApiAuthor.new(YOUTUBE_API_KEY).author('UCc96wBaIMkjH2JedZ5LIO4g')
-      _(details.origin_id).must_equal 'UCc96wBaIMkjH2JedZ5LIO4g'
+      details = UFeeling::Videos::Mappers::ApiAuthor.new(YOUTUBE_API_KEY).author(AUTHOR_ID)
+      _(details.origin_id).must_equal AUTHOR_ID
     end
 
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
-        UFeeling::Videos::Mappers::ApiAuthor.new('BAD_TOKEN').author('UCc96wBaIMkjH2JedZ5LIO4g')
+        UFeeling::Videos::Mappers::ApiAuthor.new('BAD_TOKEN').author(AUTHOR_ID)
       end).must_raise Errors::BadRequest
     end
   end

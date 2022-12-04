@@ -42,15 +42,24 @@ module UFeeling
             # Returns the list of videos
             # ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
-            # TODO Cesar
             routing.get do
+              filters = Request::EncodedVideoList.new(routing.params)
+              result = Services::ListVideos.new.call(filters:)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+              Representer::VideosList.new(result.value!.message).to_json
             end
           end
 
           # [...]  /videos/:video_origin_id
           routing.on String do |video_origin_id|
             routing.is do
-
               # [POST]  /videos/:video_origin_id
               # Adds a new video into the database and obtains the comments
               # video_origin_id = id of the video in youtube
@@ -90,7 +99,6 @@ module UFeeling
                 response.status = http_response.http_status_code
                 Representer::Video.new(result.value!.message).to_json
               end
-              
             end
 
             # [...]  /videos/:video_origin_id/comments
