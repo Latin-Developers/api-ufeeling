@@ -38,7 +38,7 @@ module UFeeling
         video_resource(:VIDEO_CATEGORIES, ApiFilters.category(id)).first
       end
 
-      # !Deprecated, not needed for the project scope
+      # !Deprecated, not needed for the video scope
       def popular_videos(region)
         video_resource(:VIDEOS, ApiFilters.popular_videos(region))
       end

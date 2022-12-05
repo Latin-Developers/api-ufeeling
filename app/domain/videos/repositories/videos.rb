@@ -6,8 +6,22 @@ module UFeeling
     module Repository
       # Repository for Categories
       class Videos
-        def self.find(origin_id)
-          find_origin_id(origin_id)
+        def self.find_origin_id(origin_id)
+          rebuild_entity Database::VideoOrm.first(origin_id:)
+        end
+
+        def self.find(video_ids, categories)
+          videos = if video_ids.size.zero? && categories.size.zero?
+                     Database::VideoOrm.all
+                   elsif video_ids.size.zero?
+                     Database::VideoOrm.where(category: categories)
+                   elsif categories.size.zero?
+                     Database::VideoOrm.where(origin_id: video_ids)
+                   else
+                     Database::VideoOrm.where(origin_id: video_ids, category: categories)
+                   end
+
+          videos.map { |video| rebuild_entity video }
         end
 
         def self.find_id(id)
@@ -22,10 +36,6 @@ module UFeeling
 
         def self.find_title(title)
           rebuild_entity Database::VideoOrm.first(title:)
-        end
-
-        def self.find_origin_id(origin_id)
-          rebuild_entity Database::VideoOrm.first(origin_id:)
         end
 
         def self.rebuild_entity(db_record)
@@ -65,7 +75,7 @@ module UFeeling
 
         def self.category_from_origin_id(entity)
           category = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Category)
-            .find(entity.origin_category_id)
+            .find_origin_id(entity.origin_category_id)
 
           unless category
             category = UFeeling::Videos::Mappers::ApiCategory.new(App.config.YOUTUBE_API_KEY)
@@ -77,7 +87,7 @@ module UFeeling
 
         def self.author_from_origin_id(entity)
           author = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Author)
-            .find(entity.origin_author_id)
+            .find_origin_id(entity.origin_author_id)
 
           unless author
             author = UFeeling::Videos::Mappers::ApiAuthor.new(App.config.YOUTUBE_API_KEY)

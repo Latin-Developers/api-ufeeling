@@ -6,3 +6,4 @@ coverage/*
 repostore/
 _snippets/
 vaderSentiment.rb
+.DS_Store

@@ -87,7 +87,7 @@ module UFeeling
 
         def self.video_from_origin_id(entity)
           video = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video)
-            .find(entity.video_origin_id)
+            .find_origin_id(entity.video_origin_id)
 
           unless video
             video = UFeeling::Videos::Mappers::ApiVideo.new(App.config.YOUTUBE_API_KEY)
@@ -100,7 +100,7 @@ module UFeeling
 
         def self.author_from_origin_id(entity)
           author = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Author)
-            .find(entity.author_channel_origin_id)
+            .find_origin_id(entity.author_channel_origin_id)
 
           unless author
             author = UFeeling::Videos::Mappers::ApiAuthor.new(App.config.YOUTUBE_API_KEY)

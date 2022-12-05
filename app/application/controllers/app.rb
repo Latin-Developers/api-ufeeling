@@ -42,8 +42,18 @@ module UFeeling
             # Returns the list of videos
             # ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
-            # TODO Cesar
             routing.get do
+              filters = Request::EncodedVideoList.new(routing.params)
+              result = Services::ListVideos.new.call(filters:)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+              Representer::VideosList.new(result.value!.message).to_json
             end
           end
 
@@ -52,7 +62,7 @@ module UFeeling
             routing.is do
               # [POST]  /videos/:video_origin_id
               # Adds a new video into the database and obtains the comments
-              # vodeo_origin_id = id of the video in youtube
+              # video_origin_id = id of the video in youtube
               routing.post do
                 result = Services::AddVideo.new.call(video_id: video_origin_id)
 
@@ -68,16 +78,26 @@ module UFeeling
 
               # [PUT]  /videos/:video_origin_id
               # Updates the information of a videos and its comments
-              # vodeo_origin_id = id of the video in youtube
-              # TODO Julian
-              routing.post do
+              # video_origin_id = id of the video in youtube
+              # TODO Armando
+              routing.put do
               end
 
               # [GET]  /videos/:video_origin_id
               # Returns the basic information of a video
-              # vodeo_origin_id = id of the video in youtube
-              # TODO Julian
+              # video_origin_id = id of the video in youtube
+              # Responsible Julian
               routing.get do
+                result = Services::GetVideo.new.call(video_id: video_origin_id)
+
+                if result.failure?
+                  failed = Representer::HttpResponse.new(result.failure)
+                  routing.halt failed.http_status_code, failed.to_json
+                end
+
+                http_response = Representer::HttpResponse.new(result.value!)
+                response.status = http_response.http_status_code
+                Representer::Video.new(result.value!.message).to_json
               end
             end
 
@@ -85,8 +105,18 @@ module UFeeling
             routing.on 'comments' do
               # [GET]  /videos/:video_origin_id/comments
               # Gets the list of comments of a video
-              # TODO Armando
+              # Responsible Julian
               routing.get do
+                result = Services::GetComments.new.call(video_id: video_origin_id)
+
+                if result.failure?
+                  failed = Representer::HttpResponse.new(result.failure)
+                  routing.halt failed.http_status_code, failed.to_json
+                end
+
+                http_response = Representer::HttpResponse.new(result.value!)
+                response.status = http_response.http_status_code
+                Representer::CommentsList.new(result.value!.message).to_json
               end
             end
 

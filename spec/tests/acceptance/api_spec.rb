@@ -43,18 +43,34 @@ describe 'Test API routes' do
       video = JSON.parse last_response.body
       _(video['title']).must_equal VIDEO_TITLE
 
-      proj = UFeeling::Representer::Video.new(UFeeling::Representer::OpenStructWithLinks.new).from_json last_response.body
+      vid = UFeeling::Representer::Video
+        .new(UFeeling::Representer::OpenStructWithLinks.new)
+        .from_json last_response.body
 
-      _(proj.links['self'].href).must_include 'http'
+      _(vid.links['self'].href).must_include 'http'
     end
 
-    it 'should report error for invalid projects' do
+    it 'should report error for invalid videos' do
       post 'api/v1/videos/adsf'
 
       _(last_response.status).must_equal 404
 
       response = JSON.parse(last_response.body)
       _(response['message']).must_include 'not'
+    end
+  end
+
+  describe 'Get a list of videos route' do
+    it 'should be able to get the list of videos' do
+      post "api/v1/videos/#{VIDEO_ID}"
+      get 'api/v1/videos'
+
+      _(last_response.status).must_equal 200
+
+      videos = JSON.parse last_response.body
+      _(videos['videos'].size).must_equal 1
+      _(videos['videos'][0]['origin_id']).must_equal VIDEO_ID
+      _(videos['videos'][0]['title']).must_equal VIDEO_TITLE
     end
   end
 end
