@@ -82,12 +82,12 @@ module UFeeling
 
       def video_in_database(input)
         Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_origin_id(input[:video_id])
+          .find_by_origin_id(input[:video_id])
       end
 
       def comment_in_database(input)
         Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_origin_id(input[:video_id])
+          .find_by_origin_id(input[:video_id])
       end
     end
   end

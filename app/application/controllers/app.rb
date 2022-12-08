@@ -83,7 +83,7 @@ module UFeeling
 
               # [PUT]  /videos/:video_origin_id
               # Updates the information of a video and its comments
-              # video_origin_id = id of the video in youtube
+              # *@video_origin_id = id of the video in youtube
               routing.put do
                 result = Services::UpdateVideo.new.call(video_id: video_origin_id)
 

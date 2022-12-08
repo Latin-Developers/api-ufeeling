@@ -6,7 +6,7 @@ module UFeeling
     module Repository
       # Repository for Categories
       class Categories
-        def self.find_origin_id(origin_id)
+        def self.find_by_origin_id(origin_id)
           rebuild_entity Database::CategoryOrm.first(origin_id:)
         end
 
