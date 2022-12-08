@@ -62,7 +62,7 @@ module UFeeling
             .klass(Videos::Entity::Comment)
             .update_or_create(comment)
         end
-        Success(Response::ApiResult.new(status: :created, message: input[:video]))
+        Success(Response::ApiResult.new(status: :ok, message: input[:video]))
       rescue StandardError => e
         puts e.backtrace.join("\n")
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
