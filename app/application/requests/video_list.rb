@@ -16,8 +16,8 @@ module UFeeling
 
       # Use in API to parse incoming list requests
       def call
-        video_ids = decode(@params['video_ids']) || []
-        categories = decode(@params['categories']) || []
+        video_ids = JSON.parse(decode(@params['video_ids'])) || []
+        categories = JSON.parse(decode(@params['categories'])) || []
         Success(video_ids:, categories:)
       rescue StandardError
         Failure(

@@ -32,10 +32,10 @@ module UFeeling
           .then { |videos| Response::VideosList.new(videos) }
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
           .then { |result| Success(result) }
-        # rescue StandardError
-        #   Failure(
-        #     Response::ApiResult.new(status: :internal_error, message: DB_ERR)
-        #   )
+      rescue StandardError
+        Failure(
+          Response::ApiResult.new(status: :internal_error, message: DB_ERR)
+        )
       end
     end
   end
