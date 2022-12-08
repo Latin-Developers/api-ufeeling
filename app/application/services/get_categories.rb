@@ -16,13 +16,16 @@ module UFeeling
 
       # Get categories
 
-      def get_categories(input)
-        input[:categories] = Videos::Repository::For.klass(Videos::Entity::Category)
-          .find_video_categories(input[:video][:id])
+      def get_categories()
+        Videos::Repository::For.klass(Videos::Entity::Category)
+          .all()
+          .then { |categories| Response::CategoriesList.new(categories) }
+          .then { |list| Response::ApiResult.new(status: :ok, message: list) }
+          .then { |result| Success(result) }  
 
-        Success(input)
-      rescue StandardError
-        Failure('Could not get categories')
+      rescue StandardError => e
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
     end
   end
