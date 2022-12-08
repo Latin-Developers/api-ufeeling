@@ -77,10 +77,19 @@ module UFeeling
               end
 
               # [PUT]  /videos/:video_origin_id
-              # Updates the information of a videos and its comments
+              # Updates the information of a video and its comments
               # video_origin_id = id of the video in youtube
-              # TODO Armando
               routing.put do
+                result = Services::UpdateVideo.new.call(video_id: video_origin_id)
+
+                if result.failure?
+                  failed = Representer::HttpResponse.new(result.failure)
+                  routing.halt failed.http_status_code, failed.to_json
+                end
+
+                http_response = Representer::HttpResponse.new(result.value!)
+                response.status = http_response.http_status_code
+                Representer::Video.new(result.value!.message).to_json
               end
 
               # [GET]  /videos/:video_origin_id

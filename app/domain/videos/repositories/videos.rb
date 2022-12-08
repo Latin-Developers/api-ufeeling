@@ -73,6 +73,16 @@ module UFeeling
           Database::VideoOrm.find_or_create(entity.to_attr_hash)
         end
 
+        def self.update(entity)
+          category = category_from_origin_id(entity)
+          author = author_from_origin_id(entity)
+
+          entity = UFeeling::Videos::Entity::Video.new(entity.to_h.merge(category_id: category.id,
+                                                                         author_id: author.id))
+
+          Database::VideoOrm.update(entity.to_attr_hash)
+        end 
+
         def self.category_from_origin_id(entity)
           category = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Category)
             .find_origin_id(entity.origin_category_id)
