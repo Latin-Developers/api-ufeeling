@@ -10,6 +10,7 @@ module UFeeling
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :common_logger, $stderr
 
+    # rubocop:disable Metrics/BlockLength
     route do |routing|
       response['Content-Type'] = 'application/json'
 
@@ -151,5 +152,6 @@ module UFeeling
         end
       end
     end
+    # rubocop:enable Metrics/BlockLength
   end
 end

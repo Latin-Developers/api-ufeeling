@@ -24,6 +24,7 @@ module UFeeling
             .filter { |comment| comment }
         end
 
+        # rubocop:disable Metrics/MethodLength
         def self.rebuild_entity(db_record)
           return nil unless db_record
 
@@ -42,6 +43,7 @@ module UFeeling
             published_info:
           )
         end
+        # rubocop:enable Metrics/MethodLength
 
         def self.published_info(db_record)
           Entity::PublishedInfo.new(

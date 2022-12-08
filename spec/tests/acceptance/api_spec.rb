@@ -73,4 +73,17 @@ describe 'Test API routes' do
       _(videos['videos'][0]['title']).must_equal VIDEO_TITLE
     end
   end
+
+  describe 'Gets a video' do
+    it 'should be able to get a video' do
+      post "api/v1/videos/#{VIDEO_ID}"
+      get "api/v1/videos/#{VIDEO_ID}"
+
+      _(last_response.status).must_equal 200
+
+      video = JSON.parse last_response.body
+      _(video['origin_id']).must_equal VIDEO_ID
+      _(video['title']).must_equal VIDEO_TITLE
+    end
+  end
 end

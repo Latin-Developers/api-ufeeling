@@ -16,17 +16,18 @@ module UFeeling
 
       # Get video
 
-      def get_video(video_id)
+      def get_video(input)
         video = Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_origin_id(video_id)
+          .find_origin_id(input[:video_id])
 
         if video
-          Success(video:)
+          Success(Response::ApiResult.new(status: :ok, message: video))
         else
-          Failure("Video #{video_id} not found")
+          Failure(Response::ApiResult.new(status: :not_found, message: "Video #{input[:video_id]} not found"))
         end
-      rescue StandardError
-        Failure('Could not obtain video')
+      rescue StandardError => e
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
     end
   end
