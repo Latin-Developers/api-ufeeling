@@ -17,15 +17,11 @@ module UFeeling
       # Get comments
 
       def get_comments(input)
-        comments = Videos::Repository::For.klass(Videos::Entity::Comment)
+        Videos::Repository::For.klass(Videos::Entity::Comment)
           .find_video_comments(input[:video_id])
-          puts(comments)
-        
-        if comments
-          Success(Response::ApiResult.new(status: :ok, message: comments))
-        else
-          Failure(Response::ApiResult.new(status: :not_found, message: "Comments #{input[:video_id]} not found"))
-        end
+          .then { |comments| Response::CommentsList.new(comments) }
+          .then { |list| Response::ApiResult.new(status: :ok, message: list) }
+          .then { |result| Success(result) }  
 
       rescue StandardError => e
         puts e.backtrace.join("\n")

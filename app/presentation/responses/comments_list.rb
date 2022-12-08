@@ -1,2 +1,8 @@
 # frozen_string_literal: true
-# TODO
+module UFeeling
+    module Response
+      # List of videos
+      CommentsList = Struct.new(:comments)
+    end
+  end
+  
