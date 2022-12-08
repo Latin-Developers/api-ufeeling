@@ -18,7 +18,7 @@ module UFeeling
 
       def get_video(input)
         video = Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_origin_id(input[:video_id])
+          .find_by_origin_id(input[:video_id])
 
         if video
           Success(Response::ApiResult.new(status: :ok, message: video))

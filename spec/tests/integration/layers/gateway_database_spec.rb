@@ -41,7 +41,7 @@ describe 'Integration Tests of Youtube API and Database' do
       UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video).find_or_create(video)
 
       video_db = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video)
-        .find_origin_id(video.origin_id)
+        .find_by_origin_id(video.origin_id)
 
       _(video_db.origin_id).must_equal(video.origin_id)
     end

@@ -19,25 +19,24 @@ module UFeeling
       YT_NOT_FOUND_MSG = 'Could not find video in youtube'
       YT_COMMENTS_ERROR = 'Having trouble getting comments from youtube'
 
-      # Get video from Youtube
+      # Get video from Youtube and validate if it exist in the database
       def get_video(input)
         if (video = video_in_database(input))
           input[:local_video] = video
-        else
           input[:remote_video] = video_from_origin(input)
+          Success(input)
+        else
+          Failure(Response::ApiResult.new(status: :not_found,
+                                          message: "Video #{input[:local_video]} does not exits in the Database"))
         end
-        Success(input)
       rescue StandardError => e
         Failure(Response::ApiResult.new(status: :not_found, message: e.to_s))
       end
 
       def update_video_in_db(input)
         # Update local video in database if there is any new data
-        video = if (new_video = input[:remote_video])
-                  Videos::Repository::For.klass(Videos::Entity::Video).update(new_video)
-                else
-                  input[:local_video]
-                end
+        video = Videos::Repository::For.klass(Videos::Entity::Video).update(input[:remote_video])
+
         Success(video:)
       rescue StandardError => e
         puts e.backtrace.join("\n")
@@ -61,7 +60,7 @@ module UFeeling
         input[:comments].each do |comment|
           Videos::Repository::For
             .klass(Videos::Entity::Comment)
-            .find_or_create(comment)
+            .update_or_create(comment)
         end
         Success(Response::ApiResult.new(status: :created, message: input[:video]))
       rescue StandardError => e
@@ -80,7 +79,7 @@ module UFeeling
 
       def video_in_database(input)
         Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_origin_id(input[:video_id])
+          .find_by_origin_id(input[:video_id])
       end
     end
   end
