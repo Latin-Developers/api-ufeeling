@@ -81,7 +81,7 @@ module UFeeling
                                                                          author_id: author.id))
 
           Database::VideoOrm.update(entity.to_attr_hash)
-        end 
+        end
 
         def self.category_from_origin_id(entity)
           category = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Category)
