@@ -51,7 +51,7 @@ module UFeeling
           routing.is do
             # [GET] /videos?ids=&categories=
             # Returns the list of videos
-            # ids = list of origin ids that needs to be filter
+            # video_ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
             routing.get do
               filters = Request::EncodedVideoList.new(routing.params)
