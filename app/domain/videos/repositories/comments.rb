@@ -6,8 +6,9 @@ module UFeeling
     module Repository
       # Repository for Categories
       class Comments
-        def self.find_video_comments(video_id)
-          Database::CommentsOrm.find(video_id:)
+        def self.find_video_comments(video_origin_id)
+          comments =  Database::CommentsOrm.where(video_origin_id:)
+          rebuild_many comments
         end
 
         def self.find_id(id)

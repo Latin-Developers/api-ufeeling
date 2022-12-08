@@ -15,8 +15,8 @@ module UFeeling
       property :origin_id
       property :text_display
       property :total_reply_count
-      property :sentiment_score
-      property :published_at
+      property :sentiment
+      property :published_info
 
       link :self do
         "#{App.config.API_HOST}/api/v1/videos/#{video_origin_id}/comments"

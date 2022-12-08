@@ -31,8 +31,12 @@ module UFeeling
         # [...] /categories
         routing.on 'categories' do
           # [GET] /categories
-          # TODO
+          # TODO Julian
           routing.get do
+            filters = Request::EncodedVideoList.new(routing.params)
+            result = Services::ListVideos.new.call(filters:)
+
+            
           end
         end
 
