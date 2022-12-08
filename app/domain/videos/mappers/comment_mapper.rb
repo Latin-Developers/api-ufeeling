@@ -28,6 +28,7 @@ module UFeeling
             @data = data
           end
 
+          # rubocop:disable Metrics/MethodLength
           def build_entity
             UFeeling::Videos::Entity::Comment.new(
               id: nil,
@@ -45,6 +46,7 @@ module UFeeling
               comment_replies: []
             )
           end
+          # rubocop:enable Metrics/MethodLength
 
           private
 

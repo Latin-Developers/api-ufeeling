@@ -38,6 +38,7 @@ module UFeeling
           rebuild_entity Database::VideoOrm.first(title:)
         end
 
+        # rubocop:disable Metrics/MethodLength
         def self.rebuild_entity(db_record)
           return nil unless db_record
 
@@ -56,6 +57,7 @@ module UFeeling
             tags: db_record.tags
           )
         end
+        # rubocop:enable Metrics/MethodLength
 
         def self.rebuild_many(db_records)
           db_records.map do |db_member|
@@ -81,7 +83,7 @@ module UFeeling
                                                                          author_id: author.id))
 
           Database::VideoOrm.update(entity.to_attr_hash)
-        end 
+        end
 
         def self.category_from_origin_id(entity)
           category = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Category)
