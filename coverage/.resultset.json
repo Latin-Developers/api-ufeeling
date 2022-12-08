@@ -806,6 +806,7 @@
           1,
           1,
           0,
+          0,
           null,
           null,
           1,
@@ -1872,6 +1873,12 @@
       "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/responses/comments_list.rb": {
         "lines": [
           null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -1924,6 +1931,10 @@
           null,
           null,
           0,
+          0,
+          0,
+          null,
+          null,
           null,
           null,
           null,
@@ -2201,6 +2212,33 @@
       "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/get_categories.rb": {
         "lines": [
           null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -2227,9 +2265,12 @@
           1,
           0,
           null,
-          null,
+          0,
+          0,
           0,
           null,
+          null,
+          0,
           0,
           null,
           null,
@@ -2444,8 +2485,8 @@
           null,
           1,
           21,
-          11681,
-          11681,
+          12671,
+          12671,
           null,
           null,
           21,
@@ -2704,6 +2745,6 @@
         ]
       }
     },
-    "timestamp": 1670488313
+    "timestamp": 1670488360
   }
 }
