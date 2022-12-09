@@ -86,4 +86,20 @@ describe 'Test API routes' do
       _(video['title']).must_equal VIDEO_TITLE
     end
   end
+
+  describe 'Get a list of comments from a video' do
+    it 'should be able to get the comments of a video' do
+      post "api/v1/videos/#{VIDEO_ID}"
+      get "api/v1/videos/#{VIDEO_ID}/comments"
+
+      _(last_response.status).must_equal 200
+
+      comments = JSON.parse last_response.body
+      _(comments['comments'].size).must_equal 39
+      #I need only to check what is the correct name to equal
+      #_(comments['comments'][0]['origin_id']).must_equal COMMENT_ID
+      #_(comments['comments'][0]['text_display']).must_equal TEXT_DISPLAY
+    end
+  end
+
 end
