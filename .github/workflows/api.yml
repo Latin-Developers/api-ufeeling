@@ -45,4 +45,5 @@ jobs:
           YOUTUBE_API: ${{ secrets.YOUTUBE_API }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY}}
           DB_FILENAME: ${{ secrets.DB_FILENAME }}
+          API_HOST: ${{ secrets.API_HOST }}
         run: bundle exec rake spec
