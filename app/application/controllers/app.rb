@@ -6,6 +6,7 @@ module UFeeling
   # Web App
   class App < Roda
     plugin :halt
+    plugin :caching
     plugin :flash
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :common_logger, $stderr
@@ -33,7 +34,7 @@ module UFeeling
           # [GET] /categories
           # TODO Julian
           routing.get do
-            result = Services::GetCategories.new.call()
+            result = Services::GetCategories.new.call
 
             if result.failure?
               failed = Representer::HttpResponse.new(result.failure)
@@ -108,6 +109,8 @@ module UFeeling
               # video_origin_id = id of the video in youtube
               # Responsible Julian
               routing.get do
+                response.cache_control public: true, max_age: 300
+
                 result = Services::GetVideo.new.call(video_id: video_origin_id)
 
                 if result.failure?
