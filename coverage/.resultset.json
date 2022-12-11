@@ -806,6 +806,7 @@
           1,
           1,
           0,
+          0,
           null,
           null,
           1,
@@ -826,7 +827,7 @@
           1,
           78,
           null,
-          78,
+          0,
           null,
           null,
           null,
@@ -837,15 +838,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          78,
           null,
           null,
           null,
@@ -864,13 +856,21 @@
           null,
           1,
           0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
           0,
           null,
           null,
           null,
           1,
-          156,
-          156,
+          117,
+          117,
           null,
           null,
           1,
@@ -1062,6 +1062,8 @@
           null,
           1,
           null,
+          null,
+          0,
           null,
           1,
           null,
@@ -1872,6 +1874,12 @@
       "/home/avasquez/api-ufeeling/app/presentation/responses/comments_list.rb": {
         "lines": [
           null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -1924,6 +1932,10 @@
           null,
           null,
           0,
+          0,
+          0,
+          null,
+          null,
           null,
           null,
           null,
@@ -2201,6 +2213,33 @@
       "/home/avasquez/api-ufeeling/app/application/services/get_categories.rb": {
         "lines": [
           null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -2227,9 +2266,12 @@
           1,
           0,
           null,
-          null,
+          0,
+          0,
           0,
           null,
+          null,
+          0,
           0,
           null,
           null,
@@ -2324,7 +2366,7 @@
           1,
           1,
           null,
-          null,
+          0,
           null,
           null,
           null,
@@ -2358,21 +2400,20 @@
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
           null,
           0,
           null,
           null,
+          1,
           null,
           0,
-          null,
-          null,
-          1,
-          null,
-          1,
+          0,
           null,
           1,
           null,
@@ -2559,9 +2600,7 @@
         ]
       },
       "/home/avasquez/api-ufeeling/spec/tests/integration/services/add_video_spec.rb": {
-        "lines": [
-
-        ]
+        "lines": []
       },
       "/home/avasquez/api-ufeeling/spec/tests/integration/services/get_comments_spec.rb": {
         "lines": [
@@ -2576,9 +2615,7 @@
         ]
       },
       "/home/avasquez/api-ufeeling/spec/tests/integration/services/update_video_spec.rb": {
-        "lines": [
-
-        ]
+        "lines": []
       },
       "/home/avasquez/api-ufeeling/spec/tests/unit/gateway_youtube_spec.rb": {
         "lines": [
@@ -2708,6 +2745,6 @@
         ]
       }
     },
-    "timestamp": 1670489261
+    "timestamp": 1670470898
   }
 }

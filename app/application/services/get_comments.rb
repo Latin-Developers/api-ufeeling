@@ -17,12 +17,15 @@ module UFeeling
       # Get comments
 
       def get_comments(input)
-        input[:comments] = Videos::Repository::For.klass(Videos::Entity::Comment)
-          .find_video_comments(input[:video][:id])
+        Videos::Repository::For.klass(Videos::Entity::Comment)
+          .find_video_comments(input[:video_id])
+          .then { |comments| Response::CommentsList.new(comments) }
+          .then { |list| Response::ApiResult.new(status: :ok, message: list) }
+          .then { |result| Success(result) }  
 
-        Success(input)
-      rescue StandardError
-        Failure('Could not get video comments')
+      rescue StandardError => e
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
     end
   end

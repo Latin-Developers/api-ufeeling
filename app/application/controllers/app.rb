@@ -31,8 +31,18 @@ module UFeeling
         # [...] /categories
         routing.on 'categories' do
           # [GET] /categories
-          # TODO
+          # TODO Julian
           routing.get do
+            result = Services::GetCategories.new.call()
+
+            if result.failure?
+              failed = Representer::HttpResponse.new(result.failure)
+              routing.halt failed.http_status_code, failed.to_json
+            end
+
+            http_response = Representer::HttpResponse.new(result.value!)
+            response.status = http_response.http_status_code
+            Representer::CategoriesList.new(result.value!.message).to_json
           end
         end
 
@@ -41,7 +51,7 @@ module UFeeling
           routing.is do
             # [GET] /videos?ids=&categories=
             # Returns the list of videos
-            # ids = list of origin ids that needs to be filter
+            # video_ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
             routing.get do
               filters = Request::EncodedVideoList.new(routing.params)
