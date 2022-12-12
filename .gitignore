@@ -7,3 +7,4 @@ repostore/
 _snippets/
 vaderSentiment.rb
 .DS_Store
+_cache/

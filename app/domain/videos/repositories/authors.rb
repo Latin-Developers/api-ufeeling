@@ -6,7 +6,7 @@ module UFeeling
     module Repository
       # Repository for Authors
       class Authors
-        def self.find_origin_id(origin_id)
+        def self.find_by_origin_id(origin_id)
           rebuild_entity Database::AuthorOrm.first(origin_id:)
         end
 

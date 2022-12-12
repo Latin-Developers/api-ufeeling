@@ -2,7 +2,7 @@
 module UFeeling
     module Response
       # List of videos
-      CommentsList = Struct.new(:comments)
+      CategoriesList = Struct.new(:categories)
     end
   end
   

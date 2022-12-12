@@ -6,7 +6,7 @@ module UFeeling
     module Repository
       # Repository for Categories
       class Videos
-        def self.find_origin_id(origin_id)
+        def self.find_by_origin_id(origin_id)
           rebuild_entity Database::VideoOrm.first(origin_id:)
         end
 
@@ -38,6 +38,7 @@ module UFeeling
           rebuild_entity Database::VideoOrm.first(title:)
         end
 
+        # rubocop:disable Metrics/MethodLength
         def self.rebuild_entity(db_record)
           return nil unless db_record
 
@@ -56,6 +57,7 @@ module UFeeling
             tags: db_record.tags
           )
         end
+        # rubocop:enable Metrics/MethodLength
 
         def self.rebuild_many(db_records)
           db_records.map do |db_member|
@@ -73,9 +75,21 @@ module UFeeling
           Database::VideoOrm.find_or_create(entity.to_attr_hash)
         end
 
+        def self.update(entity)
+          category = category_from_origin_id(entity)
+          author = author_from_origin_id(entity)
+
+          entity = UFeeling::Videos::Entity::Video.new(entity.to_h.merge(category_id: category.id,
+                                                                         author_id: author.id))
+
+          Database::VideoOrm.where(origin_id: entity.origin_id).update(entity.to_attr_hash)
+
+          find_by_origin_id(entity.origin_id)
+        end
+
         def self.category_from_origin_id(entity)
           category = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Category)
-            .find_origin_id(entity.origin_category_id)
+            .find_by_origin_id(entity.origin_category_id)
 
           unless category
             category = UFeeling::Videos::Mappers::ApiCategory.new(App.config.YOUTUBE_API_KEY)
@@ -87,7 +101,7 @@ module UFeeling
 
         def self.author_from_origin_id(entity)
           author = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Author)
-            .find_origin_id(entity.origin_author_id)
+            .find_by_origin_id(entity.origin_author_id)
 
           unless author
             author = UFeeling::Videos::Mappers::ApiAuthor.new(App.config.YOUTUBE_API_KEY)

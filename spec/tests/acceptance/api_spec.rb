@@ -24,7 +24,7 @@ describe 'Test API routes' do
   end
 
   describe 'Root route' do
-    it 'should successfully return root information' do
+    it 'HAPPY: should successfully return root information' do
       get '/'
       _(last_response.status).must_equal 200
 
@@ -35,7 +35,7 @@ describe 'Test API routes' do
   end
 
   describe 'Add video route' do
-    it 'should be able to add a video' do
+    it 'HAPPY: should be able to add a video' do
       post "api/v1/videos/#{VIDEO_ID}"
 
       _(last_response.status).must_equal 201
@@ -50,7 +50,7 @@ describe 'Test API routes' do
       _(vid.links['self'].href).must_include 'http'
     end
 
-    it 'should report error for invalid videos' do
+    it 'SAD: Should report error for invalid videos' do
       post 'api/v1/videos/adsf'
 
       _(last_response.status).must_equal 404
@@ -61,7 +61,7 @@ describe 'Test API routes' do
   end
 
   describe 'Get a list of videos route' do
-    it 'should be able to get the list of videos' do
+    it 'HAPPY: should be able to get the list of videos' do
       post "api/v1/videos/#{VIDEO_ID}"
       get 'api/v1/videos'
 
@@ -71,6 +71,75 @@ describe 'Test API routes' do
       _(videos['videos'].size).must_equal 1
       _(videos['videos'][0]['origin_id']).must_equal VIDEO_ID
       _(videos['videos'][0]['title']).must_equal VIDEO_TITLE
+    end
+  end
+
+  describe 'Gets a video' do
+    it 'HAPPY: should be able to get a video' do
+      post "api/v1/videos/#{VIDEO_ID}"
+      get "api/v1/videos/#{VIDEO_ID}"
+
+      _(last_response.status).must_equal 200
+
+      video = JSON.parse last_response.body
+      _(video['origin_id']).must_equal VIDEO_ID
+      _(video['title']).must_equal VIDEO_TITLE
+    end
+  end
+
+  describe 'Update a video' do
+    it 'HAPPY: should be able to update a video' do
+      # Get and store a video
+      post "api/v1/videos/#{VIDEO_ID}"
+
+      # Manually modify the test video
+      UFeeling::Database::VideoOrm.where(origin_id: VIDEO_ID).update(title: 'Test Tittle')
+
+      # Update the video
+      put "api/v1/videos/#{VIDEO_ID}"
+
+      # Validate Origin_id and tittle between both records.
+
+      _(last_response.status).must_equal 200
+
+      video = JSON.parse last_response.body
+      _(video['origin_id']).must_equal VIDEO_ID
+      _(video['title']).must_equal VIDEO_TITLE
+    end
+
+    it 'SAD: Should report error for not existing video' do
+      post 'api/v1/videos/adsf'
+
+      _(last_response.status).must_equal 404
+
+      response = JSON.parse(last_response.body)
+      _(response['message']).must_include 'not'
+    end
+  end
+
+  describe 'Get a comment from a video' do
+    it 'should be able to get the comments of a video' do
+      post "api/v1/videos/#{VIDEO_ID}"
+      get "api/v1/videos/#{VIDEO_ID}/comments"
+
+      _(last_response.status).must_equal 200
+
+      comments = JSON.parse last_response.body
+      _(comments['comments'][0]['origin_id']).must_equal COMMENT_ID
+      _(comments['comments'][0]['text_display']).must_equal TEXT_DISPLAY
+    end
+  end
+
+  describe 'Get a category from a list of categories' do
+    it 'should be able to get the category of a list of categories' do
+      post "api/v1/videos/#{VIDEO_ID}"
+      get 'api/v1/categories'
+
+      _(last_response.status).must_equal 200
+
+      categories = JSON.parse last_response.body
+      _(categories['categories'][0]['origin_id']).must_equal CATEGORY_ID
+      _(categories['categories'][0]['title']).must_equal CATEGORY_TITLE
     end
   end
 end

@@ -6,10 +6,12 @@ module UFeeling
   # Web App
   class App < Roda
     plugin :halt
+    plugin :caching
     plugin :flash
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :common_logger, $stderr
 
+    # rubocop:disable Metrics/BlockLength
     route do |routing|
       response['Content-Type'] = 'application/json'
 
@@ -30,8 +32,18 @@ module UFeeling
         # [...] /categories
         routing.on 'categories' do
           # [GET] /categories
-          # TODO
+          # TODO Julian
           routing.get do
+            result = Services::GetCategories.new.call
+
+            if result.failure?
+              failed = Representer::HttpResponse.new(result.failure)
+              routing.halt failed.http_status_code, failed.to_json
+            end
+
+            http_response = Representer::HttpResponse.new(result.value!)
+            response.status = http_response.http_status_code
+            Representer::CategoriesList.new(result.value!.message).to_json
           end
         end
 
@@ -40,7 +52,7 @@ module UFeeling
           routing.is do
             # [GET] /videos?ids=&categories=
             # Returns the list of videos
-            # ids = list of origin ids that needs to be filter
+            # video_ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
             routing.get do
               filters = Request::EncodedVideoList.new(routing.params)
@@ -77,10 +89,19 @@ module UFeeling
               end
 
               # [PUT]  /videos/:video_origin_id
-              # Updates the information of a videos and its comments
-              # video_origin_id = id of the video in youtube
-              # TODO Armando
+              # Updates the information of a video and its comments
+              # *@video_origin_id = id of the video in youtube
               routing.put do
+                result = Services::UpdateVideo.new.call(video_id: video_origin_id)
+
+                if result.failure?
+                  failed = Representer::HttpResponse.new(result.failure)
+                  routing.halt failed.http_status_code, failed.to_json
+                end
+
+                http_response = Representer::HttpResponse.new(result.value!)
+                response.status = http_response.http_status_code
+                Representer::Video.new(result.value!.message).to_json
               end
 
               # [GET]  /videos/:video_origin_id
@@ -88,6 +109,8 @@ module UFeeling
               # video_origin_id = id of the video in youtube
               # Responsible Julian
               routing.get do
+                response.cache_control public: true, max_age: 300
+
                 result = Services::GetVideo.new.call(video_id: video_origin_id)
 
                 if result.failure?
@@ -142,5 +165,6 @@ module UFeeling
         end
       end
     end
+    # rubocop:enable Metrics/BlockLength
   end
 end

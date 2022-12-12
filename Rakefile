@@ -48,6 +48,50 @@ task :new_session_secret do
   puts "SESSION_SECRET: #{secret}"
 end
 
+namespace :cache do
+  task :config do
+    require_relative 'config/environment' # load config info
+    require_relative 'app/infrastructure/cache/*'
+    @api = UFeeling::App
+  end
+
+  desc 'Directory listing of local dev cache'
+  namespace :list do
+    task :dev do
+      puts 'Lists development cache'
+      list = `ls _cache/rack/meta`
+      puts 'No local cache found' if list.empty?
+      puts list
+    end
+
+    desc 'Lists production cache'
+    task :production => :config do
+      puts 'Finding production cache'
+      keys = UFeeling::Cache::Client.new(@api.config).keys
+      puts 'No keys found' if keys.none?
+      keys.each { |key| puts "Key: #{key}" }
+    end
+  end
+
+  namespace :wipe do
+    desc 'Delete development cache'
+    task :dev do
+      puts 'Deleting development cache'
+      sh 'rm -rf _cache/*'
+    end
+
+    desc 'Delete production cache'
+    task :production => :config do
+      print 'Are you sure you wish to wipe the production cache? (y/n) '
+      if $stdin.gets.chomp.downcase == 'y'
+        puts 'Deleting production cache'
+        wiped = UFeeling::Cache::Client.new(@api.config).wipe
+        wiped.each_key { |key| puts "Wiped: #{key}" }
+      end
+    end
+  end
+end
+
 namespace :vcr do
   desc 'delete cassette fixtures'
   task :wipe do

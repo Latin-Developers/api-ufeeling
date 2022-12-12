@@ -5,6 +5,8 @@ require 'roda'
 require 'sequel'
 require 'yaml'
 require 'rack/session'
+require 'rack/cache'
+require 'redis-rack-cache'
 
 module UFeeling
   # Configuration for the App
@@ -20,6 +22,21 @@ module UFeeling
       )
       Figaro.load
       def self.config = Figaro.env
+
+      # Setup Cacheing mechanism
+      configure :development do
+        use Rack::Cache,
+            verbose: true,
+            metastore: 'file:_cache/rack/meta',
+            entitystore: 'file:_cache/rack/body'
+      end
+
+      configure :production do
+        use Rack::Cache,
+            verbose: true,
+            metastore: "#{config.REDISCLOUD_URL}/0/metastore",
+            entitystore: "#{config.REDISCLOUD_URL}/0/entitystore"
+      end
 
       use Rack::Session::Cookie, secret: config.SESSION_SECRET
 
