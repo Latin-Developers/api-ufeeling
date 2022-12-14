@@ -7,7 +7,7 @@ module UFeeling
       # Repository for Categories
       class Comments
         def self.find_video_comments(video_origin_id)
-          comments =  Database::CommentsOrm.where(video_origin_id:)
+          comments = Database::CommentsOrm.where(video_origin_id:)
           rebuild_many comments
         end
 
@@ -59,8 +59,7 @@ module UFeeling
         def self.sentiment(db_record)
           Values::SentimentalScore.new(
             sentiment_id: db_record.sentiment_id,
-            # sentiment_name: db_record.sentiment.sentiment_name,
-            sentiment_name: '12',
+            sentiment_name: db_record.sentiment.sentiment,
             sentiment_score: db_record.sentiment_score
           )
         end

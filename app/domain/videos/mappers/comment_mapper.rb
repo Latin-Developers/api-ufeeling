@@ -13,9 +13,16 @@ module UFeeling
           @gateway = @gateway_class.new(@token)
         end
 
-        def comments(video_id)
-          data_items = @gateway.comments(video_id)
-          data_items.map { |data| ApiComment.build_entity(data) }
+        def comments(video_id, current_page_token = '')
+          comments_data = @gateway.comments(video_id, current_page_token)
+          page_comments = comments_data[:items].map { |data| ApiComment.build_entity(data) }
+          next_page_comments = if comments_data[:next_page_token]
+                                 comments(video_id,
+                                          comments_data[:next_page_token])
+                               else
+                                 []
+                               end
+          page_comments.concat next_page_comments
         end
 
         def self.build_entity(data)

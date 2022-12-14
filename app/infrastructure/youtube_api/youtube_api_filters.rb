@@ -29,11 +29,12 @@ module UFeeling
         }
       end
 
-      def self.comments(video_id)
+      def self.comments(video_id, next_page_token)
         {
           part: "#{PATH_FILTERS[:SNIPPET]},#{PATH_FILTERS[:REPLIES]}",
           maxResults: 100,
-          videoId: video_id
+          videoId: video_id,
+          pageToken: next_page_token
         }
       end
 

@@ -3,6 +3,9 @@
 require 'roar/decorator'
 require 'roar/json'
 
+require_relative 'sentiment_representer'
+require_relative 'published_info_representer'
+
 # Represents essential Repo information for API output
 module UFeeling
   module Representer
@@ -15,8 +18,8 @@ module UFeeling
       property :origin_id
       property :text_display
       property :total_reply_count
-      property :sentiment
-      property :published_info
+      property :sentiment, extend: Representer::SentimentRepresenter
+      property :published_info, extend: Representer::PublishedInfoRepresenter
 
       link :self do
         "#{App.config.API_HOST}/api/v1/videos/#{video_origin_id}/comments"
