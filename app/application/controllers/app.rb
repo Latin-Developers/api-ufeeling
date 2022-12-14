@@ -55,6 +55,8 @@ module UFeeling
             # video_ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
             routing.get do
+              response.cache_control public: true, max_age: 300
+
               filters = Request::EncodedVideoList.new(routing.params)
               result = Services::ListVideos.new.call(filters:)
 
