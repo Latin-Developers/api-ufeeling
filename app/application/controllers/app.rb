@@ -130,6 +130,8 @@ module UFeeling
               # Gets the list of comments of a video
               # Responsible Julian
               routing.get do
+                response.cache_control public: true, max_age: 300
+
                 result = Services::GetComments.new.call(video_id: video_origin_id)
 
                 if result.failure?
