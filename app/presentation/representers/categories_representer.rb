@@ -13,7 +13,7 @@ module UFeeling
       include Roar::JSON
 
       collection :categories, extend: Representer::Category,
-                            class: Representer::OpenStructWithLinks
+                              class: Representer::OpenStructWithLinks
     end
   end
 end

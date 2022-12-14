@@ -18,8 +18,6 @@ module UFeeling
       link :self do
         "#{App.config.API_HOST}/api/v1/categories"
       end
-
-      
     end
   end
 end
