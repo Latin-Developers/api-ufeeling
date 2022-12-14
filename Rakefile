@@ -51,7 +51,7 @@ end
 namespace :cache do
   task :config do
     require_relative 'config/environment' # load config info
-    require_relative 'infrastructure/cache/*'
+    require_relative 'app/infrastructure/cache/redis_cache'
     @api = UFeeling::App
   end
 
