@@ -21,8 +21,7 @@ module UFeeling
           .find_video_comments(input[:video_id])
           .then { |comments| Response::CommentsList.new(comments) }
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
-          .then { |result| Success(result) }  
-
+          .then { |result| Success(result) }
       rescue StandardError => e
         puts e.backtrace.join("\n")
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
