@@ -86,7 +86,7 @@ namespace :cache do
       if $stdin.gets.chomp.downcase == 'y'
         puts 'Deleting production cache'
         wiped = UFeeling::Cache::Client.new(@api.config).wipe
-        wiped.each_key { |key| puts "Wiped: #{key}" }
+        wiped.each { |key| puts "Wiped: #{key}" }
       end
     end
   end
