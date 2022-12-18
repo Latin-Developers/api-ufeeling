@@ -8,15 +8,14 @@ module UFeeling
     class GetCategories
       include Dry::Transaction
 
-      step :get_categories
+      step :obtain_categories
 
       private
 
       DB_ERR_MSG = 'Having trouble accessing the database'
 
       # Get categories
-
-      def get_categories
+      def obtain_categories
         Videos::Repository::For.klass(Videos::Entity::Category)
           .all
           .then { |categories| Response::CategoriesList.new(categories) }
