@@ -1,5 +1,6 @@
 # frozen_string_literal: false
 
+require 'concurrent'
 require 'vader_sentiment_ruby'
 
 module UFeeling
@@ -14,8 +15,22 @@ module UFeeling
         end
 
         def comments(video_id)
-          data_items = @gateway.comments(video_id)
-          data_items.map { |data| ApiComment.build_entity(data) }
+          comments_data = comments_from_api(video_id, true)
+
+          comments_data[:items].map do |data|
+            Concurrent::Promise.execute do
+              ApiComment.build_entity(data)
+            end
+          end.map(&:value)
+        end
+
+        def comments_from_api(video_id, first_call, current_page_token = '', counter = 0)
+          return { items: [] } unless (first_call || current_page_token) && counter < 3
+
+          comments_data = @gateway.comments(video_id, current_page_token)
+          next_page_comments = comments_from_api(video_id, false, comments_data[:next_page_token], counter + 1)
+          comments_data[:items].concat next_page_comments[:items]
+          comments_data
         end
 
         def self.build_entity(data)

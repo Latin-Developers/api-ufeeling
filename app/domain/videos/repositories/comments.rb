@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
+require 'concurrent'
+require 'async'
+
 module UFeeling
   module Videos
     # ? Should this be called Repositories ??
     module Repository
       # Repository for Categories
-      class Comments
+      class Comments # rubocop:disable Metrics/ClassLength
         def self.find_video_comments(video_origin_id)
-          comments =  Database::CommentsOrm.where(video_origin_id:)
+          comments = Database::CommentsOrm.where(video_origin_id:)
           rebuild_many comments
         end
 
@@ -59,8 +62,7 @@ module UFeeling
         def self.sentiment(db_record)
           Values::SentimentalScore.new(
             sentiment_id: db_record.sentiment_id,
-            # sentiment_name: db_record.sentiment.sentiment_name,
-            sentiment_name: '12',
+            sentiment_name: db_record.sentiment.sentiment,
             sentiment_score: db_record.sentiment_score
           )
         end
@@ -68,6 +70,12 @@ module UFeeling
         def self.rebuild_many(db_records)
           db_records.map do |db_member|
             Comments.rebuild_entity(db_member)
+          end
+        end
+
+        def self.find_or_create_many(entities)
+          entities.each do |entity|
+            Concurrent::Promise.execute { find_or_create(entity) }
           end
         end
 
@@ -87,21 +95,21 @@ module UFeeling
           find_by_origin_id(entity.origin_id)
         end
 
-        def self.fill_reference_ids(entity)
-          video = video_from_origin_id(entity)
-          author = author_from_origin_id(entity)
-          sentiment = sentiment_from_name(entity)
+        Async def self.fill_reference_ids(entity)
+          video_task = video_from_origin_id(entity)
+          author_task = author_from_origin_id(entity)
+          sentiment_task = sentiment_from_name(entity)
 
-          UFeeling::Videos::Entity::Comment.new(entity.to_h.merge(video_id: video.id,
-                                                                  author_channel_id: author.id,
+          UFeeling::Videos::Entity::Comment.new(entity.to_h.merge(video_id: video_task.id,
+                                                                  author_channel_id: author_task.id,
                                                                   sentiment: {
-                                                                    sentiment_id: sentiment.id,
+                                                                    sentiment_id: sentiment_task.id,
                                                                     sentiment_name: entity.sentiment.sentiment_name,
                                                                     sentiment_score: entity.sentiment.sentiment_score
                                                                   }))
         end
 
-        def self.video_from_origin_id(entity)
+        Async def self.video_from_origin_id(entity)
           video = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video)
             .find_by_origin_id(entity.video_origin_id)
 
@@ -114,7 +122,7 @@ module UFeeling
           video
         end
 
-        def self.author_from_origin_id(entity)
+        Async def self.author_from_origin_id(entity)
           author = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Author)
             .find_by_origin_id(entity.author_channel_origin_id)
 
@@ -127,7 +135,7 @@ module UFeeling
           author
         end
 
-        def self.sentiment_from_name(entity)
+        Async def self.sentiment_from_name(entity)
           sentiment = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Sentiment)
             .find_title(entity.sentiment.sentiment_name)
 

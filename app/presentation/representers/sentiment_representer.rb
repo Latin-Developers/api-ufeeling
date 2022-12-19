@@ -7,17 +7,12 @@ require 'roar/json'
 module UFeeling
   module Representer
     # Represent a Video entity as Json
-    class Category < Roar::Decorator
+    class SentimentRepresenter < Roar::Decorator
       include Roar::JSON
-      include Roar::Hypermedia
-      include Roar::Decorator::HypermediaConsumer
 
-      property :origin_id
-      property :title
-
-      link :self do
-        "#{App.config.API_HOST}/api/v1/categories"
-      end
+      property :sentiment_id
+      property :sentiment_name
+      property :sentiment_score
     end
   end
 end

@@ -45,7 +45,6 @@ module UFeeling
       end
 
       # Get comments from Youtube (Julian added)
-      # TODO: Verificar el paginado de los comentarios
       def get_comments(input)
         input[:comments] = Videos::Mappers::ApiComment
           .new(App.config.YOUTUBE_API_KEY)
@@ -58,13 +57,11 @@ module UFeeling
       end
 
       # Add comments to database
-      # TODO: Verificar actualizacion de comentarios. (Reprocesar el sentimiento?)
       def add_comments_to_db(input)
-        input[:comments].each do |comment|
-          Videos::Repository::For
-            .klass(Videos::Entity::Comment)
-            .find_or_create(comment)
-        end
+        Videos::Repository::For
+          .klass(Videos::Entity::Comment)
+          .find_or_create_many(input[:comments])
+
         Success(Response::ApiResult.new(status: :created, message: input[:video]))
       rescue StandardError => e
         puts e.backtrace.join("\n")
