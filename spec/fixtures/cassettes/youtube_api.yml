@@ -9553,4 +9553,393 @@ http_interactions:
           }
         }
   recorded_at: Wed, 14 Dec 2022 05:08:42 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?id=UCfO-iMFpbv1y1Ed9jMdXAJw&key=<YOUTUBE_API_KEY>&part=snippet,statistics
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 19 Dec 2022 01:14:50 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#channelListResponse",
+          "etag": "v10vEI4PR5r54nv1vOiKohOTXbs",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#channel",
+              "etag": "s7_cwkq82csIsX8QbWHRi1kkkVo",
+              "id": "UCfO-iMFpbv1y1Ed9jMdXAJw",
+              "snippet": {
+                "title": "I’m Ric James",
+                "description": "",
+                "customUrl": "@imricjames5210",
+                "publishedAt": "2016-08-06T13:48:35Z",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://yt3.ggpht.com/lG_ROuaxH006InUfx1WrVyssJfJeXvLYOVc5y4CyvEHU7cC_l9DSMyUE_KEh9TX4cVuxJ0-kIbw=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                  },
+                  "medium": {
+                    "url": "https://yt3.ggpht.com/lG_ROuaxH006InUfx1WrVyssJfJeXvLYOVc5y4CyvEHU7cC_l9DSMyUE_KEh9TX4cVuxJ0-kIbw=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                  },
+                  "high": {
+                    "url": "https://yt3.ggpht.com/lG_ROuaxH006InUfx1WrVyssJfJeXvLYOVc5y4CyvEHU7cC_l9DSMyUE_KEh9TX4cVuxJ0-kIbw=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                  }
+                },
+                "localized": {
+                  "title": "I’m Ric James",
+                  "description": ""
+                }
+              },
+              "statistics": {
+                "viewCount": "0",
+                "subscriberCount": "7",
+                "hiddenSubscriberCount": false,
+                "videoCount": "0"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 19 Dec 2022 01:14:50 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?id=UCuydVwGxtrzyy4PJQx9L_-Q&key=<YOUTUBE_API_KEY>&part=snippet,statistics
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 19 Dec 2022 01:15:09 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#channelListResponse",
+          "etag": "v-lQ_18ygDASeov8cUWrK31vQlI",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#channel",
+              "etag": "YzY1vwdPXzHL52rBe1UYHkxP2E0",
+              "id": "UCuydVwGxtrzyy4PJQx9L_-Q",
+              "snippet": {
+                "title": "Nicolas p",
+                "description": "",
+                "customUrl": "@nicolasp9661",
+                "publishedAt": "2013-06-30T10:02:53Z",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://yt3.ggpht.com/ytc/AMLnZu_IZJeQpGPfpNB2p6xYzSi70dSTBEBPhvZivU5qbg=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                  },
+                  "medium": {
+                    "url": "https://yt3.ggpht.com/ytc/AMLnZu_IZJeQpGPfpNB2p6xYzSi70dSTBEBPhvZivU5qbg=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                  },
+                  "high": {
+                    "url": "https://yt3.ggpht.com/ytc/AMLnZu_IZJeQpGPfpNB2p6xYzSi70dSTBEBPhvZivU5qbg=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                  }
+                },
+                "localized": {
+                  "title": "Nicolas p",
+                  "description": ""
+                }
+              },
+              "statistics": {
+                "viewCount": "66",
+                "subscriberCount": "8",
+                "hiddenSubscriberCount": false,
+                "videoCount": "1"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 19 Dec 2022 01:15:09 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?id=UCtK8-n6UH-CRqoL9FssQszw&key=<YOUTUBE_API_KEY>&part=snippet,statistics
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 19 Dec 2022 01:15:10 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#channelListResponse",
+          "etag": "t20An_A2uuSaagE6EtiL9PjZwoA",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#channel",
+              "etag": "RLoUORnoMdMhzGXVEB5NI2CeTyk",
+              "id": "UCtK8-n6UH-CRqoL9FssQszw",
+              "snippet": {
+                "title": "KEY TV",
+                "description": "This is the official channel of KEY TV, \n\nI currently have 25,000+ subcribers with over 2,000,000 views and counting. My agenda is to just be the best content creator that I can possibly be; brightening up others day with an immense amount of content to watch while taking themselves out of the sad part of reality for just a moment.\n\nContent: Grand Theft Auto V\n\nMy Socials: \nTwitch - officalkeytv \nInstagram - @officialkeytv\nTwitter - @officialkeytv\n\nBusiness Email - keytv13@gmail.com (Serious Inquiries Only)",
+                "customUrl": "@keytvx",
+                "publishedAt": "2013-04-04T18:37:13Z",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://yt3.ggpht.com/DVU-80ng19gJ9p6GVhUxYTu5vRTU2MkZL-e8ECfxM3osECaUxeKwKyNHjdw-AaX8desU5SBICw=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                  },
+                  "medium": {
+                    "url": "https://yt3.ggpht.com/DVU-80ng19gJ9p6GVhUxYTu5vRTU2MkZL-e8ECfxM3osECaUxeKwKyNHjdw-AaX8desU5SBICw=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                  },
+                  "high": {
+                    "url": "https://yt3.ggpht.com/DVU-80ng19gJ9p6GVhUxYTu5vRTU2MkZL-e8ECfxM3osECaUxeKwKyNHjdw-AaX8desU5SBICw=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                  }
+                },
+                "localized": {
+                  "title": "KEY TV",
+                  "description": "This is the official channel of KEY TV, \n\nI currently have 25,000+ subcribers with over 2,000,000 views and counting. My agenda is to just be the best content creator that I can possibly be; brightening up others day with an immense amount of content to watch while taking themselves out of the sad part of reality for just a moment.\n\nContent: Grand Theft Auto V\n\nMy Socials: \nTwitch - officalkeytv \nInstagram - @officialkeytv\nTwitter - @officialkeytv\n\nBusiness Email - keytv13@gmail.com (Serious Inquiries Only)"
+                },
+                "country": "US"
+              },
+              "statistics": {
+                "viewCount": "2202913",
+                "subscriberCount": "25600",
+                "hiddenSubscriberCount": false,
+                "videoCount": "302"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 19 Dec 2022 01:15:10 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?id=UCgIxgftolqzkw2bWGvbIClg&key=<YOUTUBE_API_KEY>&part=snippet,statistics
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 19 Dec 2022 01:15:10 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#channelListResponse",
+          "etag": "toqetml4z_8M4YhLdU6RH_cDSDo",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#channel",
+              "etag": "N6ZKhDluGMuqyEKcNMSiGL99NRo",
+              "id": "UCgIxgftolqzkw2bWGvbIClg",
+              "snippet": {
+                "title": "Travis Hunstable",
+                "description": "",
+                "customUrl": "@travishunstable5283",
+                "publishedAt": "2021-12-07T21:13:14.927304Z",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://yt3.ggpht.com/ytc/AMLnZu8j4sh2LED3UOw9dWuHDQatct_BD49lLfsRdVYfRCF4__oVDtWZ_ldSs3Us_RBZ=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                  },
+                  "medium": {
+                    "url": "https://yt3.ggpht.com/ytc/AMLnZu8j4sh2LED3UOw9dWuHDQatct_BD49lLfsRdVYfRCF4__oVDtWZ_ldSs3Us_RBZ=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                  },
+                  "high": {
+                    "url": "https://yt3.ggpht.com/ytc/AMLnZu8j4sh2LED3UOw9dWuHDQatct_BD49lLfsRdVYfRCF4__oVDtWZ_ldSs3Us_RBZ=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                  }
+                },
+                "localized": {
+                  "title": "Travis Hunstable",
+                  "description": ""
+                }
+              },
+              "statistics": {
+                "viewCount": "0",
+                "subscriberCount": "0",
+                "hiddenSubscriberCount": false,
+                "videoCount": "0"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 19 Dec 2022 01:15:10 GMT
 recorded_with: VCR 6.1.0
