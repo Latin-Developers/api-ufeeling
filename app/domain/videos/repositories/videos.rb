@@ -52,6 +52,8 @@ module UFeeling
             published_at: db_record.published_at,
             title: db_record.title,
             description: db_record.description,
+            comments_proccessed: db_record.comments_proccessed,
+            comment_count: db_record.comment_count,
             thumbnail_url: db_record.thumbnail_url,
             duration: db_record.duration,
             tags: db_record.tags
