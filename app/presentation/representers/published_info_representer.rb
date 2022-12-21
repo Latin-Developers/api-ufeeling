@@ -10,7 +10,6 @@ module UFeeling
     class PublishedInfoRepresenter < Roar::Decorator
       include Roar::JSON
 
-      property :published_at
       property :year
       property :month
       property :day
