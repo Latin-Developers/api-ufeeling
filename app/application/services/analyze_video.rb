@@ -53,7 +53,7 @@ module UFeeling
           .klass(Videos::Entity::Comment)
           .find_or_create_many(input[:comments])
 
-        Success(Response::ApiResult.new(status: :created, message: input[:video]))
+        Success(Response::ApiResult.new(status: :ok, message: input[:video]))
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
