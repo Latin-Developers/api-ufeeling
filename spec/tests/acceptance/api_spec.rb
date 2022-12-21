@@ -120,6 +120,7 @@ describe 'Test API routes' do
   describe 'Get a comment from a video' do
     it 'should be able to get the comments of a video' do
       post "api/v1/videos/#{VIDEO_ID}"
+      get "api/v1/videos/#{VIDEO_ID}"
       get "api/v1/videos/#{VIDEO_ID}/comments"
 
       _(last_response.status).must_equal 200
