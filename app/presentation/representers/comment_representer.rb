@@ -18,8 +18,8 @@ module UFeeling
       property :origin_id
       property :text_display
       property :total_reply_count
-      property :sentiment, extend: Representer::SentimentRepresenter
-      property :published_info, extend: Representer::PublishedInfoRepresenter
+      # property :sentiment, extend: Representer::SentimentRepresenter
+      # property :published_info, extend: Representer::PublishedInfoRepresenter
 
       link :self do
         "#{App.config.API_HOST}/api/v1/videos/#{video_origin_id}/comments"
