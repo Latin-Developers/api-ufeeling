@@ -26,15 +26,15 @@ class GetCommentsWorker
   shoryuken_options queue: config.VIDEO_QUEUE_URL, auto_delete: true
 
   def perform(_sqs_msg, request)
-    video = Representer::Video
+    video = UFeeling::Representer::Video
       .new(OpenStruct.new).from_json(request) # rubocop:disable Style/OpenStructUse
 
-    comments = Videos::Mappers::ApiComment
-      .new(App.config.YOUTUBE_API_KEY)
+    comments = UFeeling::Videos::Mappers::ApiComment
+      .new(UFeeling::App.config.YOUTUBE_API_KEY)
       .comments(video.origin_id)
 
-    Videos::Repository::For
-      .klass(Videos::Entity::Comment)
+    UFeeling::Videos::Repository::For
+      .klass(UFeeling::Videos::Entity::Comment)
       .find_or_create_many(comments)
   rescue StandardError => e
     puts "Error executing worker: #{e}"

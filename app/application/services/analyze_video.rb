@@ -36,7 +36,7 @@ module UFeeling
 
       # Get comments from Youtube
       def get_comments(input)
-        return Success(input) if input[:video].proccessed
+        return Success(input) if input[:video].comments_proccessed
 
         Messaging::Queue.new(App.config.VIDEO_QUEUE_URL, App.config)
           .send(Representer::Video.new(input[:video]).to_json)

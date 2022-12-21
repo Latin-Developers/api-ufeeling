@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/require_app.rb": {
+      "/home/avasquez/api-ufeeling/require_app.rb": {
         "lines": [
           null,
           null,
@@ -16,12 +16,12 @@
           1,
           null,
           1,
-          65,
+          66,
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/config/environment.rb": {
+      "/home/avasquez/api-ufeeling/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -32,28 +32,22 @@
           1,
           1,
           1,
-          null,
           1,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
           null,
           1,
           1,
           null,
           null,
           1,
-          0,
+          null,
+          1,
           null,
           null,
           null,
+          1,
+          1,
           null,
           null,
           1,
@@ -64,6 +58,13 @@
           null,
           null,
           1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
           null,
           1,
           1,
@@ -75,11 +76,15 @@
           1,
           null,
           null,
+          null,
+          null,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/cache/redis_cache.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/cache/redis_cache.rb": {
         "lines": [
           null,
           null,
@@ -105,7 +110,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/database/author_orm.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/database/author_orm.rb": {
         "lines": [
           null,
           null,
@@ -126,14 +131,14 @@
           1,
           null,
           1,
-          120,
+          46,
           null,
           null,
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/database/category_orm.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/database/category_orm.rb": {
         "lines": [
           null,
           null,
@@ -157,7 +162,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/database/comments_orm.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/database/comments_orm.rb": {
         "lines": [
           null,
           null,
@@ -182,7 +187,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/database/sentiment_orm.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/database/sentiment_orm.rb": {
         "lines": [
           null,
           null,
@@ -210,7 +215,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/database/video_log_orm.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/database/video_log_orm.rb": {
         "lines": [
           null,
           null,
@@ -232,7 +237,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/database/video_orm.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/database/video_orm.rb": {
         "lines": [
           null,
           null,
@@ -271,7 +276,53 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/youtube_api/http_utils/errors.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/messaging/queue.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/infrastructure/youtube_api/http_utils/errors.rb": {
         "lines": [
           null,
           null,
@@ -285,7 +336,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/youtube_api/http_utils/response.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/youtube_api/http_utils/response.rb": {
         "lines": [
           null,
           null,
@@ -300,7 +351,7 @@
           null,
           null,
           1,
-          161,
+          85,
           null,
           null,
           1,
@@ -309,7 +360,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/youtube_api/http_utils/youtube_request.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/youtube_api/http_utils/youtube_request.rb": {
         "lines": [
           null,
           null,
@@ -320,31 +371,31 @@
           1,
           null,
           1,
-          161,
-          161,
-          161,
+          85,
+          85,
+          85,
           null,
           null,
           1,
-          161,
+          85,
           null,
-          161,
-          161,
-          null,
-          null,
-          155,
+          85,
+          85,
           null,
           null,
-          1,
+          79,
+          null,
           null,
           1,
-          479,
-          161,
+          null,
+          1,
+          247,
+          85,
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/youtube_api/youtube_api.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/youtube_api/youtube_api.rb": {
         "lines": [
           null,
           null,
@@ -364,18 +415,18 @@
           null,
           null,
           1,
-          161,
+          85,
           null,
           null,
           1,
-          161,
-          155,
+          85,
+          79,
           null,
           null,
           null,
           null,
           1,
-          122,
+          48,
           null,
           null,
           1,
@@ -392,7 +443,7 @@
           null,
           null,
           1,
-          5,
+          3,
           null,
           null,
           1,
@@ -403,7 +454,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/youtube_api/youtube_api_filters.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/youtube_api/youtube_api_filters.rb": {
         "lines": [
           null,
           null,
@@ -415,7 +466,7 @@
           1,
           1,
           null,
-          122,
+          48,
           null,
           null,
           null,
@@ -438,7 +489,7 @@
           null,
           1,
           null,
-          5,
+          3,
           null,
           null,
           null,
@@ -456,7 +507,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/infrastructure/youtube_api/youtube_constants.rb": {
+      "/home/avasquez/api-ufeeling/app/infrastructure/youtube_api/youtube_constants.rb": {
         "lines": [
           null,
           null,
@@ -468,7 +519,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/init.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/init.rb": {
         "lines": [
           null,
           null,
@@ -478,7 +529,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/init.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/init.rb": {
         "lines": [
           null,
           null,
@@ -490,7 +541,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/entities/author.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/entities/author.rb": {
         "lines": [
           null,
           null,
@@ -511,7 +562,7 @@
           1,
           null,
           1,
-          120,
+          46,
           null,
           null,
           null,
@@ -519,7 +570,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/entities/category.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/entities/category.rb": {
         "lines": [
           null,
           null,
@@ -546,7 +597,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/entities/comment.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/entities/comment.rb": {
         "lines": [
           null,
           null,
@@ -580,7 +631,7 @@
           1,
           null,
           1,
-          117,
+          39,
           null,
           null,
           null,
@@ -590,7 +641,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/values/publish_info.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/values/publish_info.rb": {
         "lines": [
           null,
           null,
@@ -610,7 +661,7 @@
           1,
           null,
           1,
-          117,
+          39,
           null,
           null,
           null,
@@ -618,7 +669,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/values/sentimental_score.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/values/sentimental_score.rb": {
         "lines": [
           null,
           null,
@@ -637,7 +688,7 @@
           1,
           null,
           1,
-          117,
+          39,
           null,
           null,
           null,
@@ -645,7 +696,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/entities/sentiment.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/entities/sentiment.rb": {
         "lines": [
           null,
           null,
@@ -663,7 +714,7 @@
           1,
           null,
           1,
-          6,
+          2,
           null,
           null,
           null,
@@ -671,7 +722,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/entities/video.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/entities/video.rb": {
         "lines": [
           null,
           null,
@@ -709,7 +760,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/entities/video_log.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/entities/video_log.rb": {
         "lines": [
           null,
           null,
@@ -743,7 +794,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/repositories/authors.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/repositories/authors.rb": {
         "lines": [
           null,
           null,
@@ -754,7 +805,7 @@
           null,
           1,
           1,
-          129,
+          51,
           null,
           null,
           1,
@@ -762,9 +813,9 @@
           null,
           null,
           1,
-          129,
+          51,
           null,
-          9,
+          5,
           null,
           null,
           null,
@@ -788,7 +839,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/repositories/categories.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/repositories/categories.rb": {
         "lines": [
           null,
           null,
@@ -840,7 +891,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/repositories/comments.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/repositories/comments.rb": {
         "lines": [
           null,
           null,
@@ -874,11 +925,9 @@
           null,
           null,
           1,
-          116,
+          118,
           null,
-          77,
-          null,
-          null,
+          79,
           null,
           null,
           null,
@@ -886,6 +935,67 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          40,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          39,
+          39,
+          0,
+          null,
+          39,
+          null,
+          null,
+          39,
+          null,
+          null,
+          1,
+          39,
+          39,
+          39,
+          null,
+          39,
           null,
           null,
           null,
@@ -895,99 +1005,40 @@
           null,
           null,
           1,
-          77,
+          39,
           null,
           null,
+          39,
+          0,
           null,
           null,
+          0,
           null,
-          null,
-          null,
-          1,
-          77,
-          null,
-          null,
-          null,
-          null,
+          39,
           null,
           null,
           1,
+          39,
+          null,
+          null,
+          39,
+          37,
+          null,
+          null,
+          37,
+          null,
+          39,
+          null,
+          null,
           1,
-          38,
+          39,
           null,
           null,
-          null,
-          1,
+          39,
           2,
-          156,
-          null,
-          null,
-          null,
-          1,
-          78,
-          78,
-          null,
-          null,
-          1,
-          39,
-          39,
-          0,
+          2,
           null,
           39,
-          null,
-          null,
-          39,
-          null,
-          null,
-          1,
-          117,
-          117,
-          117,
-          null,
-          117,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          117,
-          null,
-          null,
-          117,
-          0,
-          null,
-          null,
-          0,
-          null,
-          117,
-          null,
-          null,
-          1,
-          117,
-          null,
-          null,
-          117,
-          111,
-          null,
-          null,
-          111,
-          null,
-          117,
-          null,
-          null,
-          1,
-          117,
-          null,
-          null,
-          117,
-          6,
-          6,
-          null,
-          117,
           null,
           null,
           null,
@@ -995,7 +1046,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/repositories/for.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/repositories/for.rb": {
         "lines": [
           null,
           null,
@@ -1020,7 +1071,7 @@
           null,
           null,
           1,
-          477,
+          241,
           null,
           null,
           1,
@@ -1032,7 +1083,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/repositories/videos.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/repositories/videos.rb": {
         "lines": [
           null,
           null,
@@ -1043,7 +1094,7 @@
           null,
           1,
           1,
-          130,
+          52,
           null,
           null,
           1,
@@ -1076,9 +1127,9 @@
           null,
           null,
           1,
-          135,
+          57,
           null,
-          127,
+          49,
           null,
           null,
           null,
@@ -1154,7 +1205,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/repositories/sentiments.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/repositories/sentiments.rb": {
         "lines": [
           null,
           null,
@@ -1169,7 +1220,7 @@
           null,
           null,
           1,
-          117,
+          39,
           null,
           null,
           1,
@@ -1178,9 +1229,9 @@
           null,
           null,
           1,
-          117,
+          39,
           null,
-          111,
+          37,
           null,
           null,
           null,
@@ -1201,7 +1252,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/mappers/author_mapper.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/mappers/author_mapper.rb": {
         "lines": [
           null,
           null,
@@ -1211,64 +1262,64 @@
           null,
           1,
           1,
-          122,
-          122,
-          122,
+          48,
+          48,
+          48,
           null,
           null,
           1,
-          122,
-          121,
+          48,
+          47,
           null,
           null,
           1,
-          121,
-          null,
-          null,
-          null,
-          1,
-          1,
-          121,
-          null,
-          null,
-          1,
-          121,
-          null,
-          null,
-          null,
-          null,
-          null,
+          47,
           null,
           null,
           null,
           1,
-          null,
           1,
-          121,
-          null,
-          null,
-          1,
-          121,
+          47,
           null,
           null,
           1,
-          121,
+          47,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
-          121,
+          null,
+          1,
+          47,
           null,
           null,
           1,
-          121,
+          47,
           null,
           null,
           1,
-          121,
+          47,
           null,
           null,
           1,
-          363,
+          47,
+          null,
+          null,
+          1,
+          47,
+          null,
+          null,
+          1,
+          47,
+          null,
+          null,
+          1,
+          141,
           null,
           null,
           null,
@@ -1277,7 +1328,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/mappers/category_mapper.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/mappers/category_mapper.rb": {
         "lines": [
           null,
           null,
@@ -1336,7 +1387,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/mappers/comment_mapper.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/mappers/comment_mapper.rb": {
         "lines": [
           null,
           null,
@@ -1349,68 +1400,89 @@
           null,
           1,
           1,
-          5,
-          5,
-          5,
+          3,
+          3,
+          3,
+          null,
+          null,
+          1,
+          3,
+          null,
+          2,
+          78,
+          78,
+          null,
+          null,
           null,
           null,
           1,
           5,
           null,
-          4,
-          156,
-          156,
+          3,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          102,
+          null,
+          null,
+          null,
+          1,
+          1,
+          102,
+          null,
+          null,
+          null,
+          1,
+          102,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
           null,
           1,
-          9,
           null,
-          5,
-          4,
-          4,
-          4,
+          1,
+          102,
+          null,
+          null,
+          1,
+          102,
           null,
           null,
           1,
           204,
           null,
           null,
-          null,
           1,
-          1,
-          204,
-          null,
+          102,
           null,
           null,
           1,
-          204,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          102,
           null,
           null,
           1,
-          null,
-          1,
-          204,
+          102,
           null,
           null,
-          1,
-          204,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -1418,43 +1490,22 @@
           null,
           null,
           1,
-          204,
+          102,
           null,
           null,
           1,
-          204,
+          102,
           null,
           null,
           1,
-          204,
-          null,
-          null,
-          null,
-          null,
-          null,
+          102,
           null,
           null,
           1,
-          816,
-          null,
-          null,
-          1,
-          204,
-          null,
-          null,
-          1,
-          204,
-          null,
-          null,
-          1,
-          204,
-          null,
-          null,
-          1,
-          204,
-          204,
-          816,
-          204,
+          102,
+          102,
+          408,
+          102,
           null,
           null,
           null,
@@ -1462,35 +1513,35 @@
           null,
           null,
           1,
-          204,
+          102,
           null,
           null,
           1,
-          252,
+          126,
           null,
           null,
           1,
-          204,
+          102,
           null,
           null,
           1,
-          204,
+          102,
           null,
           null,
           1,
-          2520,
+          1260,
           null,
           null,
           1,
-          2040,
+          1020,
           null,
           null,
           1,
-          2040,
+          1020,
           null,
           null,
           1,
-          204,
+          102,
           null,
           null,
           null,
@@ -1499,7 +1550,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/mappers/video_mapper.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/mappers/video_mapper.rb": {
         "lines": [
           null,
           null,
@@ -1632,7 +1683,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/mappers/video_thumbnail_mapper.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/mappers/video_thumbnail_mapper.rb": {
         "lines": [
           null,
           null,
@@ -1684,7 +1735,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/domain/videos/lib/sentiment_calculator.rb": {
+      "/home/avasquez/api-ufeeling/app/domain/videos/lib/sentiment_calculator.rb": {
         "lines": [
           null,
           null,
@@ -1704,161 +1755,13 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/author_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/author_representer.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/categories_representer.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/openstruct_with_links.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/category_representer.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/comment_representer.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          38,
-          null,
-          null,
-          1,
-          null,
-          1,
-          38,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/sentiment_representer.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/published_info_representer.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/comments_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/categories_representer.rb": {
         "lines": [
           null,
           null,
@@ -1881,7 +1784,155 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/http_response_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/openstruct_with_links.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/presentation/representers/category_representer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/presentation/representers/comment_representer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          40,
+          null,
+          null,
+          1,
+          null,
+          1,
+          40,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/presentation/representers/sentiment_representer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/presentation/representers/published_info_representer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/presentation/representers/comments_representer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/presentation/representers/http_response_representer.rb": {
         "lines": [
           null,
           null,
@@ -1924,7 +1975,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/video_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/video_representer.rb": {
         "lines": [
           null,
           null,
@@ -1959,25 +2010,25 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/video_sentiment_summary_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/video_sentiment_summary_representer.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/video_sentiment_trend_granularity_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/video_sentiment_trend_granularity_representer.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/video_sentiment_trend_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/video_sentiment_trend_representer.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/representers/videos_representer.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/representers/videos_representer.rb": {
         "lines": [
           null,
           null,
@@ -2000,7 +2051,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/responses/api_result.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/responses/api_result.rb": {
         "lines": [
           null,
           null,
@@ -2029,7 +2080,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/responses/categories_list.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/responses/categories_list.rb": {
         "lines": [
           null,
           null,
@@ -2041,7 +2092,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/responses/comments_list.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/responses/comments_list.rb": {
         "lines": [
           null,
           null,
@@ -2053,7 +2104,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/presentation/responses/videos_list.rb": {
+      "/home/avasquez/api-ufeeling/app/presentation/responses/videos_list.rb": {
         "lines": [
           null,
           null,
@@ -2065,7 +2116,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/controllers/app.rb": {
+      "/home/avasquez/api-ufeeling/app/application/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -2192,13 +2243,13 @@
           2,
           null,
           2,
-          0,
-          0,
+          2,
+          2,
           null,
           null,
-          2,
-          2,
-          2,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -2250,7 +2301,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/requests/video_list.rb": {
+      "/home/avasquez/api-ufeeling/app/application/requests/video_list.rb": {
         "lines": [
           null,
           null,
@@ -2302,7 +2353,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/add_video.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/add_video.rb": {
         "lines": [
           null,
           null,
@@ -2365,7 +2416,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/analyze_video.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/analyze_video.rb": {
         "lines": [
           null,
           null,
@@ -2383,6 +2434,7 @@
           null,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -2404,23 +2456,9 @@
           null,
           null,
           1,
-          null,
-          null,
-          null,
           2,
           null,
-          null,
-          null,
           2,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
           null,
           null,
           2,
@@ -2429,16 +2467,32 @@
           0,
           null,
           null,
+          null,
           1,
           0,
           null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
           null,
           null,
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/get_categories.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/get_categories.rb": {
         "lines": [
           null,
           null,
@@ -2472,7 +2526,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/get_comments.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/get_comments.rb": {
         "lines": [
           null,
           null,
@@ -2507,19 +2561,19 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/get_sentiment_summary.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/get_sentiment_summary.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/get_sentiment_trend.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/get_sentiment_trend.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/get_video.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/get_video.rb": {
         "lines": [
           null,
           null,
@@ -2551,59 +2605,59 @@
           null,
           0,
           0,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/list_videos.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          0,
-          null,
-          null,
           null,
           null,
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/app/application/services/update_video.rb": {
+      "/home/avasquez/api-ufeeling/app/application/services/list_videos.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/avasquez/api-ufeeling/app/application/services/update_video.rb": {
         "lines": [
           null,
           null,
@@ -2693,7 +2747,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/helpers/vcr_helper.rb": {
+      "/home/avasquez/api-ufeeling/spec/helpers/vcr_helper.rb": {
         "lines": [
           null,
           null,
@@ -2709,13 +2763,16 @@
           3,
           3,
           3,
+          3,
+          3,
+          3,
           null,
           null,
           null,
           1,
           25,
-          19993,
-          19993,
+          20057,
+          20057,
           null,
           null,
           25,
@@ -2731,7 +2788,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/helpers/database_helper.rb": {
+      "/home/avasquez/api-ufeeling/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -2751,7 +2808,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/tests/integration/layers/gateway_database_spec.rb": {
+      "/home/avasquez/api-ufeeling/spec/tests/integration/layers/gateway_database_spec.rb": {
         "lines": [
           null,
           null,
@@ -2828,29 +2885,29 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/tests/integration/services/add_video_spec.rb": {
+      "/home/avasquez/api-ufeeling/spec/tests/integration/services/add_video_spec.rb": {
         "lines": [
 
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/tests/integration/services/get_comments_spec.rb": {
+      "/home/avasquez/api-ufeeling/spec/tests/integration/services/get_comments_spec.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/tests/integration/services/get_video_spec.rb": {
+      "/home/avasquez/api-ufeeling/spec/tests/integration/services/get_video_spec.rb": {
         "lines": [
           null,
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/tests/integration/services/update_video_spec.rb": {
+      "/home/avasquez/api-ufeeling/spec/tests/integration/services/update_video_spec.rb": {
         "lines": [
 
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/tests/unit/gateway_youtube_spec.rb": {
+      "/home/avasquez/api-ufeeling/spec/tests/unit/gateway_youtube_spec.rb": {
         "lines": [
           null,
           null,
@@ -2948,7 +3005,7 @@
           null
         ]
       },
-      "/Users/code/NTHU/2022_Fall/SOA/project/ufeeling/api-ufeeling/spec/tests/unit/result_spec.rb": {
+      "/home/avasquez/api-ufeeling/spec/tests/unit/result_spec.rb": {
         "lines": [
           null,
           null,
@@ -2978,6 +3035,6 @@
         ]
       }
     },
-    "timestamp": 1671608264
+    "timestamp": 1671614156
   }
 }
