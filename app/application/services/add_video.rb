@@ -38,7 +38,7 @@ module UFeeling
                 end
         Success(Response::ApiResult.new(status: :created, message: video))
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 

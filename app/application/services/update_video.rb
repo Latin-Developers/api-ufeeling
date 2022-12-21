@@ -39,7 +39,7 @@ module UFeeling
 
         Success(video:)
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
@@ -51,7 +51,7 @@ module UFeeling
 
         Success(input)
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
@@ -64,7 +64,7 @@ module UFeeling
         end
         Success(Response::ApiResult.new(status: :ok, message: input[:video]))
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 

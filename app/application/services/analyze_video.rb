@@ -17,6 +17,7 @@ module UFeeling
       DB_ERR_MSG = 'Having trouble accessing the database'
       YT_NOT_FOUND_MSG = 'Could not find video in youtube'
       YT_COMMENTS_ERROR = 'Having trouble getting comments from youtube'
+      PROCESSING_MSG = 'Processing the summary request'
 
       # Get video from Youtube
       def get_video(input)
@@ -29,22 +30,20 @@ module UFeeling
           Failure(Response::ApiResult.new(status: :not_found, message: "Video #{input[:video_id]} not found"))
         end
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
       # Get comments from Youtube
       def get_comments(input)
-        # Add this line after worker
-        # return Success(input) if input[:video].comments_proccessed
+        return Success(input) if input[:video].proccessed
 
-        input[:comments] = Videos::Mappers::ApiComment
-          .new(App.config.YOUTUBE_API_KEY)
-          .comments(input[:video].origin_id)
+        Messaging::Queue.new(App.config.VIDEO_QUEUE_URL, App.config)
+          .send(Representer::Video.new(input[:video]).to_json)
 
-        Success(input)
+        Failure(Response::ApiResult.new(status: :processing, message: PROCESSING_MSG))
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
@@ -56,13 +55,17 @@ module UFeeling
 
         Success(Response::ApiResult.new(status: :created, message: input[:video]))
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
       def comment_in_database(input)
         Videos::Repository::For.klass(Videos::Entity::Video)
           .find_by_origin_id(input[:video_id])
+      end
+
+      def print_error(error)
+        App.logger.error [error.inspect, error.backtrace].flatten.join("\n")
       end
     end
   end

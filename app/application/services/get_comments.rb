@@ -23,7 +23,7 @@ module UFeeling
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
           .then { |result| Success(result) }
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
     end
