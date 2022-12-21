@@ -10,8 +10,6 @@ module UFeeling
 
       step :get_video
       step :add_video_to_db
-      step :get_comments
-      step :add_comments_to_db
 
       private
 
@@ -38,38 +36,13 @@ module UFeeling
                 else
                   input[:local_video]
                 end
-        Success(video:)
-      rescue StandardError => e
-        puts e.backtrace.join("\n")
-        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
-      end
-
-      # Get comments from Youtube (Julian added)
-      def get_comments(input)
-        input[:comments] = Videos::Mappers::ApiComment
-          .new(App.config.YOUTUBE_API_KEY)
-          .comments(input[:video][:origin_id])
-
-        Success(input)
-      rescue StandardError => e
-        puts e.backtrace.join("\n")
-        Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
-      end
-
-      # Add comments to database
-      def add_comments_to_db(input)
-        Videos::Repository::For
-          .klass(Videos::Entity::Comment)
-          .find_or_create_many(input[:comments])
-
-        Success(Response::ApiResult.new(status: :created, message: input[:video]))
+        Success(Response::ApiResult.new(status: :created, message: video))
       rescue StandardError => e
         puts e.backtrace.join("\n")
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
       # Support methods that other services could use
-
       def video_from_origin(input)
         Videos::Mappers::ApiVideo
           .new(App.config.YOUTUBE_API_KEY).details(input[:video_id])
@@ -78,11 +51,6 @@ module UFeeling
       end
 
       def video_in_database(input)
-        Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_by_origin_id(input[:video_id])
-      end
-
-      def comment_in_database(input)
         Videos::Repository::For.klass(Videos::Entity::Video)
           .find_by_origin_id(input[:video_id])
       end
