@@ -14,6 +14,7 @@ Sequel.migration do
       DateTime    :published_at
       String      :title
       String      :description
+      Boolean     :comments_proccessed
       String      :thumbnail_url
       String      :duration
       String      :tags

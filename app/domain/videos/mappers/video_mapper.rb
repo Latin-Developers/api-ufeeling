@@ -45,6 +45,7 @@ module UFeeling
               title:,
               description:,
               thumbnail_url:,
+              comments_proccessed: false,
               duration:,
               tags: nil
             )
