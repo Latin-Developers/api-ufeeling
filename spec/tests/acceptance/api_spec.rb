@@ -96,11 +96,7 @@ describe 'Test API routes' do
 
       # Validate Origin_id and tittle between both records.
 
-      _(last_response.status).must_equal 200
-
-      video = JSON.parse last_response.body
-      _(video['origin_id']).must_equal VIDEO_ID
-      _(video['title']).must_equal VIDEO_TITLE
+      _(last_response.status).must_equal 202
     end
 
     it 'SAD: Should report error for not existing video' do
