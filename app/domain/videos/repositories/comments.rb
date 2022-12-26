@@ -75,7 +75,7 @@ module UFeeling
 
         def self.find_or_create_many(entities)
           entities.each do |entity|
-            Concurrent::Promise.execute { find_or_create(entity) }
+            find_or_create(entity)
           end
         end
 

@@ -9,8 +9,8 @@ module UFeeling
       include Dry::Transaction
 
       step :get_video
-      step :get_comments
-      step :add_comments_to_db
+      step :validate_comments_proccessed
+      step :return_video
 
       private
 
@@ -35,7 +35,7 @@ module UFeeling
       end
 
       # Get comments from Youtube
-      def get_comments(input)
+      def validate_comments_proccessed(input)
         return Success(input) if input[:video].comments_proccessed
 
         Messaging::Queue.new(App.config.VIDEO_QUEUE_URL, App.config)
@@ -48,20 +48,11 @@ module UFeeling
       end
 
       # Add comments to database
-      def add_comments_to_db(input)
-        Videos::Repository::For
-          .klass(Videos::Entity::Comment)
-          .find_or_create_many(input[:comments])
-
+      def return_video(input)
         Success(Response::ApiResult.new(status: :ok, message: input[:video]))
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
-      end
-
-      def comment_in_database(input)
-        Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_by_origin_id(input[:video_id])
       end
 
       def print_error(error)

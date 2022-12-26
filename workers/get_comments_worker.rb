@@ -37,6 +37,17 @@ class GetCommentsWorker
     UFeeling::Videos::Repository::For
       .klass(UFeeling::Videos::Entity::Comment)
       .find_or_create_many(comments)
+
+    video = UFeeling::Videos::Repository::For
+      .klass(UFeeling::Videos::Entity::Video)
+      .find_by_origin_id(video.origin_id)
+
+    video = UFeeling::Videos::Entity::Video
+      .new(video.to_h.merge(comments_proccessed: true))
+
+    UFeeling::Videos::Repository::For
+      .klass(UFeeling::Videos::Entity::Video)
+      .update(video)
   rescue StandardError => e
     puts "Error executing worker: #{e}"
   end
