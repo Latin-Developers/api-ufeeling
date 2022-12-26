@@ -9,12 +9,14 @@ module UFeeling
       include Dry::Transaction
 
       step :get_video
+      step :find_video_category
+      step :fill_video_author
       step :update_video_in_db
-      step :get_comments
-      step :update_comments_in_db
 
       private
 
+      CATEGORY_ERR_MSG = 'Having trouble getting video category'
+      AUTHOR_ERR_MSG = 'Having trouble getting video author'
       DB_ERR_MSG = 'Having trouble accessing the database'
       YT_NOT_FOUND_MSG = 'Could not find video in youtube'
       YT_COMMENTS_ERROR = 'Having trouble getting comments from youtube'
@@ -33,36 +35,35 @@ module UFeeling
         Failure(Response::ApiResult.new(status: :not_found, message: e.to_s))
       end
 
-      def update_video_in_db(input)
-        # Update local video in database if there is any new data
-        video = Videos::Repository::For.klass(Videos::Entity::Video).update(input[:remote_video])
-
-        Success(video:)
-      rescue StandardError => e
-        print_error(e)
-        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
-      end
-
-      # Get comments from Youtube
-      def get_comments(input)
-        input[:comments] = Videos::Mappers::ApiComment
-          .new(App.config.YOUTUBE_API_KEY)
-          .comments(input[:video][:origin_id])
+      # Gets or creates video category
+      def find_video_category(input)
+        origin_id = input[:remote_video].origin_category_id
+        category_result = Services::FindOrCreateCategory.new.call(origin_id:)
+        input[:category] = category_result.value!.message
 
         Success(input)
       rescue StandardError => e
         print_error(e)
-        Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
+        Failure(Response::ApiResult.new(status: :internal_error, message: CATEGORY_ERR_MSG))
       end
 
-      # Update comments to database
-      def update_comments_in_db(input)
-        input[:comments].each do |comment|
-          Videos::Repository::For
-            .klass(Videos::Entity::Comment)
-            .update_or_create(comment)
-        end
-        Success(Response::ApiResult.new(status: :ok, message: input[:video]))
+      # Gets or creates video author
+      def fill_video_author(input)
+        origin_id = input[:remote_video].origin_author_id
+        author_result = Services::FindOrCreateAuthor.new.call(origin_id:)
+        input[:author] = author_result.value!.message
+        Success(input)
+      rescue StandardError => e
+        print_error(e)
+        Failure(Response::ApiResult.new(status: :internal_error, message: AUTHOR_ERR_MSG))
+      end
+
+      # Updates video information in the database
+      def update_video_in_db(input)
+        # Update local video in database if there is any new data
+        video_updated = fill_foreign_keys(input[:remote_video], input[:category], input[:author])
+        Videos::Repository::For.klass(Videos::Entity::Video).update(video_updated)
+        Services::AnalyzeVideo.new.call(video_id: input[:video_id])
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
@@ -80,6 +81,17 @@ module UFeeling
       def video_in_database(input)
         Videos::Repository::For.klass(Videos::Entity::Video)
           .find_by_origin_id(input[:video_id])
+      end
+
+      def print_error(error)
+        App.logger.error [error.inspect, error.backtrace].flatten.join("\n")
+      end
+
+      def fill_foreign_keys(video, category, author)
+        remote_video_hash = video.to_h.merge(category_id: category.id,
+                                             author_id: author.id,
+                                             status: 'processing')
+        Videos::Entity::Video.new(remote_video_hash)
       end
     end
   end

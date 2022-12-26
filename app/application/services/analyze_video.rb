@@ -9,8 +9,8 @@ module UFeeling
       include Dry::Transaction
 
       step :get_video
-      step :get_comments
-      step :add_comments_to_db
+      step :validate_comments_proccessed
+      step :return_video
 
       private
 
@@ -35,37 +35,48 @@ module UFeeling
       end
 
       # Get comments from Youtube
-      def get_comments(input)
-        return Success(input) if input[:video].comments_proccessed
+      def validate_comments_proccessed(input)
+        return Success(input) if input[:video].completed?
+        return Failure(processing_result(input)) if input[:video].processing?
 
-        Messaging::Queue.new(App.config.VIDEO_QUEUE_URL, App.config)
-          .send(Representer::Video.new(input[:video]).to_json)
+        start_queue(input)
 
-        Failure(Response::ApiResult.new(status: :processing, message: PROCESSING_MSG))
+        Failure(processing_result(input))
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
-      # Add comments to database
-      def add_comments_to_db(input)
-        Videos::Repository::For
-          .klass(Videos::Entity::Comment)
-          .find_or_create_many(input[:comments])
+      def start_queue(input)
+        video_hash = input[:video].to_h.merge(status: 'processing')
+        video = Videos::Entity::Video.new(video_hash)
+        Videos::Repository::For.klass(Videos::Entity::Video).update(video)
 
+        Messaging::Queue.new(App.config.VIDEO_QUEUE_URL, App.config)
+          .send(video_representer(input).to_json)
+      end
+
+      def processing_result(input)
+        Response::ApiResult.new(
+          status: :processing,
+          message: { video_id: input[:video_id], msg: PROCESSING_MSG }
+        )
+      end
+
+      # Add comments to database
+      def return_video(input)
         Success(Response::ApiResult.new(status: :ok, message: input[:video]))
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
-      def comment_in_database(input)
-        Videos::Repository::For.klass(Videos::Entity::Video)
-          .find_by_origin_id(input[:video_id])
-      end
-
       def print_error(error)
         App.logger.error [error.inspect, error.backtrace].flatten.join("\n")
+      end
+
+      def video_representer(input)
+        Representer::Video.new(input[:video])
       end
     end
   end

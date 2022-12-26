@@ -52,7 +52,7 @@ module UFeeling
             published_at: db_record.published_at,
             title: db_record.title,
             description: db_record.description,
-            comments_proccessed: db_record.comments_proccessed,
+            status: db_record.status,
             comment_count: db_record.comment_count,
             thumbnail_url: db_record.thumbnail_url,
             duration: db_record.duration,
@@ -68,22 +68,10 @@ module UFeeling
         end
 
         def self.find_or_create(entity)
-          category = category_from_origin_id(entity)
-          author = author_from_origin_id(entity)
-
-          entity = UFeeling::Videos::Entity::Video.new(entity.to_h.merge(category_id: category.id,
-                                                                         author_id: author.id))
-
           Database::VideoOrm.find_or_create(entity.to_attr_hash)
         end
 
         def self.update(entity)
-          category = category_from_origin_id(entity)
-          author = author_from_origin_id(entity)
-
-          entity = UFeeling::Videos::Entity::Video.new(entity.to_h.merge(category_id: category.id,
-                                                                         author_id: author.id))
-
           Database::VideoOrm.where(origin_id: entity.origin_id).update(entity.to_attr_hash)
 
           find_by_origin_id(entity.origin_id)
