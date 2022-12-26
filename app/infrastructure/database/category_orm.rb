@@ -13,6 +13,7 @@ module UFeeling
       plugin :timestamps, update_on_create: true
 
       def self.find_or_create(category_info)
+        binding.pry
         first(origin_id: category_info[:origin_id]) || create(category_info)
       end
     end

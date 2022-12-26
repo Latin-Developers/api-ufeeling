@@ -25,6 +25,10 @@ module UFeeling
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
+
+      def print_error(error)
+        App.logger.error [error.inspect, error.backtrace].flatten.join("\n")
+      end
     end
   end
 end
