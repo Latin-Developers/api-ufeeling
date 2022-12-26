@@ -43,7 +43,7 @@ class GetCommentsWorker
       .find_by_origin_id(video.origin_id)
 
     video = UFeeling::Videos::Entity::Video
-      .new(video.to_h.merge(comments_proccessed: true))
+      .new(video.to_h.merge(status: 'completed'))
 
     UFeeling::Videos::Repository::For
       .klass(UFeeling::Videos::Entity::Video)

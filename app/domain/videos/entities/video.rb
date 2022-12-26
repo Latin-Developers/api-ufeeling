@@ -20,13 +20,21 @@ module UFeeling
         attribute :title,                   Strict::String
         attribute :description,             Strict::String
         attribute :thumbnail_url,           String.optional
-        attribute :comments_proccessed,     Strict::Bool
+        attribute :status,                  String.default('New')
         attribute :comment_count,           Integer.optional
         attribute :duration,                String.optional
         attribute :tags,                    String.optional
 
         def to_attr_hash
           to_hash.except(:id)
+        end
+
+        def processing?
+          status == 'processing'
+        end
+
+        def completed?
+          status == 'completed'
         end
       end
     end

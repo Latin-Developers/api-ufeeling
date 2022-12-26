@@ -36,15 +36,31 @@ module UFeeling
 
       # Get comments from Youtube
       def validate_comments_proccessed(input)
-        return Success(input) if input[:video].comments_proccessed
+        return Success(input) if input[:video].completed?
+        return Failure(processing_result(input)) if input[:video].processing?
 
-        Messaging::Queue.new(App.config.VIDEO_QUEUE_URL, App.config)
-          .send(Representer::Video.new(input[:video]).to_json)
+        start_queue(input)
 
-        Failure(Response::ApiResult.new(status: :processing, message: PROCESSING_MSG))
+        Failure(processing_result(input))
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
+      end
+
+      def start_queue(input)
+        video_hash = input[:video].to_h.merge(status: 'processing')
+        video = Videos::Entity::Video.new(video_hash)
+        Videos::Repository::For.klass(Videos::Entity::Video).update(video)
+
+        Messaging::Queue.new(App.config.VIDEO_QUEUE_URL, App.config)
+          .send(video_representer(input).to_json)
+      end
+
+      def processing_result(input)
+        Response::ApiResult.new(
+          status: :processing,
+          message: { video_id: input[:video_id], msg: PROCESSING_MSG }
+        )
       end
 
       # Add comments to database
@@ -57,6 +73,10 @@ module UFeeling
 
       def print_error(error)
         App.logger.error [error.inspect, error.backtrace].flatten.join("\n")
+      end
+
+      def video_representer(input)
+        Representer::Video.new(input[:video])
       end
     end
   end

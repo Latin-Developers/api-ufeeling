@@ -11,7 +11,6 @@ module UFeeling
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :common_logger, $stderr
 
-    # rubocop:disable Metrics/BlockLength
     route do |routing|
       response['Content-Type'] = 'application/json'
 
@@ -82,8 +81,6 @@ module UFeeling
                 App.configure :production do
                   response.cache_control public: true, max_age: 300
                 end
-
-                request_id = [request.env, video_origin_id].hash
 
                 result = Services::AddVideo.new.call(video_id: video_origin_id)
 
@@ -176,6 +173,5 @@ module UFeeling
         end
       end
     end
-    # rubocop:enable Metrics/BlockLength
   end
 end

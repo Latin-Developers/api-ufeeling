@@ -35,6 +35,7 @@ module UFeeling
         Failure(Response::ApiResult.new(status: :not_found, message: e.to_s))
       end
 
+      # Gets or creates video category
       def find_video_category(input)
         origin_id = input[:remote_video].origin_category_id
         category_result = Services::FindOrCreateCategory.new.call(origin_id:)
@@ -46,6 +47,7 @@ module UFeeling
         Failure(Response::ApiResult.new(status: :internal_error, message: CATEGORY_ERR_MSG))
       end
 
+      # Gets or creates video author
       def fill_video_author(input)
         origin_id = input[:remote_video].origin_author_id
         author_result = Services::FindOrCreateAuthor.new.call(origin_id:)
@@ -56,11 +58,12 @@ module UFeeling
         Failure(Response::ApiResult.new(status: :internal_error, message: AUTHOR_ERR_MSG))
       end
 
+      # Updates video information in the database
       def update_video_in_db(input)
         # Update local video in database if there is any new data
-        video = Videos::Repository::For.klass(Videos::Entity::Video).update(input[:remote_video])
-
-        Success(Response::ApiResult.new(status: :ok, message: video))
+        video_updated = fill_foreign_keys(input[:remote_video], input[:category], input[:author])
+        Videos::Repository::For.klass(Videos::Entity::Video).update(video_updated)
+        Services::AnalyzeVideo.new.call(video_id: input[:video_id])
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
@@ -82,6 +85,13 @@ module UFeeling
 
       def print_error(error)
         App.logger.error [error.inspect, error.backtrace].flatten.join("\n")
+      end
+
+      def fill_foreign_keys(video, category, author)
+        remote_video_hash = video.to_h.merge(category_id: category.id,
+                                             author_id: author.id,
+                                             status: 'processing')
+        Videos::Entity::Video.new(remote_video_hash)
       end
     end
   end
