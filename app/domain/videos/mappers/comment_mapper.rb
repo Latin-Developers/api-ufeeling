@@ -25,12 +25,24 @@ module UFeeling
         end
 
         def comments_from_api(video_id, first_call, current_page_token = '', counter = 0)
-          return { items: [] } unless (first_call || current_page_token) && counter < 3
+          return { items: [] } unless (first_call || current_page_token) && counter < page_limit
 
           comments_data = @gateway.comments(video_id, current_page_token)
           next_page_comments = comments_from_api(video_id, false, comments_data[:next_page_token], counter + 1)
           comments_data[:items].concat next_page_comments[:items]
           comments_data
+        end
+
+        def page_limit
+          App.configure :development do
+            return 3
+          end
+
+          App.configure :testing do
+            return 3
+          end
+
+          100
         end
 
         def self.build_entity(data)

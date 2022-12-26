@@ -33,6 +33,7 @@ class GetCommentsWorker
       .new(UFeeling::App.config.YOUTUBE_API_KEY)
       .comments(video.origin_id)
 
+    # TODO: Move into a API Call
     UFeeling::Videos::Repository::For
       .klass(UFeeling::Videos::Entity::Comment)
       .find_or_create_many(comments)
