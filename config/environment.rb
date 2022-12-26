@@ -7,6 +7,7 @@ require 'yaml'
 require 'rack/session'
 require 'rack/cache'
 require 'redis-rack-cache'
+require 'logger'
 
 module UFeeling
   # Configuration for the App
@@ -50,5 +51,9 @@ module UFeeling
       def self.DB = DB # rubocop:disable Naming/MethodName
     end
     # rubocop:enable Lint/ConstantDefinitionInBlock
+
+    # Logger Setup
+    LOGGER = Logger.new($stderr)
+    def self.logger = LOGGER
   end
 end

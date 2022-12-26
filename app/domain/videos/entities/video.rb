@@ -20,6 +20,8 @@ module UFeeling
         attribute :title,                   Strict::String
         attribute :description,             Strict::String
         attribute :thumbnail_url,           String.optional
+        attribute :comments_proccessed,     Strict::Bool
+        attribute :comment_count,           Integer.optional
         attribute :duration,                String.optional
         attribute :tags,                    String.optional
 

@@ -26,7 +26,7 @@ module UFeeling
           Failure(Response::ApiResult.new(status: :not_found, message: "Video #{input[:video_id]} not found"))
         end
       rescue StandardError => e
-        puts e.backtrace.join("\n")
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
     end

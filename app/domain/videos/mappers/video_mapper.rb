@@ -45,6 +45,8 @@ module UFeeling
               title:,
               description:,
               thumbnail_url:,
+              comments_proccessed: false,
+              comment_count:,
               duration:,
               tags: nil
             )
@@ -106,7 +108,7 @@ module UFeeling
           end
 
           def comment_count
-            statistics['commentCount']
+            statistics['commentCount'].to_i || 0
           end
 
           def snippet

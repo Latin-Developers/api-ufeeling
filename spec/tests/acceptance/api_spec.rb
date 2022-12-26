@@ -75,15 +75,11 @@ describe 'Test API routes' do
   end
 
   describe 'Gets a video' do
-    it 'HAPPY: should be able to get a video' do
+    it 'HAPPY: should return a processing status when a new video is requested' do
       post "api/v1/videos/#{VIDEO_ID}"
       get "api/v1/videos/#{VIDEO_ID}"
 
-      _(last_response.status).must_equal 200
-
-      video = JSON.parse last_response.body
-      _(video['origin_id']).must_equal VIDEO_ID
-      _(video['title']).must_equal VIDEO_TITLE
+      _(last_response.status).must_equal 202
     end
   end
 
@@ -120,13 +116,16 @@ describe 'Test API routes' do
   describe 'Get a comment from a video' do
     it 'should be able to get the comments of a video' do
       post "api/v1/videos/#{VIDEO_ID}"
+      get "api/v1/videos/#{VIDEO_ID}"
+
+      sleep(10)
       get "api/v1/videos/#{VIDEO_ID}/comments"
 
       _(last_response.status).must_equal 200
 
       comments = JSON.parse last_response.body
-      _(comments['comments'][0]['origin_id']).must_equal COMMENT_ID
-      _(comments['comments'][0]['text_display']).must_equal TEXT_DISPLAY
+
+      _(comments['comments'].size).must_be :>, 0
     end
   end
 

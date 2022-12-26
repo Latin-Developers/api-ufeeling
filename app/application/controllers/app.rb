@@ -4,7 +4,7 @@ require 'roda'
 
 module UFeeling
   # Web App
-  class App < Roda
+  class App < Roda # rubocop:disable Metrics/ClassLength
     plugin :halt
     plugin :caching
     plugin :flash
@@ -32,7 +32,6 @@ module UFeeling
         # [...] /categories
         routing.on 'categories' do
           # [GET] /categories
-          # TODO Julian
           routing.get do
             result = Services::GetCategories.new.call
 
@@ -55,7 +54,9 @@ module UFeeling
             # video_ids = list of origin ids that needs to be filter
             # categories = list of category ids that needs to be filter
             routing.get do
-              response.cache_control public: true, max_age: 300
+              App.configure :production do
+                response.cache_control public: true, max_age: 300
+              end
 
               filters = Request::EncodedVideoList.new(routing.params)
               result = Services::ListVideos.new.call(filters:)
@@ -78,6 +79,12 @@ module UFeeling
               # Adds a new video into the database and obtains the comments
               # video_origin_id = id of the video in youtube
               routing.post do
+                App.configure :production do
+                  response.cache_control public: true, max_age: 300
+                end
+
+                request_id = [request.env, video_origin_id].hash
+
                 result = Services::AddVideo.new.call(video_id: video_origin_id)
 
                 if result.failure?
@@ -113,7 +120,7 @@ module UFeeling
               routing.get do
                 response.cache_control public: true, max_age: 300
 
-                result = Services::GetVideo.new.call(video_id: video_origin_id)
+                result = Services::AnalyzeVideo.new.call(video_id: video_origin_id)
 
                 if result.failure?
                   failed = Representer::HttpResponse.new(result.failure)

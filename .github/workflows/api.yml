@@ -47,4 +47,11 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY}}
           DB_FILENAME: ${{ secrets.DB_FILENAME }}
           API_HOST: ${{ secrets.API_HOST }}
-        run: bundle exec rake spec
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          VIDEO_QUEUE: ${{ secrets.VIDEO_QUEUE }}
+          VIDEO_QUEUE_URL: ${{ secrets.VIDEO_QUEUE_URL }}
+        run: |
+          rake worker:run:test &
+          bundle exec rake spec
