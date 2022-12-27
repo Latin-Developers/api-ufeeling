@@ -248,7 +248,7 @@ DEPENDENCIES
   dry-transaction (~> 0.13)
   dry-types (~> 1)
   dry-validation (~> 1.7)
-  faye (~> 1)
+  faye (~> 1.4)
   figaro (~> 1.2)
   flog
   http (~> 5)

@@ -14,7 +14,6 @@ gem 'roar', '~> 1.1'
 
 # APPLICATION LAYER
 # Web application related
-gem 'faye', '~> 1'
 gem 'puma', '~> 6.0'
 gem 'rack-session', '~> 0.3'
 gem 'roda', '~> 3.62'
@@ -46,8 +45,11 @@ gem 'sequel', '~> 5.49'
 
 # Asynchronicity
 gem 'async'
-gem 'aws-sdk-sqs', '~> 1.48'
 gem 'concurrent-ruby', '~> 1.1'
+
+# WORKER
+gem 'aws-sdk-sqs', '~> 1.48'
+gem 'faye', '~> 1.4'
 gem 'shoryuken', '~> 5.3'
 
 group :development, :test do
