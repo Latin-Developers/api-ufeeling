@@ -90,7 +90,7 @@ module UFeeling
       def fill_foreign_keys(video, category, author)
         remote_video_hash = video.to_h.merge(category_id: category.id,
                                              author_id: author.id,
-                                             status: 'processing')
+                                             status: 'update-requested')
         Videos::Entity::Video.new(remote_video_hash)
       end
     end
