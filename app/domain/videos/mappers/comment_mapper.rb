@@ -16,14 +16,14 @@ module UFeeling
 
         def comments(video_id, progress_reporter = nil)
           comments_data = comments_from_api(video_id, true, progress_reporter)
-          counter = 0
+          progress_reporter&.call('ANALIZE', 0)
 
+          counter = 0
           comments_data[:items].map do |data|
             Concurrent::Promise.execute do
-              comment = ApiComment.build_entity(data)
-              counter += 1
               progress_reporter&.call('ANALIZE', counter) if (counter % 100).zero?
-              comment
+              counter += 1
+              ApiComment.build_entity(data)
             end
           end.map(&:value)
         end
@@ -48,7 +48,7 @@ module UFeeling
             return 10
           end
 
-          1000
+          10
         end
 
         def self.build_entity(data)
