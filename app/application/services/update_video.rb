@@ -9,6 +9,7 @@ module UFeeling
       include Dry::Transaction
 
       step :get_video
+      step :validate_comments_processing
       step :find_video_category
       step :fill_video_author
       step :update_video_in_db
@@ -20,6 +21,7 @@ module UFeeling
       DB_ERR_MSG = 'Having trouble accessing the database'
       YT_NOT_FOUND_MSG = 'Could not find video in youtube'
       YT_COMMENTS_ERROR = 'Having trouble getting comments from youtube'
+      PROCESSING_MSG = 'Processing the summary request'
 
       # Get video from Youtube and validate if it exist in the database
       def get_video(input)
@@ -33,6 +35,17 @@ module UFeeling
         end
       rescue StandardError => e
         Failure(Response::ApiResult.new(status: :not_found, message: e.to_s))
+      end
+
+      def validate_comments_processing(input)
+        if input[:local_video].processing?
+          return Failure(Response::ApiResult.new(
+                           status: :processing,
+                           message: { video_id: input[:video_id], msg: PROCESSING_MSG }
+                         ))
+        end
+
+        Success(input)
       end
 
       # Gets or creates video category

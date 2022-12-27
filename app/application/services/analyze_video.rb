@@ -10,7 +10,6 @@ module UFeeling
 
       step :get_video
       step :validate_comments_proccessed
-      step :return_video
 
       private
 
@@ -36,7 +35,7 @@ module UFeeling
 
       # Get comments from Youtube
       def validate_comments_proccessed(input)
-        return Success(input) if input[:video].completed?
+        return Success(Response::ApiResult.new(status: :ok, message: input[:video])) if input[:video].completed?
         return Failure(processing_result(input)) if input[:video].processing?
 
         start_queue(input)
@@ -61,14 +60,6 @@ module UFeeling
           status: :processing,
           message: { video_id: input[:video_id], msg: PROCESSING_MSG }
         )
-      end
-
-      # Add comments to database
-      def return_video(input)
-        Success(Response::ApiResult.new(status: :ok, message: input[:video]))
-      rescue StandardError => e
-        print_error(e)
-        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
       def print_error(error)
