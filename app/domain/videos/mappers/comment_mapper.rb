@@ -14,35 +14,41 @@ module UFeeling
           @gateway = @gateway_class.new(@token)
         end
 
-        def comments(video_id)
-          comments_data = comments_from_api(video_id, true)
+        def comments(video_id, progress_reporter = nil)
+          comments_data = comments_from_api(video_id, true, progress_reporter)
+          counter = 0
 
           comments_data[:items].map do |data|
             Concurrent::Promise.execute do
-              ApiComment.build_entity(data)
+              comment = ApiComment.build_entity(data)
+              counter += 1
+              progress_reporter&.call('ANALIZE', counter) if (counter % 100).zero?
+              comment
             end
           end.map(&:value)
         end
 
-        def comments_from_api(video_id, first_call, current_page_token = '', counter = 0)
+        def comments_from_api(video_id, first_call, progress_reporter = nil, current_page_token = '', counter = 0)
           return { items: [] } unless (first_call || current_page_token) && counter < page_limit
 
           comments_data = @gateway.comments(video_id, current_page_token)
-          next_page_comments = comments_from_api(video_id, false, comments_data[:next_page_token], counter + 1)
+          progress_reporter&.call('YOUTUBE', (counter + 1) * 100)
+          next_page_comments = comments_from_api(video_id, false, progress_reporter, comments_data[:next_page_token],
+                                                 counter + 1)
           comments_data[:items].concat next_page_comments[:items]
           comments_data
         end
 
         def page_limit
           App.configure :development do
-            return 3
+            return 10
           end
 
           App.configure :testing do
-            return 3
+            return 10
           end
 
-          100
+          1000
         end
 
         def self.build_entity(data)
@@ -70,7 +76,7 @@ module UFeeling
               like_count:,
               total_reply_count:,
               published_info:,
-              comment_replies: []
+              comment_replies:
             )
           end
           # rubocop:enable Metrics/MethodLength

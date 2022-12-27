@@ -1,54 +1,53 @@
 # frozen_string_literal: true
 
 require_relative '../require_app'
+require_relative 'get_comments_monitor'
+require_relative 'job_reporter'
 require_app
 
 require 'figaro'
 require 'shoryuken'
 
-# Shoryuken worker class to get the comments in parallel
-class GetCommentsWorker
-  # Environment variables setup
-  Figaro.application = Figaro::Application.new(
-    environment: ENV['RACK_ENV'] || 'development',
-    path: File.expand_path('config/secrets.yml')
-  )
-  Figaro.load
-  def self.config = Figaro.env
+# Shoryuken module to handle get the comments in parallel
+module GetComments
+  # Shoryuken worker class to get the comments in parallel
+  class Worker
+    # Environment variables setup
+    Figaro.application = Figaro::Application.new(
+      environment: ENV['RACK_ENV'] || 'development',
+      path: File.expand_path('config/secrets.yml')
+    )
+    Figaro.load
+    def self.config = Figaro.env
 
-  Shoryuken.sqs_client = Aws::SQS::Client.new(
-    access_key_id: config.AWS_ACCESS_KEY_ID,
-    secret_access_key: config.AWS_SECRET_ACCESS_KEY,
-    region: config.AWS_REGION
-  )
+    Shoryuken.sqs_client = Aws::SQS::Client.new(
+      access_key_id: config.AWS_ACCESS_KEY_ID,
+      secret_access_key: config.AWS_SECRET_ACCESS_KEY,
+      region: config.AWS_REGION
+    )
 
-  include Shoryuken::Worker
-  shoryuken_options queue: config.VIDEO_QUEUE_URL, auto_delete: true
+    include Shoryuken::Worker
+    Shoryuken.sqs_client_receive_message_opts = { wait_time_seconds: 20 }
+    shoryuken_options queue: config.VIDEO_QUEUE_URL, auto_delete: true, concurrency: 1
 
-  def perform(_sqs_msg, request)
-    video = UFeeling::Representer::Video
-      .new(OpenStruct.new).from_json(request) # rubocop:disable Style/OpenStructUse
+    def perform(_sqs_msg, request)
+      video = UFeeling::Representer::Video.new(OpenStruct.new).from_json(request) # rubocop:disable Style/OpenStructUse
 
-    comments = UFeeling::Videos::Mappers::ApiComment
-      .new(UFeeling::App.config.YOUTUBE_API_KEY)
-      .comments(video.origin_id)
+      job = JobReporter.new(request, Worker.config)
+      job.report(GetCommentsMonitor.starting_percent)
+      update_lamda = update_lamda(job, video.comment_count)
 
-    # TODO: Move into a API Call
-    UFeeling::Videos::Repository::For
-      .klass(UFeeling::Videos::Entity::Comment)
-      .find_or_create_many(comments)
+      UFeeling::Services::AnalyzeComments.new.call(video_id: video.origin_id, lambda: update_lamda)
 
-    video = UFeeling::Videos::Repository::For
-      .klass(UFeeling::Videos::Entity::Video)
-      .find_by_origin_id(video.origin_id)
+      job.report_each_second(5) { GetCommentsMonitor.finished_percent }
+    rescue StandardError => e
+      puts "Error executing worker: #{e}"
+    end
 
-    video = UFeeling::Videos::Entity::Video
-      .new(video.to_h.merge(status: 'completed'))
-
-    UFeeling::Videos::Repository::For
-      .klass(UFeeling::Videos::Entity::Video)
-      .update(video)
-  rescue StandardError => e
-    puts "Error executing worker: #{e}"
+    def update_lamda(job, total_comments)
+      lambda { |step, comments_processed|
+        job.report GetCommentsMonitor.progress(step, comments_processed, total_comments)
+      }
+    end
   end
 end

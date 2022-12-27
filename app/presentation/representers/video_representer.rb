@@ -16,6 +16,7 @@ module UFeeling
       property :title
       property :description
       property :thumbnail_url
+      property :comment_count
 
       link :self do
         "#{App.config.API_HOST}/api/v1/videos/#{video_origin_id}"
