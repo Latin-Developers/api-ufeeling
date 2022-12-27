@@ -7,7 +7,6 @@ module UFeeling
   class App < Roda # rubocop:disable Metrics/ClassLength
     plugin :halt
     plugin :caching
-    plugin :flash
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :common_logger, $stderr
 
