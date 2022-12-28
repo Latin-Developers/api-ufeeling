@@ -77,10 +77,6 @@ module UFeeling
               # Adds a new video into the database and obtains the comments
               # video_origin_id = id of the video in youtube
               routing.post do
-                App.configure :production do
-                  response.cache_control public: true, max_age: 300
-                end
-
                 result = Services::AddVideo.new.call(video_id: video_origin_id)
 
                 if result.failure?
@@ -114,8 +110,6 @@ module UFeeling
               # video_origin_id = id of the video in youtube
               # Responsible Julian
               routing.get do
-                response.cache_control public: true, max_age: 300
-
                 result = Services::AnalyzeVideo.new.call(video_id: video_origin_id)
 
                 if result.failure?
