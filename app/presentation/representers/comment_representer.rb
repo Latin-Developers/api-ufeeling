@@ -16,7 +16,7 @@ module UFeeling
       include Roar::Decorator::HypermediaConsumer
 
       property :origin_id
-      property :text_display
+      property :text_original
       property :total_reply_count
       property :sentiment, extend: Representer::SentimentRepresenter
       # property :published_info, extend: Representer::PublishedInfoRepresenter
