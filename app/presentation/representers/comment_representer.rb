@@ -18,7 +18,7 @@ module UFeeling
       property :origin_id
       property :text_original
       property :total_reply_count
-      property :sentiment, extend: Representer::SentimentRepresenter
+      property :sentiment, extend: Representer::SentimentRepresenter, class: OpenStruct
       # property :published_info, extend: Representer::PublishedInfoRepresenter
 
       link :self do
