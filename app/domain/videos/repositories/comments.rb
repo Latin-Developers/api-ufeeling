@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'concurrent'
-require 'async'
 
 module UFeeling
   module Videos
@@ -75,6 +74,7 @@ module UFeeling
 
         def self.find_or_create_many(entities, progress_reporter = nil)
           counter = 0
+          progress_reporter&.call('DATABASE', 0)
           entities.each do |entity|
             counter += 1
             find_or_create(entity)
@@ -98,7 +98,7 @@ module UFeeling
           find_by_origin_id(entity.origin_id)
         end
 
-        Async def self.fill_reference_ids(entity)
+        def self.fill_reference_ids(entity)
           video_task = video_from_origin_id(entity)
           author_task = author_from_origin_id(entity)
           sentiment_task = sentiment_from_name(entity)
@@ -112,7 +112,7 @@ module UFeeling
                                                                   }))
         end
 
-        Async def self.video_from_origin_id(entity)
+        def self.video_from_origin_id(entity)
           video = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Video)
             .find_by_origin_id(entity.video_origin_id)
 
@@ -125,7 +125,7 @@ module UFeeling
           video
         end
 
-        Async def self.author_from_origin_id(entity)
+        def self.author_from_origin_id(entity)
           author = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Author)
             .find_by_origin_id(entity.author_channel_origin_id)
 
@@ -138,7 +138,7 @@ module UFeeling
           author
         end
 
-        Async def self.sentiment_from_name(entity)
+        def self.sentiment_from_name(entity)
           sentiment = UFeeling::Videos::Repository::For.klass(UFeeling::Videos::Entity::Sentiment)
             .find_title(entity.sentiment.sentiment_name)
 
