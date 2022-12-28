@@ -18,8 +18,8 @@ module UFeeling
       property :origin_id
       property :text_original
       property :total_reply_count
-      property :sentiment, extend: Representer::SentimentRepresenter, class: OpenStruct
-      # property :published_info, extend: Representer::PublishedInfoRepresenter
+      property :sentiment, extend: Representer::SentimentRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
+      property :published_info, extend: Representer::PublishedInfoRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
 
       link :self do
         "#{App.config.API_HOST}/api/v1/videos/#{video_origin_id}/comments"
