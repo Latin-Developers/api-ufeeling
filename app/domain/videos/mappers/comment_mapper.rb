@@ -14,41 +14,16 @@ module UFeeling
           @gateway = @gateway_class.new(@token)
         end
 
-        def comments(video_id, progress_reporter = nil)
-          comments_data = comments_from_api(video_id, true, progress_reporter)
-          counter = 0
+        def comments(video_id, current_page_token = '')
+          comments_data = @gateway.comments(video_id, current_page_token)
 
-          comments_data[:items].map do |data|
+          comments = comments_data[:items].map do |data|
             Concurrent::Promise.execute do
-              comment = ApiComment.build_entity(data)
-              counter += 1
-              progress_reporter&.call('ANALIZE', counter) if (counter % 100).zero?
-              comment
+              ApiComment.build_entity(data)
             end
           end.map(&:value)
-        end
 
-        def comments_from_api(video_id, first_call, progress_reporter = nil, current_page_token = '', counter = 0)
-          return { items: [] } unless (first_call || current_page_token) && counter < page_limit
-
-          comments_data = @gateway.comments(video_id, current_page_token)
-          progress_reporter&.call('YOUTUBE', (counter + 1) * 100)
-          next_page_comments = comments_from_api(video_id, false, progress_reporter, comments_data[:next_page_token],
-                                                 counter + 1)
-          comments_data[:items].concat next_page_comments[:items]
-          comments_data
-        end
-
-        def page_limit
-          App.configure :development do
-            return 10
-          end
-
-          App.configure :testing do
-            return 10
-          end
-
-          1000
+          { comments:, next_page_token: comments_data[:next_page_token] }
         end
 
         def self.build_entity(data)
