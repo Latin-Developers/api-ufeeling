@@ -4,14 +4,10 @@ module GetComments
   # Infrastructure to clone while yielding progress
   module GetCommentsMonitor
     CLONE_PROGRESS = {
-      'STARTED'         => 5,
-      'YOUTUBE_START'   => 10,
-      'YOUTUBE_FINISH'  => 40,
-      'ANALIZE_START'   => 40,
-      'ANALIZE_FINISH'  => 60,
-      'DATABASE_START'  => 60,
-      'DATABASE_FINISH' => 90,
-      'FINISHED'        => 100
+      'STARTED'        => 5,
+      'YOUTUBE_START'  => 10,
+      'YOUTUBE_FINISH' => 90,
+      'FINISHED'       => 100
     }.freeze
 
     def self.starting_percent

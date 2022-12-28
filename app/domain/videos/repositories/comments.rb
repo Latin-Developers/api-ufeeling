@@ -72,13 +72,9 @@ module UFeeling
           end
         end
 
-        def self.find_or_create_many(entities, progress_reporter = nil)
-          counter = 0
-          progress_reporter&.call('DATABASE', 0)
+        def self.find_or_create_many(entities)
           entities.each do |entity|
-            counter += 1
             find_or_create(entity)
-            progress_reporter&.call('DATABASE', counter) if (counter % 100).zero?
           end
         end
 

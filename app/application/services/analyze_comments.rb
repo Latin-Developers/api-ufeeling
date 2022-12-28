@@ -9,8 +9,7 @@ module UFeeling
     class AnalyzeComments
       include Dry::Transaction
 
-      step :get_comments_from_youtube
-      step :save_comments_in_db
+      step :obtain_analize_comments
       step :update_video_status
 
       private
@@ -19,22 +18,32 @@ module UFeeling
       YT_COMMENTS_ERROR = 'Having trouble getting comments from youtube'
       VIDEO_DB_ERR_MSG = 'Having trouble updating video in the database'
 
-      def get_comments_from_youtube(input)
-        input[:comments] = UFeeling::Videos::Mappers::ApiComment
-          .new(UFeeling::App.config.YOUTUBE_API_KEY)
-          .comments(input[:video_id], input[:lambda])
+      def obtain_analize_comments(input)
+        obtain_comments(input, true)
         Success(input)
       rescue StandardError
         Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
-      def save_comments_in_db(input)
+      def obtain_comments(input, first_call, current_page_token = '', counter = 0)
+        input[:lambda]&.call('YOUTUBE', counter)
+        return unless (first_call || current_page_token) && counter < 300
+
+        comments_response = comments_from_youtube(input, current_page_token)
+        save_comments_db(comments_response[:comments])
+        obtain_comments(input, false, comments_response[:next_page_token], counter + comments_response[:comments].size)
+      end
+
+      def comments_from_youtube(input, current_page_token)
+        UFeeling::Videos::Mappers::ApiComment
+          .new(UFeeling::App.config.YOUTUBE_API_KEY)
+          .comments(input[:video_id], current_page_token)
+      end
+
+      def save_comments_db(comments)
         UFeeling::Videos::Repository::For
           .klass(UFeeling::Videos::Entity::Comment)
-          .find_or_create_many(input[:comments], input[:lambda])
-        Success(input)
-      rescue StandardError
-        Failure(Response::ApiResult.new(status: :internal_error, message: COMMENTS_DB_ERR_MSG))
+          .find_or_create_many(comments)
       end
 
       def update_video_status(input)
