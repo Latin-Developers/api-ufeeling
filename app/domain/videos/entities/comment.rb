@@ -34,6 +34,14 @@ module UFeeling
             .merge(published_info.to_attr_hash)
             .merge(sentiment.to_attr_hash)
         end
+
+        def confidence
+          sentiment.sentiment_score
+        end
+
+        def sentiment_name
+          sentiment.sentiment_name
+        end
       end
     end
   end
