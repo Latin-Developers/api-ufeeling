@@ -14,11 +14,11 @@ module UFeeling
           videos = if video_ids.size.zero? && categories.size.zero?
                      Database::VideoOrm.all
                    elsif video_ids.size.zero?
-                     Database::VideoOrm.where(category: categories)
+                     Database::VideoOrm.where(origin_category_id: categories)
                    elsif categories.size.zero?
                      Database::VideoOrm.where(origin_id: video_ids)
                    else
-                     Database::VideoOrm.where(origin_id: video_ids, category: categories)
+                     Database::VideoOrm.where(origin_id: video_ids, origin_category_id: categories)
                    end
 
           videos.map { |video| rebuild_entity video }
