@@ -44,7 +44,8 @@ module UFeeling
             total_reply_count: db_record.total_reply_count,
             sentiment: sentiment(db_record),
             published_info: published_info(db_record),
-            comment_replies: []
+            comment_replies: [],
+            author: db_record.author
           )
         end
         # rubocop:enable Metrics/MethodLength

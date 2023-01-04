@@ -51,7 +51,8 @@ module UFeeling
               like_count:,
               total_reply_count:,
               published_info:,
-              comment_replies:
+              comment_replies:,
+              author: nil
             )
           end
           # rubocop:enable Metrics/MethodLength

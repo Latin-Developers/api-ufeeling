@@ -24,9 +24,10 @@ module UFeeling
         attribute :comment_count,           Integer.optional
         attribute :duration,                String.optional
         attribute :tags,                    String.optional
+        attribute :author,                  Author.optional
 
         def to_attr_hash
-          to_hash.except(:id)
+          to_hash.except(:id, :author)
         end
 
         def processing?

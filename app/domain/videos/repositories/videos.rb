@@ -56,7 +56,8 @@ module UFeeling
             comment_count: db_record.comment_count,
             thumbnail_url: db_record.thumbnail_url,
             duration: db_record.duration,
-            tags: db_record.tags
+            tags: db_record.tags,
+            author: db_record.author
           )
         end
         # rubocop:enable Metrics/MethodLength
