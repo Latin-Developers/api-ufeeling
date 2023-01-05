@@ -142,6 +142,19 @@ module UFeeling
                 response.status = http_response.http_status_code
                 Representer::CommentsList.new(result.value!.message).to_json
               end
+
+              routing.post do
+                result = Services::AnalyzeComments.new.call(video_id: video_origin_id, lambda: nil)
+
+                if result.failure?
+                  failed = Representer::HttpResponse.new(result.failure)
+                  routing.halt failed.http_status_code, failed.to_json
+                end
+
+                http_response = Representer::HttpResponse.new(result.value!)
+                response.status = http_response.http_status_code
+                Representer::Video.new(result.value!.message).to_json
+              end
             end
 
             # [...] /videos/:video_origin_id/sentiments
