@@ -51,6 +51,9 @@ module UFeeling
               like_count:,
               total_reply_count:,
               published_info:,
+              language_name:,
+              language_code:,
+              language_reliable:,
               comment_replies:
             )
           end
@@ -144,6 +147,15 @@ module UFeeling
 
           def author_channel_origin_id
             top_level_comment_snippet['authorChannelId']['value'] || {}
+          end
+
+          def language_name
+            analysis = CLD.detect_language(text_display)
+            UFeeling::Videos::Values::LanguageDetection.new(
+              language_name: analysis.values[0],
+              language_code: analysis.values[1],
+              language_reliable: analysis.values[2]
+            )
           end
         end
       end

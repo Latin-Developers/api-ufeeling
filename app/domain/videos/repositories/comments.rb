@@ -44,6 +44,9 @@ module UFeeling
             total_reply_count: db_record.total_reply_count,
             sentiment: sentiment(db_record),
             published_info: published_info(db_record),
+            language_name: language_name(db_record),
+            language_code: language_code(db_record),
+            language_reliable: language_reliable(db_record),
             comment_replies: []
           )
         end

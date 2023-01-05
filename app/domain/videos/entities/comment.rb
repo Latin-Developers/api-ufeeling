@@ -23,6 +23,10 @@ module UFeeling
         attribute :text_original,             Strict::String
         attribute :like_count,                Strict::Integer
         attribute :total_reply_count,         Strict::Integer
+        # attribute :language,                  UFeeling::Videos::Values::Language
+        attribute :language_name,             Strict::String
+        attribute :language_code,             Strict::String
+        attribute :language_reliable,         Strict::Bool
         attribute :published_info,            UFeeling::Videos::Values::PublishedInfo
         attribute :sentiment,                 UFeeling::Videos::Values::SentimentalScore
 
@@ -30,9 +34,10 @@ module UFeeling
         attribute :comment_replies,           Array.of(Comment)
 
         def to_attr_hash
-          to_hash.except(:id, :published_info, :comment_replies, :sentiment)
+          to_hash.except(:id, :published_info, :comment_replies, :sentiment, :language)
             .merge(published_info.to_attr_hash)
             .merge(sentiment.to_attr_hash)
+          #  .merge(language.to_attr_hash)
         end
       end
     end
