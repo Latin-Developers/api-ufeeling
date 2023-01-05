@@ -41,7 +41,7 @@ module UFeeling
               origin_id:,
               origin_category_id:,
               origin_author_id:,
-              published_at:,
+              published_info:,
               title:,
               description:,
               thumbnail_url:,
@@ -57,6 +57,27 @@ module UFeeling
 
           def origin_id
             @data['id']
+          end
+
+          def published_info
+            UFeeling::Videos::Values::PublishedInfo.new(
+              published_at:,
+              year:,
+              month:,
+              day:
+            )
+          end
+
+          def year
+            published_at.year
+          end
+
+          def month
+            published_at.month
+          end
+
+          def day
+            published_at.day
           end
 
           def published_at

@@ -78,7 +78,6 @@ module UFeeling
               # video_origin_id = id of the video in youtube
               routing.post do
                 result = Services::AddVideo.new.call(video_id: video_origin_id)
-
                 if result.failure?
                   failed = Representer::HttpResponse.new(result.failure)
                   routing.halt failed.http_status_code, failed.to_json

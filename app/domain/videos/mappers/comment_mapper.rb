@@ -3,6 +3,7 @@
 require 'cld'
 require 'concurrent'
 require 'vader_sentiment_ruby'
+require 'aws-sdk-comprehend'
 
 module UFeeling
   module Videos

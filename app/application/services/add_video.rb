@@ -59,13 +59,13 @@ module UFeeling
 
       def add_video_to_db(input)
         # Add video to database
-        video = if (new_video = input[:remote_video])
-                  new_video = fill_foreign_keys(new_video, input[:category], input[:author])
-                  Videos::Repository::For.klass(Videos::Entity::Video).find_or_create(new_video)
-                else
-                  input[:local_video]
-                end
-        Success(Response::ApiResult.new(status: :created, message: video))
+        if (new_video = input[:remote_video])
+          new_video = fill_foreign_keys(new_video, input[:category], input[:author])
+          Videos::Repository::For.klass(Videos::Entity::Video).find_or_create(new_video)
+        else
+          input[:local_video]
+        end
+        Success(Response::ApiResult.new(status: :created, message: video_in_database(input)))
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))

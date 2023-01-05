@@ -49,6 +49,7 @@ gem 'async'
 gem 'concurrent-ruby', '~> 1.1'
 
 # WORKER
+gem 'aws-sdk-comprehend'
 gem 'aws-sdk-sqs', '~> 1.48'
 gem 'faye', '~> 1.4'
 gem 'nokogiri'

@@ -12,6 +12,9 @@ Sequel.migration do
       String      :origin_category_id # Check if we need it
       String      :origin_author_id # Check if we need it
       DateTime    :published_at
+      Integer     :day
+      Integer     :month
+      Integer     :year
       String      :title
       String      :description
       String      :status
