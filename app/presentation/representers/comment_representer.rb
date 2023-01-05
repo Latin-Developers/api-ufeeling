@@ -4,6 +4,8 @@ require 'roar/decorator'
 require 'roar/json'
 
 require_relative 'sentiment_representer'
+require_relative 'author_representer'
+require_relative 'language_representer'
 require_relative 'published_info_representer'
 
 # Represents essential Repo information for API output
@@ -21,6 +23,7 @@ module UFeeling
       property :sentiment, extend: Representer::SentimentRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
       property :published_info, extend: Representer::PublishedInfoRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
       property :author, extend: Representer::AuthorRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
+      property :language, extend: Representer::LanguageRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
 
       link :self do
         "#{App.config.API_HOST}/api/v1/videos/#{video_origin_id}/comments"
