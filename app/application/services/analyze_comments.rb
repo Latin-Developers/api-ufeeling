@@ -31,7 +31,6 @@ module UFeeling
         return unless (first_call || current_page_token) && counter < 300
 
         comments_response = comments_from_youtube(input, current_page_token)
-        binding.pry
         save_comments_db(comments_response[:comments])
         obtain_comments(input, false, comments_response[:next_page_token], counter + comments_response[:comments].size)
       end
