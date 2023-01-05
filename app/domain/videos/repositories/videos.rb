@@ -14,11 +14,11 @@ module UFeeling
           videos = if video_ids.size.zero? && categories.size.zero?
                      Database::VideoOrm.all
                    elsif video_ids.size.zero?
-                     Database::VideoOrm.where(category: categories)
+                     Database::VideoOrm.where(origin_category_id: categories)
                    elsif categories.size.zero?
                      Database::VideoOrm.where(origin_id: video_ids)
                    else
-                     Database::VideoOrm.where(origin_id: video_ids, category: categories)
+                     Database::VideoOrm.where(origin_id: video_ids, origin_category_id: categories)
                    end
 
           videos.map { |video| rebuild_entity video }
@@ -56,7 +56,8 @@ module UFeeling
             comment_count: db_record.comment_count,
             thumbnail_url: db_record.thumbnail_url,
             duration: db_record.duration,
-            tags: db_record.tags
+            tags: db_record.tags,
+            author: db_record.author
           )
         end
         # rubocop:enable Metrics/MethodLength

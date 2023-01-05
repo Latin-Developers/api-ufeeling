@@ -47,7 +47,8 @@ module UFeeling
               thumbnail_url:,
               comment_count:,
               duration:,
-              tags: nil
+              tags: nil,
+              author: nil
             )
           end
           # rubocop:enable Metrics/MethodLength

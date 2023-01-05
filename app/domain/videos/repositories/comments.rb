@@ -47,7 +47,8 @@ module UFeeling
             language_name: language_name(db_record),
             language_code: language_code(db_record),
             language_reliable: language_reliable(db_record),
-            comment_replies: []
+            comment_replies: [],
+            author: db_record.author
           )
         end
         # rubocop:enable Metrics/MethodLength

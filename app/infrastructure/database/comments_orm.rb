@@ -10,7 +10,8 @@ module UFeeling
                   class: :'UFeeling::Database::VideoOrm'
 
       many_to_one :author,
-                  class: :'UFeeling::Database::AuthorOrm'
+                  class: :'UFeeling::Database::AuthorOrm',
+                  key: :author_channel_id
 
       many_to_one :sentiment,
                   class: :'UFeeling::Database::SentimentOrm'

@@ -17,6 +17,7 @@ module UFeeling
       property :description
       property :thumbnail_url
       property :comment_count
+      property :author, extend: Representer::AuthorRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
 
       link :self do
         "#{App.config.API_HOST}/api/v1/videos/#{video_origin_id}"

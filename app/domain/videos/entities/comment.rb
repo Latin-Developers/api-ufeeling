@@ -29,15 +29,22 @@ module UFeeling
         attribute :language_reliable,         Strict::Bool
         attribute :published_info,            UFeeling::Videos::Values::PublishedInfo
         attribute :sentiment,                 UFeeling::Videos::Values::SentimentalScore
-
-        # TODO: Move into a CommentReplies class
-        attribute :comment_replies,           Array.of(Comment)
+        attribute :author,                    Author.optionals
+        attribute :comment_replies,           Array.of(Comment).optional
 
         def to_attr_hash
-          to_hash.except(:id, :published_info, :comment_replies, :sentiment, :language)
+          to_hash.except(:id, :published_info, :comment_replies, :sentiment, :language, :author)
             .merge(published_info.to_attr_hash)
             .merge(sentiment.to_attr_hash)
           #  .merge(language.to_attr_hash)
+        end
+
+        def confidence
+          sentiment.sentiment_score
+        end
+
+        def sentiment_name
+          sentiment.sentiment_name
         end
       end
     end

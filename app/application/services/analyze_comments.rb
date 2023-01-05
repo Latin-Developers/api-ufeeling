@@ -21,7 +21,8 @@ module UFeeling
       def obtain_analize_comments(input)
         obtain_comments(input, true)
         Success(input)
-      rescue StandardError
+      rescue StandardError => e
+        puts "Error obtaining comments: #{e}"
         Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
@@ -54,7 +55,8 @@ module UFeeling
           .update(video)
 
         Success(Response::ApiResult.new(status: :ok, message: video))
-      rescue StandardError
+      rescue StandardError => e
+        puts "Error executing worker: #{e}"
         Failure(Response::ApiResult.new(status: :internal_error, message: VIDEO_DB_ERR_MSG))
       end
 

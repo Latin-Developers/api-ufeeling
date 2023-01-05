@@ -54,7 +54,8 @@ module UFeeling
               language_name:,
               language_code:,
               language_reliable:,
-              comment_replies:
+              comment_replies:,
+              author: nil
             )
           end
           # rubocop:enable Metrics/MethodLength
