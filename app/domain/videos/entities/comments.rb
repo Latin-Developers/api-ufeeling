@@ -30,8 +30,14 @@ module UFeeling
           end
         end
 
-        def group_weighted
-          weight_total_likes.group_by(&:sentiment_name)
+        def group_sentiments
+          group = weight_total_likes.group_by { |sentiment| sentiment[:sentiment_name] }
+          group.map do |key, value|
+            total_replies = value.sum { |v| v[:reply_count] }
+            count_sentiment = value.size
+            total_weighted = value.sum { |v| v[:value] }
+            { sentiment: key, total_replies:, count_sentiment:, total_weighted: }
+          end
         end
       end
     end
