@@ -29,7 +29,7 @@ module UFeeling
         attribute :language_reliable,         Strict::Bool
         attribute :published_info,            UFeeling::Videos::Values::PublishedInfo
         attribute :sentiment,                 UFeeling::Videos::Values::SentimentalScore
-        attribute :author,                    Author.optionals
+        attribute :author,                    Author.optional
         attribute :comment_replies,           Array.of(Comment).optional
 
         def to_attr_hash
