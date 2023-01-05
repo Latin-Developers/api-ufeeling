@@ -21,7 +21,8 @@ module UFeeling
       def obtain_analize_comments(input)
         obtain_comments(input, true)
         Success(input)
-      rescue StandardError
+      rescue StandardError => e
+        puts "Error obtaining comments: #{e}"
         Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
@@ -30,6 +31,7 @@ module UFeeling
         return unless (first_call || current_page_token) && counter < 300
 
         comments_response = comments_from_youtube(input, current_page_token)
+        binding.pry
         save_comments_db(comments_response[:comments])
         obtain_comments(input, false, comments_response[:next_page_token], counter + comments_response[:comments].size)
       end
@@ -54,7 +56,8 @@ module UFeeling
           .update(video)
 
         Success(Response::ApiResult.new(status: :ok, message: video))
-      rescue StandardError
+      rescue StandardError => e
+        puts "Error executing worker: #{e}"
         Failure(Response::ApiResult.new(status: :internal_error, message: VIDEO_DB_ERR_MSG))
       end
 
