@@ -21,14 +21,14 @@ module UFeeling
       def obtain_analize_comments(input)
         obtain_comments(input, true)
         Success(input)
-      rescue StandardError => e
-        puts "Error obtaining comments: #{e}"
-        Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
+        # rescue StandardError => e
+        #   puts "Error obtaining comments: #{e}"
+        # Failure(Response::ApiResult.new(status: :internal_error, message: YT_COMMENTS_ERROR))
       end
 
       def obtain_comments(input, first_call, current_page_token = '', counter = 0)
         input[:lambda]&.call('YOUTUBE', counter)
-        return unless (first_call || current_page_token) && counter < 300
+        return unless (first_call || current_page_token) && counter < 100
 
         comments_response = comments_from_youtube(input, current_page_token)
         save_comments_db(comments_response[:comments])

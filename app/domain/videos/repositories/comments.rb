@@ -44,9 +44,7 @@ module UFeeling
             total_reply_count: db_record.total_reply_count,
             sentiment: sentiment(db_record),
             published_info: published_info(db_record),
-            language_name: language_name(db_record),
-            language_code: language_code(db_record),
-            language_reliable: language_reliable(db_record),
+            language: language(db_record),
             comment_replies: [],
             author: db_record.author
           )
@@ -70,6 +68,14 @@ module UFeeling
           )
         end
 
+        def self.language(db_record)
+          Values::Language.new(
+            language_name: db_record.language_name,
+            language_code: db_record.language_code,
+            language_reliable: db_record.language_reliable
+          )
+        end
+
         def self.rebuild_many(db_records)
           db_records.map do |db_member|
             Comments.rebuild_entity(db_member)
@@ -84,6 +90,7 @@ module UFeeling
 
         def self.find_or_create(entity)
           entity = fill_reference_ids(entity)
+          binding.pry
           Database::CommentsOrm.find_or_create(entity.to_attr_hash)
         end
 
