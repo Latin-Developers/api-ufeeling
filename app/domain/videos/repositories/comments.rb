@@ -93,17 +93,6 @@ module UFeeling
           Database::CommentsOrm.find_or_create(entity.to_attr_hash)
         end
 
-        def self.update_or_create(entity)
-          entity = fill_reference_ids(entity)
-          if find_by_origin_id(entity.origin_id)
-            Database::CommentsOrm.where(origin_id: entity.origin_id).update(entity.to_attr_hash)
-          else
-            Database::CommentsOrm.find_or_create(entity.to_attr_hash)
-          end
-
-          find_by_origin_id(entity.origin_id)
-        end
-
         def self.fill_reference_ids(entity)
           video_task = video_from_origin_id(entity)
           author_task = author_from_origin_id(entity)

@@ -3,6 +3,8 @@
 require 'dry-types'
 require 'dry-struct'
 
+require_relative '../values/publish_info'
+
 module UFeeling
   module Videos
     module Entity
@@ -16,7 +18,7 @@ module UFeeling
         attribute :origin_id,               Strict::String
         attribute :origin_category_id,      Strict::String
         attribute :origin_author_id,        Strict::String
-        attribute :published_at,            Strict::Time
+        attribute :published_info,          UFeeling::Videos::Values::PublishedInfo
         attribute :title,                   Strict::String
         attribute :description,             Strict::String
         attribute :thumbnail_url,           String.optional
@@ -27,7 +29,8 @@ module UFeeling
         attribute :author,                  Author.optional
 
         def to_attr_hash
-          to_hash.except(:id, :author)
+          to_hash.except(:id, :author, :published_info)
+            .merge(published_info.to_attr_hash)
         end
 
         def processing?
