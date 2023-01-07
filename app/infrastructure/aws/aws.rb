@@ -17,6 +17,12 @@ module UFeeling
                                 })
       end
 
+      def detect_language(text)
+        client.detect_dominant_language({
+                                          text:
+                                        })
+      end
+
       private
 
       def client

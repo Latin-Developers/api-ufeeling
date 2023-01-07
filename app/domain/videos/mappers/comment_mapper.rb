@@ -52,7 +52,7 @@ module UFeeling
               like_count:,
               total_reply_count:,
               published_info:,
-              language:,
+              language: nil,
               comment_replies:,
               author: nil
             )
@@ -115,36 +115,6 @@ module UFeeling
               sentiment_name: score[0].to_s,
               sentiment_score: score[1]
             )
-          end
-
-          def language
-            client = Aws::Comprehend::Client.new(
-              region: App.config.AWS_REGION,
-              access_key_id: App.config.AWS_ACCESS_KEY_ID,
-              secret_access_key: App.config.AWS_SECRET_ACCESS_KEY
-            )
-            analysis = client.detect_dominant_language({
-                                                         text: text_display
-                                                       })
-            UFeeling::Videos::Values::Language.new(
-              language_code: analysis[0][0].values[0],
-              language_confidence: analysis[0][0].values[1],
-              language_name: language_name_by_code(analysis[0][0].values[0])
-            )
-          rescue StandardError => e
-            puts "Error Evaluating Language: #{e}"
-            UFeeling::Videos::Values::Language.new(
-              language_code: 'en',
-              language_confidence: 0.0,
-              language_name: 'English'
-            )
-          end
-
-          def language_name_by_code(language_code)
-            languages = YAML.safe_load_file('./language_names.yml')
-            languages.find { |l| l['code'] == language_code }['language']
-          rescue StandardError => e
-            puts "Error Evaluating Language: #{e}"
           end
 
           def language_old
