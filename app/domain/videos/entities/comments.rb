@@ -13,6 +13,9 @@ module UFeeling
       class Comments
         attr_reader :comments
 
+        LIKE_WEIGHT = 0.2
+        COMMENT_WEIGHT = 0.8
+
         def initialize(comments:)
           @comments = comments
         end
@@ -37,6 +40,19 @@ module UFeeling
             count_sentiment = value.size
             total_weighted = value.sum { |v| v[:value] }
             { sentiment: key, total_replies:, count_sentiment:, total_weighted: }
+          end
+        end
+
+        def final_score
+          total_replies = group_sentiments.sum { |sentiment| sentiment[:total_replies] }
+          total_count_sentiment = group_sentiments.sum { |sentiment| sentiment[:count_sentiment] }
+
+          group_sentiments.map do |value|
+            replies_weight = value[:total_replies] * LIKE_WEIGHT / total_replies
+            count_weight = value[:count_sentiment] * COMMENT_WEIGHT / total_count_sentiment
+            final_score = (replies_weight + count_weight).round(2)
+            sentiment = value[:sentiment]
+            { sentiment:, final_score: }
           end
         end
       end
