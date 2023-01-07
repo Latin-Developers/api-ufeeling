@@ -30,6 +30,7 @@ gem 'redis-rack-cache', '~> 2.2'
 
 # DOMAIN LAYER
 # Validation
+gem 'cld', '~> 0.11.0'
 gem 'dry-struct', '~> 1'
 gem 'dry-types', '~> 1'
 gem 'vader_sentiment_ruby'
@@ -48,6 +49,7 @@ gem 'async'
 gem 'concurrent-ruby', '~> 1.1'
 
 # WORKER
+gem 'aws-sdk-comprehend'
 gem 'aws-sdk-sqs', '~> 1.48'
 gem 'faye', '~> 1.4'
 gem 'nokogiri'

@@ -49,7 +49,7 @@ module UFeeling
             origin_id: db_record.origin_id,
             origin_category_id: db_record.origin_category_id,
             origin_author_id: db_record.origin_author_id,
-            published_at: db_record.published_at,
+            published_info: published_info(db_record),
             title: db_record.title,
             description: db_record.description,
             status: db_record.status,
@@ -61,6 +61,15 @@ module UFeeling
           )
         end
         # rubocop:enable Metrics/MethodLength
+
+        def self.published_info(db_record)
+          Values::PublishedInfo.new(
+            published_at: db_record.published_at,
+            day: db_record.day,
+            month: db_record.month,
+            year: db_record.year
+          )
+        end
 
         def self.rebuild_many(db_records)
           db_records.map do |db_member|

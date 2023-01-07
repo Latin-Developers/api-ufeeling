@@ -62,6 +62,7 @@ module UFeeling
         video = if (new_video = input[:remote_video])
                   new_video = fill_foreign_keys(new_video, input[:category], input[:author])
                   Videos::Repository::For.klass(Videos::Entity::Video).find_or_create(new_video)
+                  video_in_database(input)
                 else
                   input[:local_video]
                 end

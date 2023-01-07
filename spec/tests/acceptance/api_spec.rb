@@ -120,7 +120,6 @@ describe 'Test API routes' do
       _(last_response.status).must_equal 200
 
       comments = JSON.parse last_response.body
-
       _(comments['comments'].size).must_be :>, 0
     end
   end

@@ -2,7 +2,7 @@
 
 require 'dry-types'
 require 'dry-struct'
-
+require_relative '../values/language'
 require_relative '../values/publish_info'
 require_relative '../values/sentimental_score'
 
@@ -23,15 +23,17 @@ module UFeeling
         attribute :text_original,             Strict::String
         attribute :like_count,                Strict::Integer
         attribute :total_reply_count,         Strict::Integer
+        attribute :language,                  UFeeling::Videos::Values::Language.optional
         attribute :published_info,            UFeeling::Videos::Values::PublishedInfo
-        attribute :sentiment,                 UFeeling::Videos::Values::SentimentalScore
+        attribute :sentiment,                 UFeeling::Videos::Values::SentimentalScore.optional
         attribute :author,                    Author.optional
         attribute :comment_replies,           Array.of(Comment).optional
 
         def to_attr_hash
-          to_hash.except(:id, :published_info, :comment_replies, :sentiment, :author)
+          to_hash.except(:id, :published_info, :comment_replies, :sentiment, :language, :author)
             .merge(published_info.to_attr_hash)
             .merge(sentiment.to_attr_hash)
+            .merge(language.to_attr_hash)
         end
 
         def confidence

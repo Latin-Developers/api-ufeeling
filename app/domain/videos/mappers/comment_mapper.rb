@@ -1,7 +1,10 @@
 # frozen_string_literal: false
 
+require 'cld'
 require 'concurrent'
 require 'vader_sentiment_ruby'
+require 'aws-sdk-comprehend'
+require 'yaml'
 
 module UFeeling
   module Videos
@@ -16,13 +19,11 @@ module UFeeling
 
         def comments(video_id, current_page_token = '')
           comments_data = @gateway.comments(video_id, current_page_token)
-
           comments = comments_data[:items].map do |data|
-            Concurrent::Promise.execute do
-              ApiComment.build_entity(data)
-            end
-          end.map(&:value)
-
+            #   Concurrent::Promise.execute do
+            ApiComment.build_entity(data)
+          end
+          # end.map(&:value)
           { comments:, next_page_token: comments_data[:next_page_token] }
         end
 
@@ -42,7 +43,7 @@ module UFeeling
               id: nil,
               video_id: nil,
               author_channel_id: nil,
-              sentiment:,
+              sentiment: nil,
               origin_id:,
               video_origin_id:,
               author_channel_origin_id:,
@@ -51,6 +52,7 @@ module UFeeling
               like_count:,
               total_reply_count:,
               published_info:,
+              language:,
               comment_replies:,
               author: nil
             )
@@ -104,7 +106,7 @@ module UFeeling
             published_at.day
           end
 
-          def sentiment
+          def sentiment_old
             analysis = VaderSentimentRuby.polarity_scores(text_display)
             analysis.delete(:compound)
             score = analysis.max_by { |_k, v| v }
@@ -112,6 +114,53 @@ module UFeeling
               sentiment_id: nil,
               sentiment_name: score[0].to_s,
               sentiment_score: score[1]
+            )
+          end
+
+          def language
+            client = Aws::Comprehend::Client.new(
+              region: App.config.AWS_REGION,
+              access_key_id: App.config.AWS_ACCESS_KEY_ID,
+              secret_access_key: App.config.AWS_SECRET_ACCESS_KEY
+            )
+            analysis = client.detect_dominant_language({
+                                                         text: text_display
+                                                       })
+            UFeeling::Videos::Values::Language.new(
+              language_code: analysis[0][0].values[0],
+              language_confidence: analysis[0][0].values[1],
+              language_name: language_name_by_code(analysis[0][0].values[0])
+            )
+          rescue StandardError => e
+            puts "Error Evaluating Language: #{e}"
+            UFeeling::Videos::Values::Language.new(
+              language_code: 'en',
+              language_confidence: 0.0,
+              language_name: 'English'
+            )
+          end
+
+          def language_name_by_code(language_code)
+            languages = YAML.safe_load_file('./language_names.yml')
+            languages.find { |l| l['code'] == language_code }['language']
+          rescue StandardError => e
+            puts "Error Evaluating Language: #{e}"
+          end
+
+          def language_old
+            analysis = CLD.detect_language(text_display)
+            language_name = analysis.values[0]
+
+            case language_name
+            when 'Chinese'
+              language_name = 'Simplified Chinese'
+            when 'ChineseT'
+              language_name = 'Traditional Chinese'
+            end
+            UFeeling::Videos::Values::Language.new(
+              language_name:,
+              language_code: analysis.values[1],
+              language_confidence: analysis.values[2]
             )
           end
 

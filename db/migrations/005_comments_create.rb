@@ -18,9 +18,12 @@ Sequel.migration do
       Integer     :like_count
       Integer     :total_reply_count
       DateTime    :published_at
-      Integer      :day
-      Integer      :month
-      Integer      :year
+      Integer     :day
+      Integer     :month
+      Integer     :year
+      String      :language_name
+      String      :language_code
+      Float       :language_confidence
       DateTime    :created_at
       DateTime    :updated_at
     end
