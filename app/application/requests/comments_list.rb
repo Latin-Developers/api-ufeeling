@@ -16,7 +16,7 @@ module UFeeling
 
       # Use in API to parse incoming list requests
       def call
-        sentiment_id = JSON.parse(decode(@params['sentiment_id']) || '[]')
+        sentiment_id = JSON.parse(decode(@params['sentiment_id']) || 'null')
         Success(sentiment_id:)
       rescue StandardError
         Failure(
