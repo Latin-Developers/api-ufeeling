@@ -12,7 +12,7 @@ module UFeeling
 
         attribute :language_name,           Strict::String
         attribute :language_code,           Strict::String
-        attribute :language_reliable,       Strict::Bool
+        attribute :language_confidence,     Strict::Float
 
         def to_attr_hash
           to_hash

@@ -12,7 +12,7 @@ module UFeeling
 
       property :language_name
       property :language_code
-      property :language_reliable
+      property :language_confidence
     end
   end
 end

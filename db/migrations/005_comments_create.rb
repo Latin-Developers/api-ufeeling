@@ -23,7 +23,7 @@ Sequel.migration do
       Integer     :year
       String      :language_name
       String      :language_code
-      Boolean     :language_reliable
+      Float       :language_confidence
       DateTime    :created_at
       DateTime    :updated_at
     end

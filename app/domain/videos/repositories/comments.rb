@@ -72,7 +72,7 @@ module UFeeling
           Values::Language.new(
             language_name: db_record.language_name,
             language_code: db_record.language_code,
-            language_reliable: db_record.language_reliable
+            language_confidence: db_record.language_confidence
           )
         end
 
