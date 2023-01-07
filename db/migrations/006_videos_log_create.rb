@@ -13,9 +13,9 @@ Sequel.migration do
       Integer     :favorite_count
       Integer     :comment_count
       DateTime    :date_info
-      Integer      :day
-      Integer      :month
-      Integer      :year
+      Integer     :day
+      Integer     :month
+      Integer     :year
       Float       :sentiment_score
       DateTime    :created_at
       DateTime    :updated_at
