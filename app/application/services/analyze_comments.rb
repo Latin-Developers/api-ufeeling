@@ -39,6 +39,16 @@ module UFeeling
         obtain_comments(input, false, comments_response[:next_page_token], counter + comments_with_sentiment.size)
       end
 
+      def counter_limit
+        App.configure :production do
+          return 500
+        end
+
+        App.configure :production do
+          return 50
+        end
+      end
+
       def detect_language(comments)
         comments.map do |comment|
           language = UFeeling::Videos::Mappers::AWSLanguage
