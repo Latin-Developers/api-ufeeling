@@ -10,6 +10,10 @@ module UFeeling
                   class: :'UFeeling::Database::CommentsOrm',
                   key: :sentiment_id
 
+      one_to_many :videos,
+                  class: :'UFeeling::Database::VideoOrmOrm',
+                  key: :sentiment_id
+
       one_to_many :logs,
                   class: :'UFeeling::Database::VideoLogOrm',
                   key: :sentiment_id

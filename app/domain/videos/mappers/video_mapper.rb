@@ -42,6 +42,7 @@ module UFeeling
               origin_category_id:,
               origin_author_id:,
               published_info:,
+              sentiment:,
               title:,
               description:,
               thumbnail_url:,
@@ -57,6 +58,14 @@ module UFeeling
 
           def origin_id
             @data['id']
+          end
+
+          def sentiment
+            UFeeling::Videos::Values::SentimentalScore.new(
+              sentiment_id: nil,
+              sentiment_name: nil,
+              sentiment_score: nil
+            )
           end
 
           def published_info

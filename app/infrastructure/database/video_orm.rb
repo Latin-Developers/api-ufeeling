@@ -20,6 +20,9 @@ module UFeeling
                   class: :'UFeeling::Database::VideoLogOrm',
                   key: :video_id
 
+      many_to_one :sentiment,
+                  class: :'UFeeling::Database::SentimentOrm'
+
       plugin :association_dependencies, logs: :destroy
       plugin :timestamps, update_on_create: true
 
