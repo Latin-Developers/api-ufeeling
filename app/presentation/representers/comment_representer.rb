@@ -3,7 +3,7 @@
 require 'roar/decorator'
 require 'roar/json'
 
-require_relative 'sentiment_representer'
+require_relative 'sentiment_info_representer'
 require_relative 'author_representer'
 require_relative 'language_representer'
 require_relative 'published_info_representer'
@@ -20,8 +20,8 @@ module UFeeling
       property :origin_id
       property :text_original
       property :total_reply_count
-      property :sentiment, extend: Representer::SentimentRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
-      property :published_info, extend: Representer::PublishedInfoRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
+      property :sentiment, extend: Representer::SentimentInfo, class: OpenStruct # rubocop:disable Style/OpenStructUse
+      property :published_info, extend: Representer::PublishedInfo, class: OpenStruct # rubocop:disable Style/OpenStructUse
       property :author, extend: Representer::AuthorRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
       property :language, extend: Representer::LanguageRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
 

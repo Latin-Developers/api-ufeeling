@@ -7,7 +7,7 @@ require 'roar/json'
 module UFeeling
   module Representer
     # Represent a Video entity as Json
-    class PublishedInfoRepresenter < Roar::Decorator
+    class PublishedInfo < Roar::Decorator
       include Roar::JSON
 
       property :year

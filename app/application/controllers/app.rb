@@ -44,6 +44,23 @@ module UFeeling
           end
         end
 
+        # [...] /sentiments
+        routing.on 'sentiments' do
+          # [GET] /sentiments
+          routing.get do
+            result = Services::GetSentiments.new.call
+
+            if result.failure?
+              failed = Representer::HttpResponse.new(result.failure)
+              routing.halt failed.http_status_code, failed.to_json
+            end
+
+            http_response = Representer::HttpResponse.new(result.value!)
+            response.status = http_response.http_status_code
+            Representer::SentimentsList.new(result.value!.message).to_json
+          end
+        end
+
         # [...] /videos/
         routing.on 'videos' do
           routing.is do
@@ -131,6 +148,8 @@ module UFeeling
                 App.configure :production do
                   response.cache_control public: true, max_age: 300
                 end
+
+                filters = Request::EncodedVideoList.new(routing.params)
                 result = Services::GetComments.new.call(video_id: video_origin_id)
 
                 if result.failure?

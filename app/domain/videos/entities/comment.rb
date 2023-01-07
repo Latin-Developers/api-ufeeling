@@ -23,9 +23,9 @@ module UFeeling
         attribute :text_original,             Strict::String
         attribute :like_count,                Strict::Integer
         attribute :total_reply_count,         Strict::Integer
-        attribute :language,                  UFeeling::Videos::Values::Language
+        attribute :language,                  UFeeling::Videos::Values::Language.optional
         attribute :published_info,            UFeeling::Videos::Values::PublishedInfo
-        attribute :sentiment,                 UFeeling::Videos::Values::SentimentalScore
+        attribute :sentiment,                 UFeeling::Videos::Values::SentimentalScore.optional
         attribute :author,                    Author.optional
         attribute :comment_replies,           Array.of(Comment).optional
 
