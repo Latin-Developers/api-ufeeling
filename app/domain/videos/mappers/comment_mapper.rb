@@ -43,7 +43,7 @@ module UFeeling
               id: nil,
               video_id: nil,
               author_channel_id: nil,
-              sentiment:,
+              sentiment: nil,
               origin_id:,
               video_origin_id:,
               author_channel_origin_id:,
@@ -104,32 +104,6 @@ module UFeeling
 
           def day
             published_at.day
-          end
-
-          def sentiment
-            client = Aws::Comprehend::Client.new(
-              region: App.config.AWS_REGION,
-              access_key_id: App.config.AWS_ACCESS_KEY_ID,
-              secret_access_key: App.config.AWS_SECRET_ACCESS_KEY
-            )
-
-            analysis = client.detect_sentiment({
-                                                 text: text_display,
-                                                 language_code: language.language_code
-                                               })
-
-            score = analysis.sentiment_score.max_by { |_k, v| v }
-            UFeeling::Videos::Values::SentimentalScore.new(
-              sentiment_id: nil,
-              sentiment_name: analysis.sentiment.to_s.downcase,
-              sentiment_score: score
-            )
-          rescue StandardError => e
-            UFeeling::Videos::Values::SentimentalScore.new(
-              sentiment_id: nil,
-              sentiment_name: 'neutral',
-              sentiment_score: 0.0
-            )
           end
 
           def sentiment_old

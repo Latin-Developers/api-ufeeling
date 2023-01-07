@@ -31,14 +31,25 @@ module UFeeling
         return unless (first_call || current_page_token) && counter < 100
 
         comments_response = comments_from_youtube(input, current_page_token)
-        save_comments_db(comments_response[:comments])
-        obtain_comments(input, false, comments_response[:next_page_token], counter + comments_response[:comments].size)
+        # detect language
+        comments_with_sentiment = detect_comments_sentiments(comments_response[:comments])
+        save_comments_db(comments_with_sentiment)
+        obtain_comments(input, false, comments_response[:next_page_token], counter + comments_with_sentiment.size)
       end
 
       def comments_from_youtube(input, current_page_token)
         UFeeling::Videos::Mappers::ApiComment
           .new(UFeeling::App.config.YOUTUBE_API_KEY)
           .comments(input[:video_id], current_page_token)
+      end
+
+      def detect_comments_sentiments(comments)
+        comments.map do |comment|
+          sentiment = UFeeling::Videos::Mappers::AWSSentiment
+            .new(UFeeling::App.config.AWS_REGION, App.config.AWS_ACCESS_KEY_ID, App.config.AWS_SECRET_ACCESS_KEY)
+            .sentiment(comment[:text_display], comment[:language][:language_code])
+          UFeeling::Videos::Entity::Comment.new(comment.to_h.merge(sentiment: sentiment.to_h))
+        end
       end
 
       def save_comments_db(comments)
