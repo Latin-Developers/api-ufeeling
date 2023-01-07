@@ -168,7 +168,7 @@ module UFeeling
           end
 
           def language_name_by_code(language_code)
-            languages = YAML.safe_load_file('/home/avasquez/api-ufeeling/language_names.yml')
+            languages = YAML.safe_load_file('./language_names.yml')
             languages.find { |l| l['code'] == language_code }['language']
           rescue StandardError => e
             puts "Error Evaluating Language: #{e}"
