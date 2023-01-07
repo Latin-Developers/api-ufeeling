@@ -22,7 +22,8 @@ module GetComments
       start = percent("#{step}_START")
       finish = percent("#{step}_FINISH")
 
-      progress = start + (comments_completed * (finish - start) / total_comments)
+      comments_percentage = total_comments.zero? ? 0 : (comments_completed * (finish - start) / total_comments)
+      progress = start + comments_percentage
       progress < finish ? progress.to_s : finish.to_s
     end
 

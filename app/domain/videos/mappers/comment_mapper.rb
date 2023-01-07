@@ -19,12 +19,12 @@ module UFeeling
 
         def comments(video_id, current_page_token = '')
           comments_data = @gateway.comments(video_id, current_page_token)
-          comments = comments_data[:items].map do |data|
+          comments = comments_data[:items]&.map do |data|
             #   Concurrent::Promise.execute do
             ApiComment.build_entity(data)
           end
           # end.map(&:value)
-          { comments:, next_page_token: comments_data[:next_page_token] }
+          { comments: comments || [], next_page_token: comments_data[:next_page_token] }
         end
 
         def self.build_entity(data)
