@@ -8,8 +8,12 @@ module UFeeling
     module Repository
       # Repository for Categories
       class Comments # rubocop:disable Metrics/ClassLength
-        def self.find_video_comments(video_origin_id)
-          comments = Database::CommentsOrm.where(video_origin_id:)
+        def self.find_video_comments(video_origin_id, sentiment_id)
+          comments = if sentiment_id
+                       Database::CommentsOrm.where(video_origin_id:, sentiment_id:)
+                     else
+                       Database::CommentsOrm.where(video_origin_id:)
+                     end
           rebuild_many comments
         end
 

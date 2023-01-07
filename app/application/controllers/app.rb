@@ -149,8 +149,8 @@ module UFeeling
                   response.cache_control public: true, max_age: 300
                 end
 
-                filters = Request::EncodedVideoList.new(routing.params)
-                result = Services::GetComments.new.call(video_id: video_origin_id)
+                filters = Request::EncodedCommentList.new(routing.params)
+                result = Services::GetComments.new.call(video_id: video_origin_id, filters:)
 
                 if result.failure?
                   failed = Representer::HttpResponse.new(result.failure)
