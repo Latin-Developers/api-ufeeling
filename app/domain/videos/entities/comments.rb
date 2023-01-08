@@ -16,9 +16,20 @@ module UFeeling
         LIKE_WEIGHT = 0.2
         COMMENT_WEIGHT = 0.8
 
-        def initialize(comments:)
+        def initialize(comments)
           @comments = comments
         end
+
+        def calculate_sentiment
+          sentiment = final_score.max_by { |e| e[:score] }
+          Values::SentimentalScore.new(
+            sentiment_id: nil,
+            sentiment_name: sentiment[:sentiment],
+            sentiment_score: sentiment[:score]
+          )
+        end
+
+        private
 
         def total_likes
           @comments.sum(&:like_count)
@@ -48,12 +59,19 @@ module UFeeling
           total_count_sentiment = group_sentiments.sum { |sentiment| sentiment[:count_sentiment] }
 
           group_sentiments.map do |value|
-            replies_weight = value[:total_replies] * LIKE_WEIGHT / total_replies
-            count_weight = value[:count_sentiment] * COMMENT_WEIGHT / total_count_sentiment
-            final_score = (replies_weight + count_weight).round(2)
-            sentiment = value[:sentiment]
-            { sentiment:, final_score: }
+            replies_weight = replies_weight(value[:total_replies], total_replies)
+            count_weight = count_weight(value[:count_sentiment], total_count_sentiment)
+            score = replies_weight + count_weight
+            { sentiment: value[:sentiment], score: }
           end
+        end
+
+        def replies_weight(sentiment_replies, total_replies)
+          total_replies.zero? ? 0 : sentiment_replies * LIKE_WEIGHT / total_replies
+        end
+
+        def count_weight(count_sentiment, total_count_sentiment)
+          total_count_sentiment.zero? ? 0 : count_sentiment * COMMENT_WEIGHT / total_count_sentiment
         end
       end
     end

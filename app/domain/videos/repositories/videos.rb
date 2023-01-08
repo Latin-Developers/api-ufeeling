@@ -50,6 +50,7 @@ module UFeeling
             origin_category_id: db_record.origin_category_id,
             origin_author_id: db_record.origin_author_id,
             published_info: published_info(db_record),
+            sentiment: sentiment(db_record),
             title: db_record.title,
             description: db_record.description,
             status: db_record.status,
@@ -61,6 +62,14 @@ module UFeeling
           )
         end
         # rubocop:enable Metrics/MethodLength
+
+        def self.sentiment(db_record)
+          Values::SentimentalScore.new(
+            sentiment_id: db_record.sentiment_id,
+            sentiment_name: db_record.sentiment&.sentiment,
+            sentiment_score: db_record.sentiment_score
+          )
+        end
 
         def self.published_info(db_record)
           Values::PublishedInfo.new(

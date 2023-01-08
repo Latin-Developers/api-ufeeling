@@ -11,8 +11,8 @@ module UFeeling
         include Dry.Types
 
         attribute :sentiment_id,          Coercible::Integer.optional
-        attribute :sentiment_name,        Strict::String
-        attribute :sentiment_score,       Strict::Float
+        attribute :sentiment_name,        Strict::String.optional
+        attribute :sentiment_score,       Strict::Float.optional
 
         def to_attr_hash
           to_hash.except(:sentiment_name)

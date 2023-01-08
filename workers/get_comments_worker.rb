@@ -34,7 +34,7 @@ module GetComments
       video = UFeeling::Representer::Video.new(OpenStruct.new).from_json(request) # rubocop:disable Style/OpenStructUse
 
       job = JobReporter.new(request, Worker.config)
-      job.report(GetCommentsMonitor.starting_percent)
+      job.report_each_second(5) { GetCommentsMonitor.starting_percent }
       update_lamda = update_lamda(job, video.comment_count)
 
       UFeeling::Services::AnalyzeComments.new.call(video_id: video.origin_id, lambda: update_lamda)

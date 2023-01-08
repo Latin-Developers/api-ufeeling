@@ -20,6 +20,7 @@ module UFeeling
       property :thumbnail_url
       property :comment_count
       property :author, extend: Representer::AuthorRepresenter, class: OpenStruct # rubocop:disable Style/OpenStructUse
+      property :sentiment, extend: Representer::SentimentInfo, class: OpenStruct # rubocop:disable Style/OpenStructUse
       property :published_info, extend: Representer::PublishedInfo, class: OpenStruct # rubocop:disable Style/OpenStructUse
 
       link :self do

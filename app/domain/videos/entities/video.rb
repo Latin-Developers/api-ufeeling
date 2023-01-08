@@ -19,6 +19,7 @@ module UFeeling
         attribute :origin_category_id,      Strict::String
         attribute :origin_author_id,        Strict::String
         attribute :published_info,          UFeeling::Videos::Values::PublishedInfo
+        attribute :sentiment,               UFeeling::Videos::Values::SentimentalScore.optional
         attribute :title,                   Strict::String
         attribute :description,             Strict::String
         attribute :thumbnail_url,           String.optional
@@ -29,8 +30,9 @@ module UFeeling
         attribute :author,                  Author.optional
 
         def to_attr_hash
-          to_hash.except(:id, :author, :published_info)
+          to_hash.except(:id, :author, :published_info, :sentiment)
             .merge(published_info.to_attr_hash)
+            .merge(sentiment.to_attr_hash)
         end
 
         def processing?
