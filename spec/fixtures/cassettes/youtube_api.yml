@@ -47594,4 +47594,3660 @@ http_interactions:
       encoding: UTF-8
       string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.003432127181440592,"Negative":0.17806461453437805,"Neutral":0.7132064700126648,"Positive":0.10529685020446777}}'
   recorded_at: Sat, 07 Jan 2023 17:31:57 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Easily destroy all DCU and DCEU, WB sold DC to China’s Tencent"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112301Z
+      X-Amz-Content-Sha256:
+      - c9c93300cffc70b0fbffa523d41a700fbdc43b921f0d7b24034c8f4e6c3825dc
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=99dbbbc41d826d5350ade5b3d73a395caa188cc79e52c5abc38fb91fc579b205
+      Content-Length:
+      - '75'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 3a02fc73-c12a-4cef-beb9-f60bbc9e003d
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:01 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9038516879081726}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:01 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Congrats!!"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112301Z
+      X-Amz-Content-Sha256:
+      - 47e346b3fb437688136617fc6c795afadfdadf8789e3c693e42d58e1c62c88a7
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=30a040c4b8d4736678369d10a301249350a542e0fddb8bda7e4f09cb423358d5
+      Content-Length:
+      - '21'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 9e2244ac-c3cc-40be-bdd6-4ed797f4b5d2
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:01 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9257968664169312}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:01 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Bullcrap. All enemy just stand there wait for damage.... Lame
+        asf. Marvel Spider-Man wayyyyyyy better..... How old is that game? 5 years?
+        Still awsome"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112301Z
+      X-Amz-Content-Sha256:
+      - 8610718958ce84d4d80f1648774958585deab9d651deac53f3205f17dc534ada
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=ccb18bd24629990c952c314b67239a3f3560532f2cc23362c4d70b1899db4cc9
+      Content-Length:
+      - '161'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - f38b32ce-93b5-4ca4-b11d-c0719ac6929a
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:01 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9784435629844666}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I still cant believe they unveiled Sans as a launch DLC"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - f8554ba02beca8bc2090e0bc52baed8279eaab122731a3084c0063de6b1e16be
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=92521d789e573718b6ba5190ea017647fe9fb61383c5aa5d65bd61762e0e5a88
+      Content-Length:
+      - '66'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - a58f2cdf-8105-4d57-8803-be6512ea96c0
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:01 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9690053462982178}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Marvel&#39;s Midnight Suns is coming tomorrow in the MCU."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - 87cac0efa6a2e2c21228fc22a8841bac3b663665b9972c3c025aee509475d45b
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=8afa78028d14aabbaeac5513ffe76865cbbddffe288c059c2dc346e041c1937b
+      Content-Length:
+      - '68'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 370c5a8d-a14b-4ff9-8010-e435cd8e729d
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:01 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9898682236671448}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Hey there!<br>Very excited for the game!<br><br>When it will
+        be launched on PS4?"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - 3fba31156b8224ab98076f70f0ede3237c87cd43eed64afdb7021ea35376f6ed
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=350081ba1aa54627405d0f18b64ade9a7b3192b97d390c3249900e05a2da8c93
+      Content-Length:
+      - '91'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d53e0458-dfc4-4771-be21-49ef3fda5ba9
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '63'
+      Date:
+      - Sun, 08 Jan 2023 11:23:01 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.950602114200592}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Is it a mobile game"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - af5cd362338ee08b952638dc37a71b4b2c668eed5e7d5155c7edddecd3bcdabc
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=d5e25058cd006c36dddabe7f69104dde6046b1a2ba60d1ce2ca29b03adabdf74
+      Content-Length:
+      - '30'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d1d6dd60-5e1e-4764-8ad3-53ff28811884
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '61'
+      Date:
+      - Sun, 08 Jan 2023 11:23:01 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9923095703125}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Can&#39;t wait for this game tomorrow."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - a59da40427d224d9b1e5fd96e4ce7db74d4ca27808d3f9454a32acdd0eb7d093
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=afb473639d37939d32c5038e345fc1e84a85b054f4b6addaf26e0e5c07670479
+      Content-Length:
+      - '49'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d9e725a5-8085-4b8d-a8a4-531f671c83c9
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9897207021713257}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I don&#39;t understand what is Captain Marvel, Iron Man, Captain
+        America doing in this game. Especially Captain Marvel, we are sending a character
+        who travels in space and explodes a spaceship to &quot;stealth and tactics&quot;
+        missions.\r<br>We could have gone to the bottom of Supernatural events with
+        characters like Blade, Elsa Bloodstone, Moon Knight, Magik, they missed that
+        opportunity. Probably to take advantage of the Avengers commercial.\r<br>\r<br>Although
+        they named it &quot;Midnight Suns&quot; instead of &quot;Midnight Sons&quot;,
+        I guess to take advantage of this Avengers cash-in."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - 1d080312fe7674055496d8599c1e9008989d31c29ab7fb4ef8b918c40dae6b61
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=58bcee3a3ba748f9166a7aa4f1034afd668c4a5f5266add8b0bf74b7dfff79e1
+      Content-Length:
+      - '609'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - fc8869a0-0400-4652-a88e-2a3f34036dc4
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9831502437591553}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"What a waste, I thought it will be like Marvel Avengers, turns
+        out to be card game. It&#39;s totally waste time and money."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - d66ca47384217cfc1993ed5ba0ad1989138178c9cfaf3ba14840922492b0d96a
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=ae5528ef6c6fe11e9d9f86727e9663ac28e5b90407b0e8ddd493ef0dba83a662
+      Content-Length:
+      - '133'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - ae713067-290b-4045-ab0b-0f531bbf4129
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9904269576072693}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"chat comments upset that its a card game,  It&#39;s a board-tactics
+        game with abilities played through cards.. Personally I think it has potential
+        to be a ton of fun.  take turn gameplay also allows me to go back and forth
+        making plays with my mate..  snap isn&#39;t a great card game its matches
+        are done to quickly, and strike force isn&#39;t the same either..  I like
+        tactics board game+card game stuff,  but the guys streaming were really turtling
+        more than actually playing x_x,  to much explaining of stuff that wasn&#39;t
+        being asked to be explained and not enough actual play demonstration going
+        on"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - 3c343eeafc38f0871a38162260b8cb5ff6dd54372e65278225a7df26bbf92790
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=a8e8282e80213bf5e8bf474ed567feea7c9767a5ebc0ce1d5c333212638a0006
+      Content-Length:
+      - '617'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - '059b0854-8a91-47d6-80a1-2a31c4b24221'
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9963316321372986}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Very nice game bro \U0001F44D\U0001F44D\U0001F4AF\U0001F929\U0001F929\U0001F60D\U0001F60D\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - 0aa1a127d208a58bf88f76abb8b56bc9a5c5941d1b04585cb3041f047961c901
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=309ecacd6736f4bf06dd18f129541cfb2b4e0a53cf2447e6b59c4f33043e26e9
+      Content-Length:
+      - '58'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - c12eef75-6d81-40b0-8fe3-65b2c0a039c7
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9645044207572937}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Very very good game bro \U0001F4AF\U0001F929\U0001F929\U0001F60D\U0001F60D\U0001F44D\U0001F44D\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - 14db77747531ba8d0d57603fb61eb58844b16821c0a0dcac251809374a647301
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=411d2b653aca29cfdc0f3ab943b835ae0c07c53aabd9371e9c1e9024067c8b26
+      Content-Length:
+      - '63'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - e7941f23-5aab-4048-b5a1-ec5744ecb9e4
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9576402902603149}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Very very nice game bro game ko release kar Kamal ka hai
+        yar \U0001F929\U0001F60D\U0001F60D\U0001F929\U0001F929\U0001F60D\U0001F44C\U0001F44C\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - 27954992e92e1da89a1000442be4da05e57a84a42b0a65fb43f14cbc8f0dfe97
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=5eb6a183b787bbf99abeb741548004894280f7a66a3572a1d4e3d9787f87c29e
+      Content-Length:
+      - '104'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 1364d533-5ddb-4d41-91b1-d8319f5dfb62
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.4746791422367096}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"No matter how you try to make the game &quot;look cool&quot;.
+        It’s still a stupid turn based game. Turn based games, card games, matching
+        games sucks. Marvel should stop making such stupid games."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - d5c880564e1fd8be0a1702d754bf994ecf6321be87a636e1450ea34202997d50
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=e0ed7d9da30f7ab343de8a24ec021933f86b25bc5d69edfea0bb63aaed719fa8
+      Content-Length:
+      - '208'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - b2c01f2b-b880-4e3c-9f9e-481496d748a7
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9951505064964294}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:02 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"so do you have to play as the hunter girl or can i main ghost
+        rider the whole game?"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112302Z
+      X-Amz-Content-Sha256:
+      - d74da09602d0305a343a1265c466f4b5fd4809634140dc572abf8aab95ed9403
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=419779a09b502d7b9e4f6afa59bcf6de303365cc918d622956bbefc2c018a490
+      Content-Length:
+      - '94'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 96996ba4-d8bc-4709-86bd-0770cddd8558
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9952125549316406}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"In thumbnail, she looks like Lara croft from tomb raider"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - 3075e33dfd5fa86f4d98be81184688bf614c6cb6158bcd5da21fdd695d84e136
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=2ea1c99c0c35bc2fd48cf3536c2a2431b3229a3332145e7f5b7c891cb77b12a0
+      Content-Length:
+      - '67'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 4f36b24c-6290-4f24-9ddc-edc149057079
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9928862452507019}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"less then 48 hours to go"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - cf451725fdec3c6ee819037bc70126b4477316b704dd14b79146db5649b6f0ad
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=3e4dff74565d99d96c9e61fdb812485b7e8f0e7f2243d9b4dcda861d089c8a1a
+      Content-Length:
+      - '35'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 1e37fae1-3f05-4a40-9d71-6dbfabeed608
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9979338645935059}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"So he is similar to Raechelle goal"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - d615f38b16d56a7a7787b45a3503d68f850f943e3bb9dfa1e72092fb917c00d7
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=1aaf4a127f93e223b034955a3320955d68522aca310409073fc7472ff1f49818
+      Content-Length:
+      - '45'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 0fb7eed1-62fc-471d-969a-0bbb62c6008b
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9909422397613525}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Please not only consider ps also do consider phone and
+        remember this is not a gaming studio but movie so give us better movies and
+        series than games \U0001F602\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - a559c546d9ceb2281c76f2f90558aed7688c542e923c3e905a758836c8c814d1
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=bc2f4d6c00f3e2243f4d36a568896fc8f2f494f18819e1685cf961f457c584f7
+      Content-Length:
+      - '164'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 6ad0af48-9e9a-4733-8b7b-362f405a8d3a
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '63'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.991126537322998}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I was already concerned that they were going to micro transaction
+        the hell out of this thing.  Then they announced a partnership with Strike
+        Force for skins.  Mobile game ads confirmed *before it was even released*.  Hard
+        pass."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - a3ceb9639f5dbf15072dc6f41f9d3602aa2e9d736c0a8517e7c90d1d82de9855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=0298b174b3dca637cc3f33978d59a5de4e6f6b18c37fc054ab22c0276c03caf4
+      Content-Length:
+      - '238'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 6398bbff-702b-4696-a4eb-b12cfca270bc
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9968652129173279}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Awesome"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - 2036d160962219697a5dc0568b88e0d297d94a3c1fda93617bfbcc57f176831e
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=2d4f6969921c9be7556c6fbb10829fc5c2e61d1202c690bf3146c256b19572c6
+      Content-Length:
+      - '18'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 1d3fc3cc-ea66-4b1d-9377-f34f503bbab3
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9961049556732178}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Hi can&#39;t wait to play it and thanks you for everything
+        again"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - b88ba14284066ca079e3167c42ec1f8056239a6a8dc9f28f9f0d9e7b2019f77a
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=623884d185c0b0147280836c431bc54da6fb077285bd5179e22da2b8faea36d8
+      Content-Length:
+      - '75'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 39eeac08-361f-47c3-8ec2-9b40c298e3f4
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9873810410499573}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Hulk looks so cool in this game his character design and gameplay
+        are awesome man"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - e4e9030eb271e1369a77da25a2b424793655c13a5b0c56b2579dc788f277dc09
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=d76e3c170c023d39297f12e9818557ce45f623a8cd52bcfd20593d0891f71951
+      Content-Length:
+      - '92'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 85a4bc1d-f499-4c03-8110-5c74552f529f
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9942759275436401}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Looks honestly not far off from Gotham Knights thought
+        the concept was awesome and wanted this game at first but looks like a mobile
+        game tbh \U0001F480\U0001F602\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - 3b18bb0c1cc619988ba4c58ba1c30b855374a04086c1a57221b87081abc20585
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=baf09266e1c2aeb599e5a999fe2833b63c95d3ab82e4b84b719702742d52441c
+      Content-Length:
+      - '161'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 4bdbddf5-fc4e-41b5-9372-8f464081b631
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9967632293701172}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Wish the squad was bigger. <br>4 or even 5-member squads."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - bceecba7a49f44b4c28de315f3f7db57f8c3324f64278cda98ca6dff6fc0c6c9
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=bd75dda5ecae03eb78b6d4bf9008a23ddfbda17cd6dbb46912f305470b2d445e
+      Content-Length:
+      - '68'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 3dd87df5-a176-42f7-8bc5-c0579752a5f1
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9804611206054688}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"L game. Looks very boring"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - d4591ddeec45d590be24c653c881e6fff3b3b533b32e7932a71f617d7759b6b7
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=354aa42715a93944cad1e7d7fbabb71ecf544c14cae0082be87f0af11c93ee5d
+      Content-Length:
+      - '36'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 21d8018d-a879-421d-92cf-d4a31374b4de
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '63'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.976008951663971}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"So excited to get this game and the exclusive FUNKO POP that’s
+        coming with it❗️"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - eaea8d3a38fb688041f470cde27db04c6ae6d2665af2ea80cfb5589a850e3bc4
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=79b4ab3cd5cc9cc0ff2aafd6d9354ff8948ecfb0da08d7f5170855c88aa5420b
+      Content-Length:
+      - '96'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 7d2f6bc2-35cb-4016-a190-5a281bdb59aa
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9973304867744446}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:03 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Present 3 hours"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112303Z
+      X-Amz-Content-Sha256:
+      - 3659b68ab3839de453d0f90c74f4bdd6e57e67cb492810f96350928d882fa914
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=02b676ed8c29e777fc20bd3d7676cd140b84ddb29c51c8ec57098cf1839d025a
+      Content-Length:
+      - '26'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 6b3bd92d-9174-4b75-99fd-6551824109ce
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9906712174415588}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"This is incredible"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - f5d362799dd643df72baacc1820aeed063dd6a9ab6993aca4f87817d47c4a21d
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=4be5db807760b097dfa39be68d1ea935d4763b31c500bfafca71bec0f865154f
+      Content-Length:
+      - '29'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - f23ae982-7ed3-4a11-b513-56dd1dadf3de
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9990735054016113}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Please make a full animated midnight sun&#39;s movie or show"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - b8268fe84b76ff107c4277a15899866b23efa7b1e87693d99ba7c6f9178f5fae
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=c088ad88e34d544f13a72f8dc5f9e879f2e46ed72ff4beecdb27068e31b0b5a9
+      Content-Length:
+      - '71'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - ee23238c-4cbf-4e79-866f-0d520f5da803
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9959665536880493}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"So no Old Gen?"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 5de703cd26f78ee8734628c590a6ff5c6b1c0295027bbb6080bb9ceeefecd46e
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=862ac55b8652693614ba11d9bc3383ab855fdeb7bf9a86981a24cb5091370c5f
+      Content-Length:
+      - '25'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - e2fb2722-b22a-4d60-a6ec-060d8b54e9c7
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9438285231590271}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Love marvel since young"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 4a0704deb37f8f25ce07a93c81f90366ac31984bbfd5011f9972db13aaa245a6
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=b7db149c2ed51fdac37a52e9e93a3cb432a390a0a9a1d3107954d73153ff649e
+      Content-Length:
+      - '34'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 3fee4359-4752-4caf-8ae0-2dc55f1e68cc
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9731296896934509}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Just helped me unsubscribe, good job way to go! \U0001F44D\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 6582422e0e22303bbcd28c6186ecfb240a94cfa391afa4981f25448d8f5f96d5
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=25b7b9d06846153bf395f085d6f534016935e026f38631ce813684af12eb7642
+      Content-Length:
+      - '63'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - e9f3960b-f5fe-43aa-b15d-8c7e4e29bf0f
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9930596947669983}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"JC, Really a Stupid card game, what a friggin waste!"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - e913f9b3fafd21006dbee59fc42f7793fca6fdd5454a636aae26ff40e9ffc1fa
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=fd48230eedc56308e36cc8f84eb412dbaaf20a68c250f32082d8e092205e2308
+      Content-Length:
+      - '63'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 0b95acd0-4e50-44a9-9a58-ab627a46d894
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9950053095817566}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I got mad harry potter vibes."}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 9a11676d5969236f088a6a4e5a7caad32134c2bb8ea241b5b1ff63f685364071
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=216a7dc96271757aff204417766af9dce4ceeb002d8bc040d1075a5eeb45b8a7
+      Content-Length:
+      - '40'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 757c40a4-dc4b-412d-be39-751755409494
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9740002751350403}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Please Fix Clint Barton in the MCU"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 9346a8e98acf223da6bb5f15fc80b55ab51c1fa46bba96549541903612a03f84
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=73d43b71cf086d2e5295893b22cf29515756b8a4a7ca18785ae5d615df0fc287
+      Content-Length:
+      - '45'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 659f3f34-d034-4ff7-a4e7-bd89b5c9cf99
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9930456876754761}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I’ll pass"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 8b6b10d9c72312962bcb0dac584c186fdf752b8fd4f6668b1ee34ee608b76ef8
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=2addf3b4cb083f073d0d50e0350f783ea0c3aec9ea74d90f1e8e562e5843906b
+      Content-Length:
+      - '22'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 10e32e29-b914-4895-98fd-a8872a36e1d5
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9974617958068848}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Question any chance of us getting Punisher, moon knight, daredevil
+        or Elsa bloodstone down the road?? I am fine with a season pass 2"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 695e84a826e74b8aaa20471fc521ade63cfa658e6bb8de09086bfbd8f43da5dd
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=81751c356e00f6145a1bbc1253bc212f48593af2c1667ad81fad43f7e67c80b0
+      Content-Length:
+      - '143'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 5c82343d-5abe-4683-a225-43a2fc490562
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9874982833862305}]}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Easily destroy all DCU and DCEU, WB sold DC to China’s Tencent","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 4252d9b21ba38d15713613975eb52bf3dd8fa295b8e3c37e2babbe72fc10215d
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=409fb6f81539d83085ed32f36d1276189bd3379b5f53fc1e57d0ade0a37364ec
+      Content-Length:
+      - '95'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - a109e894-986e-4da0-ad6a-aaa08c036db3
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '163'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":2.6614489615894854E-4,"Negative":0.6617849469184875,"Neutral":0.2584993243217468,"Positive":0.07944958657026291}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Congrats!!","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - e2da53381c38f0a7553cadde6e117c33b857fe46eae13093ff0233c506655ab9
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=49c95284fc1fd6346e2153c8bfe4bd6c44888536e34116fe39023b1f8c54ee08
+      Content-Length:
+      - '41'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 89664acd-8a4e-4562-a2d6-e54613143bb7
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '166'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":1.2235750909894705E-4,"Negative":6.091668619774282E-4,"Neutral":5.106677999719977E-4,"Positive":0.9987578392028809}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:04 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Bullcrap. All enemy just stand there wait for damage.... Lame
+        asf. Marvel Spider-Man wayyyyyyy better..... How old is that game? 5 years?
+        Still awsome","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112304Z
+      X-Amz-Content-Sha256:
+      - 18d3ecfcfd4836bc0f5f2748397a0f15de40bd827925012e258b26ebefd0c7a4
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=7714ad2c1fcccc765bcb88a27f6bc9dff71423f0850cbbc44649d53f467bdac0
+      Content-Length:
+      - '181'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 31992a4c-dfb4-4f0f-8383-0c8b2a6da2fe
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '165'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":0.004592505749315023,"Negative":0.9484513998031616,"Neutral":0.023467479273676872,"Positive":0.023488633334636688}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:05 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I still cant believe they unveiled Sans as a launch DLC","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112305Z
+      X-Amz-Content-Sha256:
+      - 2983ba52f64e77852ade88944ba13d69d163269aea7a3acf0e79a986a181ed51
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=05975933cd5d4f7a1dbe40af6b17119debfed183577ae621e78ecea4bb884699
+      Content-Length:
+      - '86'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 631a56bc-0b0f-44e7-857d-0ed3342304e8
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '159'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.004600957036018372,"Negative":0.3046490252017975,"Neutral":0.5396201610565186,"Positive":0.151129812002182}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:05 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Marvel&#39;s Midnight Suns is coming tomorrow in the MCU.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112305Z
+      X-Amz-Content-Sha256:
+      - 573082099a1a5a19cc9bcac93f1de4d51cfdd3675e9b44eb0b37232c83b43566
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=0781139b78aa853373c22154c942eb60dc5e978558228f4a372147fcb33ba86e
+      Content-Length:
+      - '88'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 8f1c08e5-311d-4c59-81e2-779fa9af3263
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '164'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":1.3607457731268369E-5,"Negative":0.009406941011548042,"Neutral":0.9279255270957947,"Positive":0.06265391409397125}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:05 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Hey there!<br>Very excited for the game!<br><br>When it will
+        be launched on PS4?","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112305Z
+      X-Amz-Content-Sha256:
+      - 802f5b86b52d54945269ee527cdd1155fc2f6443b15ab3b02206cdc709adceaa
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=3885b4dcb36dfe7fbc286c80d8e8e57a25388930801baf415543c0d3a35f4379
+      Content-Length:
+      - '111'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 513b68ea-dc2a-46ba-bbd3-a45aa746fbb0
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '167'
+      Date:
+      - Sun, 08 Jan 2023 11:23:04 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":2.8825093977502547E-5,"Negative":2.9774539871141315E-4,"Neutral":0.028030676767230034,"Positive":0.9716426730155945}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:05 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Is it a mobile game","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112305Z
+      X-Amz-Content-Sha256:
+      - 5e7842eed9c372d8dbba7c09069f5f14ca7103860b964780f1ad6f59e2b8bd25
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=3d22afcaa2e99374f4e1bee5b56772b250725686cbc9f952f6c3a7865706f217
+      Content-Length:
+      - '50'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 80c8e9af-da78-42e2-832b-244ba12e94c3
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '160'
+      Date:
+      - Sun, 08 Jan 2023 11:23:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.012278000824153423,"Negative":0.00959036685526371,"Neutral":0.6324570775032043,"Positive":0.345674604177475}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:05 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Can&#39;t wait for this game tomorrow.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112305Z
+      X-Amz-Content-Sha256:
+      - 4ea1764cd51be0c84aac3c7aad5768f7761cac11f1c138da6ab98197a2c21d85
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=183c4b06d9b4576cc55b2deba60fbcde69503d59a2e0023e832da37e875a8c5b
+      Content-Length:
+      - '69'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - ffe3ddd8-53e2-460a-be1c-d544284bc0ae
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '165'
+      Date:
+      - Sun, 08 Jan 2023 11:23:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":1.436307793483138E-4,"Negative":8.730831323191524E-4,"Neutral":0.005635717883706093,"Positive":0.9933475852012634}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:05 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I don&#39;t understand what is Captain Marvel, Iron Man, Captain
+        America doing in this game. Especially Captain Marvel, we are sending a character
+        who travels in space and explodes a spaceship to &quot;stealth and tactics&quot;
+        missions.\r<br>We could have gone to the bottom of Supernatural events with
+        characters like Blade, Elsa Bloodstone, Moon Knight, Magik, they missed that
+        opportunity. Probably to take advantage of the Avengers commercial.\r<br>\r<br>Although
+        they named it &quot;Midnight Suns&quot; instead of &quot;Midnight Sons&quot;,
+        I guess to take advantage of this Avengers cash-in.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112305Z
+      X-Amz-Content-Sha256:
+      - 11901813cd474166cb8684c72637c1eac55019d204f7d1976b4e846f15d38091
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=58c733037e985f221fac8bff57206013aea9ddeea8ce4db3a5003336eaee01bc
+      Content-Length:
+      - '629'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 973ffa3e-53c4-47ea-9492-591ac2934a9f
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '165'
+      Date:
+      - Sun, 08 Jan 2023 11:23:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":2.9522363911382854E-4,"Negative":0.9062781929969788,"Neutral":0.08826973289251328,"Positive":0.005156799219548702}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:05 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"What a waste, I thought it will be like Marvel Avengers, turns
+        out to be card game. It&#39;s totally waste time and money.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112305Z
+      X-Amz-Content-Sha256:
+      - 2a2e5fe06670c316afbb66b3de0e4bd8e36a7edde07b876bd51695463f220a13
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=c1e979eae9ec518bde30d086f35d7799cbe7271033f20481ce56de1c8c9e33ae
+      Content-Length:
+      - '153'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 48b42b59-0393-4c81-b4b0-c2d6546cf136
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '167'
+      Date:
+      - Sun, 08 Jan 2023 11:23:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":1.2331834113865625E-5,"Negative":0.9996024966239929,"Neutral":2.522200520616025E-4,"Positive":1.3301943545229733E-4}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"chat comments upset that its a card game,  It&#39;s a board-tactics
+        game with abilities played through cards.. Personally I think it has potential
+        to be a ton of fun.  take turn gameplay also allows me to go back and forth
+        making plays with my mate..  snap isn&#39;t a great card game its matches
+        are done to quickly, and strike force isn&#39;t the same either..  I like
+        tactics board game+card game stuff,  but the guys streaming were really turtling
+        more than actually playing x_x,  to much explaining of stuff that wasn&#39;t
+        being asked to be explained and not enough actual play demonstration going
+        on","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - 79d29aed6a60cbc43ef922e9eb76cdcb5181dc4dc5c46ff2ad0c11af6cc642ee
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=6c17c2966c72fb1e768855f9f1751c7bafaea16d8ed83a179b81f4e62e67ef7e
+      Content-Length:
+      - '637'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 425100fa-1d3b-48f9-a04f-cf7bd2688a74
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '162'
+      Date:
+      - Sun, 08 Jan 2023 11:23:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"MIXED","SentimentScore":{"Mixed":0.9297400116920471,"Negative":0.057110730558633804,"Neutral":0.0031722411513328552,"Positive":0.00997694581747055}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Very nice game bro \U0001F44D\U0001F44D\U0001F4AF\U0001F929\U0001F929\U0001F60D\U0001F60D\",\"LanguageCode\":\"en\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - 63ea17469329efca230e01df8c8f7221ebfa5fcd6bb74d631e5b5802fe52e10b
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=170e0d8a869d7c73d44e934184b0c90e84e96bc1351574a287049b230bf179d4
+      Content-Length:
+      - '78'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d8f181c1-e536-46d5-b61e-648ea7e5ba1a
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '166'
+      Date:
+      - Sun, 08 Jan 2023 11:23:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":3.3159773010993376E-5,"Negative":7.39051538403146E-5,"Neutral":0.0030810560565441847,"Positive":0.9968119263648987}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Very very good game bro \U0001F4AF\U0001F929\U0001F929\U0001F60D\U0001F60D\U0001F44D\U0001F44D\",\"LanguageCode\":\"en\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - dac8c3d86411207fdb12afb4b2e53bd39730ec200a8900ac493a75849279bd64
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=282dc81d4c86bbbe5ec061c077f27953eed23632768fbb1b733438902a5d80f9
+      Content-Length:
+      - '83'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 9aafe72f-6625-4498-b823-59de70ecd121
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '164'
+      Date:
+      - Sun, 08 Jan 2023 11:23:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":2.696149022085592E-5,"Negative":7.74444270064123E-5,"Neutral":0.002490000333636999,"Positive":0.9974055886268616}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Very very nice game bro game ko release kar Kamal ka hai
+        yar \U0001F929\U0001F60D\U0001F60D\U0001F929\U0001F929\U0001F60D\U0001F44C\U0001F44C\",\"LanguageCode\":\"en\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - befa8bef5e507d68fe94e84363c027b79398838ba4ba8e502596f82d76534d2d
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=50c72c750bf0c72ad1f1a9bbfa308ee03396818d8378e2c597f655a1226d4480
+      Content-Length:
+      - '124'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 1e488a85-c885-4ab8-a820-dc54232ebf28
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '165'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":1.2502088793553412E-5,"Negative":7.280024874489754E-5,"Neutral":0.00310160918161273,"Positive":0.9968129992485046}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"No matter how you try to make the game &quot;look cool&quot;.
+        It’s still a stupid turn based game. Turn based games, card games, matching
+        games sucks. Marvel should stop making such stupid games.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - 5812aa223eff864058783cf2a301aedd704aaebbe5175af6f4da17d8025ed913
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=0fd28b978d3d85bab9195d4528b062f470daa568c4499e12927ce8115c7c8673
+      Content-Length:
+      - '228'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - eda86226-68e4-4766-8898-7b6dfd86004f
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '165'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":2.289385738549754E-4,"Negative":0.998906135559082,"Neutral":7.275680545717478E-4,"Positive":1.3726956967730075E-4}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"so do you have to play as the hunter girl or can i main ghost
+        rider the whole game?","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - 97b24057be5c484e78746a82f12360472c30051d3542e337c4deecbbe8d577ab
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=1d5718b9250c21434cbf4f3e67c1905e8510628a0f21db5866cf29d6ceef4a17
+      Content-Length:
+      - '114'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - da856520-d934-4502-b4f9-32a9a6f6279d
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '161'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.09848921000957489,"Negative":0.1346786469221115,"Neutral":0.7487050294876099,"Positive":0.018127165734767914}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"In thumbnail, she looks like Lara croft from tomb raider","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - c6c268714bdfb927e44435530c0e1ef9a054a2d2f6d4aeede13f42cd42d7b84b
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=72bacac7a0e01e1e43a3e659a169a65ce3d28462f193d0a20943ccdc953b2e14
+      Content-Length:
+      - '87'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - e163f58b-8919-4f78-af85-9b3511e0564f
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '163'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":1.0343873873353004E-4,"Negative":0.05158507823944092,"Neutral":0.9169401526451111,"Positive":0.03137132152915001}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:06 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"less then 48 hours to go","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112306Z
+      X-Amz-Content-Sha256:
+      - d09668f3c49f6ed0c716b79828b523b0659cc0e581c8e0f022d89fe6b4482c4c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=2af3235abbada20901f64dd38890a67f88da9e9c2f52e05bcd6ee32070cde5f7
+      Content-Length:
+      - '55'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d9a7a9f5-3c9d-4833-b01c-96981cb5954c
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '163'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.006587099749594927,"Negative":0.36077746748924255,"Neutral":0.45764195919036865,"Positive":0.17499352991580963}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"So he is similar to Raechelle goal","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - a80e17d5a9a839138302a6b8a19e2e57661fda4188e406a644f5457e455d1e99
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=2bf7f4372d264e9ab2685fb95369d54aa8d9153a13d34c610c90780ae9dfdce3
+      Content-Length:
+      - '65'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - b38da731-3d2d-408f-9421-24212da9cafa
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '164'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":3.5844952799379826E-4,"Negative":0.004636324010789394,"Neutral":0.9428359866142273,"Positive":0.05216929689049721}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Please not only consider ps also do consider phone and
+        remember this is not a gaming studio but movie so give us better movies and
+        series than games \U0001F602\",\"LanguageCode\":\"en\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - 26b19adf740393f4aad031112f9206a3d715d06c8e7ac2504271d989d16e183f
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=14ac8744fbdc7714e092a271b890343fe91ea94f1b02ab8b338c5d046a98f463
+      Content-Length:
+      - '184'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 69c9107a-f1a1-4f4e-9d02-59cb4c6ce0f6
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '162'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.09684368968009949,"Negative":0.11710125207901001,"Neutral":0.44629475474357605,"Positive":0.33976033329963684}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I was already concerned that they were going to micro transaction
+        the hell out of this thing.  Then they announced a partnership with Strike
+        Force for skins.  Mobile game ads confirmed *before it was even released*.  Hard
+        pass.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - 94741550bebc3962eac4413a5e347f99300db3ab60d576cfdb70d323852054b5
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=8da2439979988062a5a606bf35458b94c50bd9fafd2b5bc9d5e71d513bd07d9b
+      Content-Length:
+      - '258'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 9102543a-265c-4273-9e6e-a3cd47a42464
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '163'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":0.0029162131249904633,"Negative":0.7792403697967529,"Neutral":0.1930416077375412,"Positive":0.02480189874768257}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Awesome","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - 683d9619fa933161ab7cf7622096cdb916cac920684367fd469ebd53ffcb97c6
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=63105375a8d909c4c3044b5c292bfe50b5bbdc8cf3382ade346ca85549386615
+      Content-Length:
+      - '38'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - cc45598f-c3b7-4913-9221-67b0524311d6
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '166'
+      Date:
+      - Sun, 08 Jan 2023 11:23:06 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":2.969182678498328E-4,"Negative":2.2572759189642966E-4,"Neutral":0.002238654997199774,"Positive":0.9972386360168457}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Hi can&#39;t wait to play it and thanks you for everything
+        again","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - 9ea52d12896117626ed346aa582628a6a9bd639ecb9c3c853007507a49103099
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=febdf15eff6d66976fbddae8c8fa3aa9c459a3f030512a335e012daab4f5130e
+      Content-Length:
+      - '95'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 11565fa8-07fe-435d-a335-f07f82d92d86
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '165'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":6.269630102906376E-5,"Negative":1.3027885870542377E-4,"Neutral":0.00211910018697381,"Positive":0.9976879358291626}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Hulk looks so cool in this game his character design and gameplay
+        are awesome man","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - c171fa6d1efb1307cb8fbe4b58ee80dfba6ee2c9c67f4f8e05a6e58979bbc160
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=33e7ba14852043445c46ae072ba7de4a155dbe2a437d666a7c3dc8adb7b29225
+      Content-Length:
+      - '112'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 159930fb-6bf4-49d0-b9ca-9fc09ea6f0fe
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '166'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":1.778746081981808E-4,"Negative":4.0407583583146334E-5,"Neutral":7.462806534022093E-4,"Positive":0.9990354776382446}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Looks honestly not far off from Gotham Knights thought
+        the concept was awesome and wanted this game at first but looks like a mobile
+        game tbh \U0001F480\U0001F602\",\"LanguageCode\":\"en\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - eb7697d2f195d26c2d5e774a21dfe20328881dfa39c9c0c441841eb7e8ca8831
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=c674a5ca68a473996041b4403b9f324abfe47f9af56867b59019040b7aba07b0
+      Content-Length:
+      - '181'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - '09b2b1c4-efd9-449f-9754-c7c21ffe5b27'
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '162'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":0.08818063139915466,"Negative":0.04813437536358833,"Neutral":0.12254033237695694,"Positive":0.7411447167396545}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Wish the squad was bigger. <br>4 or even 5-member squads.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112307Z
+      X-Amz-Content-Sha256:
+      - '088c45cb7ac541dc686dcc14f8c1a6b7e0e9be298e0b61c63e1f48f540c36712'
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=8e9fa4781523d43b337ef715eac850d37716ea8a6e8acb18c0f091c7c57cf835
+      Content-Length:
+      - '88'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - df015585-cc04-4a9e-89d4-cc59b1d24205
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '160'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"MIXED","SentimentScore":{"Mixed":0.48852384090423584,"Negative":0.3983303904533386,"Neutral":0.09046299755573273,"Positive":0.022682709619402885}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:07 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"L game. Looks very boring","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - a666e7a7000a64dc4eafc00c248da340f6b9222242f178eb48a15c926c9bbe34
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=f75401c4866d0b82f37fd3eb00c6715fc78fe1a00eae710a32d75b76b5ed7af8
+      Content-Length:
+      - '56'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 1f915d96-b600-4902-9996-8df72ee18270
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '165'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":0.010830219835042953,"Negative":0.988332211971283,"Neutral":5.831418675370514E-4,"Positive":2.5431570247747004E-4}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"So excited to get this game and the exclusive FUNKO POP that’s
+        coming with it❗️","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - 4e6d2f94d30ffbf051de44b500935af88501a06d8bd7b082bd3ae12593cfe667
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=ae97dc41d506f8b12e4cd7b2073d6607a3fd84b881dd66c54763d72de3f8cc7d
+      Content-Length:
+      - '116'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 43953ff0-ec47-410f-8117-d3c1c2b8cdeb
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '167'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":3.476950223557651E-5,"Negative":1.3481084897648543E-4,"Neutral":0.0018011999782174826,"Positive":0.9980291724205017}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Present 3 hours","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - 94713882aadd2f6376da87d108a8b0df9c8f2a972c3936d11b5e404e9c10048c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=0b9b486828b33bb2b20adbc48d199899e141d8ef793e08c122f4b2b0dae2e5f2
+      Content-Length:
+      - '46'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 60ffdce0-2d6d-4637-ae6b-120e0ed24234
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '163'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":6.184484227560461E-4,"Negative":0.005101878196001053,"Neutral":0.9773622155189514,"Positive":0.01691751927137375}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"This is incredible","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - f3d2cdad5fcfe9b013adb3d01d4aadab07bb1c3e2075b5c6ede1e1436effc245
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=1b05461fca8b6412b4a1142958beac0d8f6eec0eda2df94ca82ca801e2b7e89c
+      Content-Length:
+      - '49'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - a728794d-9029-4fec-b4d0-e9c7ab42e833
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '167'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":4.3440863373689353E-4,"Negative":3.614292072597891E-4,"Neutral":0.0013829671079292893,"Positive":0.9978210926055908}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Please make a full animated midnight sun&#39;s movie or show","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - 57e518947fe1063f268d563188babeba0b9303819db590167fa9d6b2717983de
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=d5e6f5fd13f3233cb9d253a87d430cbb7779805e4c30061a602f8ed6bea462d6
+      Content-Length:
+      - '91'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 8be73dba-ac0f-4895-921d-dbb4c6ee26e1
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '161'
+      Date:
+      - Sun, 08 Jan 2023 11:23:07 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.0657530277967453,"Negative":0.032392263412475586,"Neutral":0.7794287204742432,"Positive":0.12242589145898819}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"So no Old Gen?","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - 812c6ea6a75198085912515733d1d2653fe9a174df1f40b5cbab178b5af57456
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=fda4b59951feda0473468ae6f2c14ad54ad70f57e6a0ab748526e1854d07ac39
+      Content-Length:
+      - '45'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - '081d65ee-6b82-4ce2-938b-605b4d510721'
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '161'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.001312188571318984,"Negative":0.0383247472345829,"Neutral":0.9386454820632935,"Positive":0.02171757072210312}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Love marvel since young","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - 8d7fa40594c2e9fa32d4b3274732af68bfd080c73146e02f5d890f05dda4a7cc
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=20cabdda083fdfd83cd714aca6a21b0e8e6d04795314b2609b3b54d1d1b1c90c
+      Content-Length:
+      - '54'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 90c95c78-c31b-4cdf-8a21-51d7c97e1fd3
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '164'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":9.31271497393027E-5,"Negative":7.295767863979563E-5,"Neutral":7.423707284033298E-4,"Positive":0.9990915060043335}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: "{\"Text\":\"Just helped me unsubscribe, good job way to go! \U0001F44D\",\"LanguageCode\":\"en\"}"
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - a0571457a961245e26b380b3eba5429254c9e0c0cdcb5cd69160d2e98507e97c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=5020b1c7efb3526b65ed2157d68b8c270a1820d3ccad4da752f7c13710589baa
+      Content-Length:
+      - '83'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 979b4cb9-c9a4-43a3-8a6a-0fa932dcd863
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '164'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"POSITIVE","SentimentScore":{"Mixed":0.004307692404836416,"Negative":0.004506585653871298,"Neutral":0.23763832449913025,"Positive":0.7535474300384521}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:08 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"JC, Really a Stupid card game, what a friggin waste!","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112308Z
+      X-Amz-Content-Sha256:
+      - 134ac1265a164ba1f7a4fc66bb315c7fbbba6d636867a45945f64a3c885842df
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=e5bc1b5b04a85a4356ad9e8d8139646c0002703dd3962f5a80314a47662d9581
+      Content-Length:
+      - '83'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - db4afe76-4dbe-4b3f-b7c3-59e4584adc89
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '166'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEGATIVE","SentimentScore":{"Mixed":1.695820683380589E-4,"Negative":0.9967600703239441,"Neutral":0.001799692865461111,"Positive":0.0012707483256235719}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:09 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I got mad harry potter vibes.","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112309Z
+      X-Amz-Content-Sha256:
+      - '0491c7cd0596f7434af757d5d0cc407559f4b4691dee8c85518062536211fe91'
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=843bf71c313e5520244aadd3d72f5fd6e7d98ad22e23d2152ef5ef3ab4a0c20e
+      Content-Length:
+      - '60'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 4d7cce7a-ae07-4f37-ad08-420a56a290e7
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '162'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.001729856594465673,"Negative":0.17468495666980743,"Neutral":0.7268012762069702,"Positive":0.09678392857313156}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:09 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Please Fix Clint Barton in the MCU","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112309Z
+      X-Amz-Content-Sha256:
+      - a1a7b37463e6be572ff5bb033df6ebb711aeaee63ef96f76bf00b66463f14936
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=9d3b0d528a229c860765e45ce78a5f96e17fd72bf23deb020a2ee25a981548c4
+      Content-Length:
+      - '65'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - cfc850d1-e725-4bd7-8ccc-8f3e3a442826
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '162'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":3.733699850272387E-4,"Negative":0.04689018428325653,"Neutral":0.9460036754608154,"Positive":0.00673272367566824}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:09 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"I’ll pass","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112309Z
+      X-Amz-Content-Sha256:
+      - 5fb312f182d5f1d8e641ff9b0cfe3a842c4549f305060b83b18a1c99845b60a0
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=cdf49a99ea367f0e5f1baad7018a89c35b04a54c5de483ca91d1511879fee2de
+      Content-Length:
+      - '42'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - c1731603-c4b1-43b6-a029-02a01882965e
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '162'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.018888860940933228,"Negative":0.13252808153629303,"Neutral":0.7562863826751709,"Positive":0.09229672700166702}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:09 GMT
+- request:
+    method: post
+    uri: https://comprehend.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Question any chance of us getting Punisher, moon knight, daredevil
+        or Elsa bloodstone down the road?? I am fine with a season pass 2","LanguageCode":"en"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.168.4 ruby/3.1.2 arm64-darwin21 aws-sdk-comprehend/1.64.0
+      Content-Type:
+      - application/x-amz-json-1.1
+      X-Amz-Target:
+      - Comprehend_20171127.DetectSentiment
+      Host:
+      - comprehend.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20230108T112309Z
+      X-Amz-Content-Sha256:
+      - fc0a734719413c70c54e656ca7626ad51a76d3e208f568883506162f5dd8c79b
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAX3ZHKAHAFQ26IM7R/20230108/ap-northeast-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=9e6347113058d26df5b091de6f16a825b6ffa9060508125bedd71e9c929d6a28
+      Content-Length:
+      - '163'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 802abf51-c1ee-40f7-8290-dba4a9a80035
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '162'
+      Date:
+      - Sun, 08 Jan 2023 11:23:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Sentiment":"NEUTRAL","SentimentScore":{"Mixed":0.003432127181440592,"Negative":0.17806461453437805,"Neutral":0.7132064700126648,"Positive":0.10529685020446777}}'
+  recorded_at: Sun, 08 Jan 2023 11:23:09 GMT
 recorded_with: VCR 6.1.0
