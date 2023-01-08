@@ -134,4 +134,17 @@ describe 'Test API routes' do
       _(categories['categories'][0]['title']).must_equal CATEGORY_TITLE
     end
   end
+
+  describe 'Get a sentiments' do
+    it 'should be able to get the sentiments after creating a video' do
+      post "api/v1/videos/#{VIDEO_ID}"
+      post "api/v1/videos/#{VIDEO_ID}/comments"
+      get 'api/v1/sentiments'
+
+      _(last_response.status).must_equal 200
+
+      sentiments = JSON.parse last_response.body
+      _(sentiments['sentiments'].size).must_be :>, 0
+    end
+  end
 end
