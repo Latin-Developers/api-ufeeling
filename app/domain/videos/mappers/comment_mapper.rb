@@ -121,12 +121,12 @@ module UFeeling
             analysis = CLD.detect_language(text_display)
             language_name = analysis.values[0]
 
-            case language_name
-            when 'Chinese'
-              language_name = 'Simplified Chinese'
-            when 'ChineseT'
-              language_name = 'Traditional Chinese'
-            end
+            # case language_name
+            # when 'Chinese'
+            #   language_name = 'Simplified Chinese'
+            # when 'ChineseT'
+            #   language_name = 'Traditional Chinese'
+            # end
             UFeeling::Videos::Values::Language.new(
               language_name:,
               language_code: analysis.values[1],

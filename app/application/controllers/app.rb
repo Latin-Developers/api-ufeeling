@@ -175,25 +175,6 @@ module UFeeling
                 Representer::Video.new(result.value!.message).to_json
               end
             end
-
-            # [...] /videos/:video_origin_id/sentiments
-            routing.on 'sentiments' do
-              # [...] /videos/:video_origin_id/sentimens/summary
-              routing.on 'summary' do
-                # [GET] /videos/:video_origin_id/sentimens/summary
-                # TODO
-                routing.get do
-                end
-              end
-
-              # [...] /videos/:video_origin_id/sentimens/trend
-              routing.on 'trend' do
-                # [GET] /videos/:video_origin_id/sentimens/summary
-                # TODO
-                routing.get do
-                end
-              end
-            end
           end
         end
       end
